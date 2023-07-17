@@ -24,7 +24,6 @@ const HeaderMenu = () => {
                                 Privacy Notice
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="/about">ABOUT</Nav.Link>
                         <Nav.Link href="/privacy">PRIVACY NOTICE</Nav.Link>
                         <Nav.Link href="/contact">CONTACT</Nav.Link>
                         <Button className='btn btn-danger'>ORDER ONLINE</Button>
