@@ -1,0 +1,28 @@
+
+
+.text-right.with-margin p,
+.text-right.with-margin h1,
+.text-right.with-margin h3 {
+  line-height: 2.0; 
+}
+img {
+  height: 330px;
+  width: 1515px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+    
+  }
+  /* Chèn chữ vào giữa hình ảnh */
+.text-on-image {
+    position: relative;
+  }
+  .image-caption {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 55px;
+    font-weight: bold;
+    color: white;
+  }

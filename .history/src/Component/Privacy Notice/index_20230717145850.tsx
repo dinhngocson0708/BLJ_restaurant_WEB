@@ -23,7 +23,7 @@ const PrivacyNotice: React.FC = () => {
           <div className="border"></div>
           <h3>Privacy Policy</h3>
           <div className="content">
-            <p>
+            <p style={}>
               Overrice And Rolls LLC, a Virginia limited liability company d/b/a
               Rolls Vietnamese Grill (“us”, “we,” or “our”) provides online
               ordering application (the "Service"). We are committed to
