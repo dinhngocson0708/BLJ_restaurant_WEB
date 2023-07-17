@@ -30,8 +30,5 @@ img {
 .border{
   margin-top: 10px;
   margin-bottom: 10px;
-  border-bottom: 1px light rgb(243, 241, 241);
-}
-.content p{
-  line-height: 2.5;
+  border-bottom: 1px li rgb(221, 219, 219);
 }

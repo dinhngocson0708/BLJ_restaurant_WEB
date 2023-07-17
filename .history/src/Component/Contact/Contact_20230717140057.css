@@ -1,0 +1,33 @@
+.Contact{
+    margin-top: 100px;
+}
+.title_contact{
+    color: #506172;
+    font-size: 17px;
+}
+p{ 
+    color: #506172;
+    font-size: 17px;
+}
+.imag_contact{
+    height: 330px;
+    width: 1515px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.title_contactUs{
+    position: absolute;
+    top: 160px;
+    left: 660px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: capitalize;
+    
+    font-size: 60px;
+}
+
+.Contact_us{
+    font-family: "Poppins",sans-serif;
+}
