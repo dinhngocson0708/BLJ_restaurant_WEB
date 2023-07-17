@@ -5,6 +5,8 @@ import { Container } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import HeaderMenu from './Component/Header/Header';
+import Footer from './Component/Footer/Footer';
 
 
 
@@ -15,9 +17,9 @@ export type Props = {
 const Layout = ({ children }: Props) => {
     return (
         <>
-            {/* <Header/> */}
+            <HeaderMenu />
             {children}
-            {/* <Footer/> */}
+            <Footer />
         </>
     )
 }

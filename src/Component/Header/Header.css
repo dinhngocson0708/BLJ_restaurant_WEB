@@ -1,0 +1,24 @@
+.bg-body-restaurant {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.bg-body-restaurant a {
+    color: #002E5B;
+    font-weight: 600;
+}
+
+.bg-body-restaurant a:hover {
+    text-decoration: none;
+    color: #ff656a;
+}
+
+#basic-navbar-nav {
+    margin-left: 100px;
+    font-size: 14px;
+   
+}

@@ -1,0 +1,15 @@
+.footer{
+    background-color: #e5e5e5;
+    padding: 50px;
+    color: rgb(24, 24, 81);
+}
+.image{
+    width: 250px;
+    background-color: #e5e5e5;
+}
+.openinghour{
+    padding-right: 130px;
+}
+.getintouch{
+    margin-left: -80px;
+}
