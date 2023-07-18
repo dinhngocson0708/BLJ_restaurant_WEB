@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, BrowserRouter, Route } from "react-router-dom";
-import Home from './Home';
+import Home from './Component/Home';
 import Contact from './Contact/Contact';
 import './App.css';
 import Ourmenu from './OurMenu/Ourmenu';
 import Detail from './OurMenu/Detail';
-import PrivacyNotice from './Privacy Notice';
+import PrivacyNotice from './Component/Privacy Notice';
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 .Contact{
-    margin-top: 100px;
+    margin-top: 7%;
 }
 .title_contact{
     color: #506172;
@@ -10,22 +10,21 @@ p{
     font-size: 17px;
 }
 .imag_contact{
-    height: 330px;
-    width: 1515px;
+    height: -18%;
+    width: 100%;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
 .title_contactUs{
     position: absolute;
-    top: 160px;
-    left: 660px;
+    top: 25%;
+    left: 45%;
     color: #fff;
     font-size: 50px;
     font-weight: 700;
     text-transform: capitalize;
     font-weight: bold;
-    font-size: 60px;
 }
 
 .Contact_us{

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Layout from '../../Layout';
+import Layout from '../Layout';
 
 import './Contact.css';
 
