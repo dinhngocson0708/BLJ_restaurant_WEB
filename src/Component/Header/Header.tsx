@@ -10,7 +10,7 @@ const HeaderMenu = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto w-100 justify-content-between">
                         <Nav.Link href="/home">HOME</Nav.Link>
-                        <Nav.Link href="/menu">OUR MENU</Nav.Link>
+                        <Nav.Link href="/ourmenu">OUR MENU</Nav.Link>
                         <NavDropdown
                             id="nav-dropdown-light-example"
                             title="MENU"
