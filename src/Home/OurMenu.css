@@ -26,19 +26,22 @@
   .carousel-item-info p {
     font-size: 16px;
     margin-bottom: 10px;
-    color: rgb(221, 120, 120);
-    font-weight: bold;
+    color: rgb(29, 24, 24);
     text-align: left;
     float: left;
   }
   .carousel-item-container .carousel-item-info {
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transform: translateX(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
   
   .carousel-item-container.hover .carousel-item-info {
     opacity: 1;
+    transform: translateX(0); /* Khi hover, hi?n th? ph?n t? t? bên trái vào */
   }
+  
+  
   div.ourmenu{
     width: 100%;
   }

@@ -1,0 +1,37 @@
+.text-right.with-margin p,
+.text-right.with-margin h1,
+.text-right.with-margin h3 {
+  line-height: 2;
+}
+img {
+  height: 330px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* Chèn chữ vào giữa hình ảnh */
+.text-on-image {
+  position: relative;
+}
+.image-caption {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+}
+.text1{
+ margin-top: 90px;
+ 
+}
+.border{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px light rgb(243, 241, 241);
+}
+.content p{
+  line-height: 2.5;
+}
