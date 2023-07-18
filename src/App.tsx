@@ -7,7 +7,6 @@ import Ourmenu from './OurMenu/Ourmenu';
 import Detail from './OurMenu/Detail';
 import PrivacyNotice from './Privacy Notice';
 import Loading from './Component/Loading/Loading';
-
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -21,19 +20,15 @@ function App() {
 
   return (
     <BrowserRouter>
-      {loading ? (
-        <Loading />
-      ) : (
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/ourmenu" element={<Ourmenu />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/detail/:id' element={<Detail />} />
-          <Route path='/privacy' element={<PrivacyNotice />} />
-          {/* <Route path="*" element={<NotFound />} /> */}
-        </Routes>
-      )}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/ourmenu" element={<Ourmenu/>} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/detail/:id' element={<Detail />} />
+        <Route path='/privacy' element={<PrivacyNotice />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
+      </Routes>
     </BrowserRouter>
   );
 }
