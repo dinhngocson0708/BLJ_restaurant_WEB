@@ -6,6 +6,7 @@ import './App.css';
 import Ourmenu from './OurMenu/Ourmenu';
 import Detail from './OurMenu/Detail';
 import PrivacyNotice from './Privacy Notice';
+import ScrollUpButton from './ScollUp';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/detail/:id' element={<Detail />} />
         <Route path='/privacy' element={<PrivacyNotice />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="/scollUp" element={<ScrollUpButton />} />
       </Routes>
     </BrowserRouter>
   )
