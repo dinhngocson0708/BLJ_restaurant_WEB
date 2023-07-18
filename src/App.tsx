@@ -4,6 +4,8 @@ import Home from './Component/Home';
 import Contact from '../src/Component/Contact/Contact';
 import logo from './logo.svg';
 import './App.css';
+import Ourmenu from './Component/OurMenu/Ourmenu';
+import Detail from './Component/OurMenu/Detail';
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/ourmenu" element={<Ourmenu/>} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/detail/:id' element={<Detail />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>
