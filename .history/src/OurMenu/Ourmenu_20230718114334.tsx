@@ -29,6 +29,7 @@ const Ourmenu = () => {
           <Row>
             <h4 className='category-name'>CHICKEN</h4>
             {chickenData.map((item:MenuItem) => (
+              
               <Col md={4} key={item.id}>
                 <Card className='thumbnail' style={{ width: '26rem' }}>
                 <Link  to={`/detail/${item.id}`}> <Card.Img  variant="top" src={item.img} /></Link>
