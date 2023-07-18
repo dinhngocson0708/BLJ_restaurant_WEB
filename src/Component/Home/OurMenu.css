@@ -1,0 +1,40 @@
+.carousel-item-container {
+    position: relative;
+  }
+  
+  .carousel-item-image {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+  }
+  
+  .carousel-item-info {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    top: 180px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    padding: 1px;
+    padding-left: 8px;
+    background-color: rgb(254, 221, 177);
+  }
+  
+  .carousel-item-info h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+
+  }
+  
+  .carousel-item-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    float: left;
+  }
