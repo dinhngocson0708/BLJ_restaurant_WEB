@@ -7,28 +7,34 @@ import Ourmenu from './OurMenu/Ourmenu';
 import Detail from './OurMenu/Detail';
 import PrivacyNotice from './Privacy Notice';
 import Loading from './Component/Loading/Loading';
+
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Giả định một thời gian chờ trước khi chuyển trang hoàn tất
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, []);
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/ourmenu" element={<Ourmenu/>} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/detail/:id' element={<Detail />} />
-        <Route path='/privacy' element={<PrivacyNotice />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
-      </Routes>
+      {loading ? (
+        <Loading />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/ourmenu" element={<Ourmenu />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/detail/:id' element={<Detail />} />
+          <Route path='/privacy' element={<PrivacyNotice />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
+        </Routes>
+      )}
     </BrowserRouter>
   );
 }
