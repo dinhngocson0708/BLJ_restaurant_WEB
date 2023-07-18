@@ -3,20 +3,14 @@
   }
   
   .carousel-item-image {
-    object-fit: cover;
     width: 100%;
-    height: 300px;
   }
   
   .carousel-item-info {
     position: absolute;
     width: 40%;
     height: 40%;
-    top: 180px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 1px;
+    top: 200px;
     padding-left: 8px;
     background-color: rgb(255, 254, 252);
   }
