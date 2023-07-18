@@ -38,7 +38,7 @@
   
   .carousel-item-container.hover .carousel-item-info {
     opacity: 1;
-    transform: translateX(0); /* Khi hover, hi?n th? ph?n t? t? bên trái vào */
+    transform: translateX(0); /* Khi hover, hi?n th? ph?n t? t? bï¿½n trï¿½i vï¿½o */
   }
   
   
