@@ -1,12 +1,8 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMobileAlt, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Layout from '../../Layout';
-
 import './Contact.css';
 
 const Contact = () => {
@@ -15,7 +11,7 @@ const Contact = () => {
        
         <Layout>
        <img
-                className="imag_contact"
+                className="imag_contact" 
                 src={process.env.PUBLIC_URL+"img/bgHeaderPage.jpg"}
                 alt="aboutus"
               />
