@@ -11,6 +11,8 @@ import ScrollToTop from './Component/ScrollButton';
 
 
 
+
+
 export type Props = {
     children: ReactNode;
 }
@@ -22,6 +24,7 @@ const Layout = ({ children }: Props) => {
             {children}
             <Footer />
             <ScrollToTop/>
+            
         </>
     )
 }
