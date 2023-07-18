@@ -9,7 +9,6 @@
 
 .bg-body-restaurant a {
     color: #002E5B;
-    font-weight: 600;
 }
 
 .bg-body-restaurant a:hover {
@@ -18,7 +17,7 @@
 }
 
 #basic-navbar-nav {
-    margin-left: 100px;
+    margin-left: 50px;
     font-size: 14px;
    
 }
