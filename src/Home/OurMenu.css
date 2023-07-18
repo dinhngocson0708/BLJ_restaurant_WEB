@@ -45,4 +45,6 @@
   .carousel-item-container.hover .carousel-item-info {
     opacity: 1;
   }
-  
+  div.ourmenu{
+    width: 100%;
+  }
