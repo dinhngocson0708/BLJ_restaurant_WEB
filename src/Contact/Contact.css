@@ -8,7 +8,22 @@
 p{ 
     color: #506172;
     font-size: 17px;
+      
 }
+.phone-link {
+    text-decoration: none;
+    color: inherit;
+}
+  
+.phone-link:hover {
+    color: rgb(11, 156, 205);
+}
+  
+.address:hover {
+    color: rgb(11, 156, 205);
+    cursor: pointer;
+}
+  
 .imag_contact{
     height: -18%;
     width: 100%;
@@ -26,3 +41,4 @@ p{
     text-transform: capitalize;
     font-weight: bold;
 }
+
