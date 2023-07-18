@@ -4,7 +4,7 @@ const AboutRestaurant = () => {
     return (
         <Row>
             <Col md={6}>
-                <img className="nameimage" src="https://res.ringameal.com/Uploads/1070/ed3fdcc7-9a40-45c6-bf27-912838683456.jpg" alt="" style={{marginLeft:'10px', width: '95%', marginTop: '50px',height:'500px',borderTopRightRadius:'50px',borderBottomLeftRadius:'50px'}} />
+                <img className="nameimage" src="https://res.ringameal.com/Uploads/1070/ed3fdcc7-9a40-45c6-bf27-912838683456.jpg" alt="" style={{marginLeft:'10px', width: '100%', marginTop: '50px',height:'500px',borderTopRightRadius:'50px',borderBottomLeftRadius:'50px'}} />
             </Col>
             <Col md={6} className='about' style={{ marginTop: '50px', fontSize: '35px',fontWeight: '700' }}>
                 About Us

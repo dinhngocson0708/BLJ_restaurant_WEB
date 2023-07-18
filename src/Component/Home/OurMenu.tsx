@@ -1,6 +1,18 @@
+import React, { useState } from "react";
 import { Col, Row, Button, Carousel, CarouselItem } from "react-bootstrap";
-import './OurMenu.css';
+import "./OurMenu.css";
+
 const OurMenu = () => {
+  const [hovered, setHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
   return (
     <div className="ourmenu" style={{ backgroundColor: "#F8F8FF" }}>
       <Row style={{ marginLeft: "150px", padding: "50px" }}>
@@ -14,7 +26,11 @@ const OurMenu = () => {
         <Col>
           <Carousel>
             <CarouselItem>
-              <div className="carousel-item-container">
+              <div
+                className={`carousel-item-container ${hovered ? "hover" : ""}`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
                 <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2019/06/deep-dish-pizza-chicago.jpg" alt="" className="carousel-item-image" />
                 <div className="carousel-item-info">
                   <h3>Deep Dish Pizza</h3>
@@ -24,7 +40,11 @@ const OurMenu = () => {
               </div>
             </CarouselItem>
             <CarouselItem>
-              <div className="carousel-item-container">
+              <div
+                className={`carousel-item-container ${hovered ? "hover" : ""}`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
                 <img src="https://www.tasteatlas.com/images/toplistarticles/08c818739e4b48ce96d319c16f4cc0ca.jpg" alt="" className="carousel-item-image" />
                 <div className="carousel-item-info">
                   <h3>Authentic Sushi</h3>

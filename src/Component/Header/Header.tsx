@@ -17,7 +17,6 @@ const HeaderMenu = () => {
                             menuVariant="light"
                         >
                             <NavDropdown.Item href="/home">Home</NavDropdown.Item>
-                            <NavDropdown.Item href="/about">About</NavDropdown.Item>
                             <NavDropdown.Item href="/contact">Contact</NavDropdown.Item>
                             {/* <NavDropdown.Divider /> dùng để chia những menu con*/}
                             <NavDropdown.Item href="/privacy">
