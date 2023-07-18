@@ -17,11 +17,12 @@ const HeaderMenu = () => {
                             menuVariant="light"
                         >
                             <NavDropdown.Item href="/home">Home</NavDropdown.Item>
-                            <NavDropdown.Item href="/contact">Contact</NavDropdown.Item>
-                            {/* <NavDropdown.Divider /> dùng để chia những menu con*/}
+                            <NavDropdown.Item href="/ourmenu">Our Menu</NavDropdown.Item>
                             <NavDropdown.Item href="/privacy">
                                 Privacy Notice
                             </NavDropdown.Item>
+                            <NavDropdown.Item href="/contact">Contact</NavDropdown.Item>
+                            {/* <NavDropdown.Divider /> dùng để chia những menu con*/}
                         </NavDropdown>
                         <Nav.Link href="/privacy">PRIVACY NOTICE</Nav.Link>
                         <Nav.Link href="/contact">CONTACT</Nav.Link>
