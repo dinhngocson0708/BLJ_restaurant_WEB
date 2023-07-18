@@ -23,14 +23,16 @@ const Ourmenu = () => {
     <div>
         
       <Layout>
+        <h1 className='ourmenu__'>Our Menu</h1>
         <img src='https://get.ringameal.com/App_Themes/Template04/img/bgHeaderPage.jpg'width='100%'/>
         <Container>
           <Row>
             <h4 className='category-name'>CHICKEN</h4>
             {chickenData.map((item:MenuItem) => (
+              
               <Col md={4} key={item.id}>
-                <Card style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src={item.img} />
+                <Card className='thumbnail' style={{ width: '26rem' }}>
+                <Link  to={`/detail/${item.id}`}> <Card.Img  variant="top" src={item.img} /></Link>
                   <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
                     <Card.Text>
@@ -44,8 +46,8 @@ const Ourmenu = () => {
             <h4 className='category-name'>RICE PLATE</h4>
             {riceData.map((item:MenuItem) => (
               <Col md={4} key={item.id}>
-                <Card style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src={item.img} />
+                <Card className='thumbnail' style={{ width: '26rem' }}>
+                <Link  to={`/detail/${item.id}`}> <Card.Img  variant="top" src={item.img} /></Link>
                   <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
                     <Card.Text>
@@ -59,8 +61,8 @@ const Ourmenu = () => {
              <h4 className='category-name'>FAMILY MEALS</h4>
             {familyData.map((item:MenuItem) => (
               <Col md={4} key={item.id}>
-                <Card style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src={item.img} />
+                <Card className='thumbnail' style={{ width: '26rem' }}>
+                <Link  to={`/detail/${item.id}`}> <Card.Img  variant="top" src={item.img} /></Link>
                   <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
                     <Card.Text>
@@ -74,8 +76,8 @@ const Ourmenu = () => {
              <h4 className='category-name'>Beverage</h4>
             {waterData.map((item:MenuItem) => (
               <Col md={4} key={item.id}>
-                <Card style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src={item.img} />
+                <Card className='thumbnail' style={{ width: '26rem' }}>
+                <Link  to={`/detail/${item.id}`}> <Card.Img  variant="top" src={item.img} /></Link>
                   <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
                     <Card.Text>
