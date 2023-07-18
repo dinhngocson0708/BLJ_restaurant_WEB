@@ -13,8 +13,9 @@ const Home = () => {
             </Container>
             <br />
             <br />
-            <Container fluid> <OurMenu /></Container>
-           
+            <Container fluid>
+                <OurMenu />
+            </Container>
         </Layout>
 
     )
