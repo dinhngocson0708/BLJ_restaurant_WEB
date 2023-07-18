@@ -21,7 +21,7 @@ const OurMenu = () => {
           <Col style={{ fontSize: "22px", fontWeight: "100" }}>
             Find your favorite food! We are very pleased to welcome you as guests in our restaurant.
           </Col>
-          <Button variant="outline-danger" style={{ width: '40%' }}>See more</Button>
+          <Button variant="outline-danger" style={{ width: '40%' }} href="/ourmenu">See more</Button>
         </Col>
         <Col>
           <Carousel>
