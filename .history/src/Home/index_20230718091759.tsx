@@ -1,4 +1,4 @@
-import Layout from "../../Layout";
+import Layout from "../Layout";
 import SliderImage from "./SliderImage";
 import AboutRestaurant from "./AboutRestaurant";
 import { Container } from 'react-bootstrap'

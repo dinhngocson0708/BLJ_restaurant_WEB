@@ -11,8 +11,7 @@ const Home = () => {
             <Container>
                 <AboutRestaurant />
             </Container>
-            <br />
-            <br />
+            
             <OurMenu />
         </Layout>
 

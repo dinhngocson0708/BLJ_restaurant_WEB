@@ -13,7 +13,8 @@ const Home = () => {
             </Container>
             <br />
             <br />
-            <OurMenu />
+            <Container></Container>
+            
         </Layout>
 
     )

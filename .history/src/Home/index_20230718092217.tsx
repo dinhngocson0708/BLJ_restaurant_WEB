@@ -7,7 +7,7 @@ import OurMenu from "./OurMenu";
 const Home = () => {
     return (
         <Layout>
-            <SliderImage />
+            
             <Container>
                 <AboutRestaurant />
             </Container>

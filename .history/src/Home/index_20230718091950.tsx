@@ -12,7 +12,6 @@ const Home = () => {
                 <AboutRestaurant />
             </Container>
             <br />
-            <br />
             <OurMenu />
         </Layout>
 
