@@ -11,6 +11,7 @@ const Footer = () => {
     const openingItems = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',];
     const timeopening = ['9:00 AM - 5:00 PM', '9:00 AM - 5:00 PM', '9:00 AM - 5:00 PM', '9:00 AM - 5:00 PM', '9:00 AM - 5:00 PM', '9:00 AM - 5:00 PM', 'Closed'];
     return (
+        <>
         <div className='footer'>
             <Container >
                 <Row>
@@ -50,6 +51,8 @@ const Footer = () => {
                 </Row>
             </Container>
         </div>
+        <div style={{backgroundColor:'#002E5B',color:'white',textAlign:'center',padding:'20px'}}>Provided by ringameal.com</div>
+        </>
     );
 };
 
