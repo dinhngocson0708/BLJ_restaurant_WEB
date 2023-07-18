@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import HeaderMenu from './Component/Header/Header';
 import Footer from './Component/Footer/Footer';
-import ScrollToTop from './Component/ScrollButton';
+import ScrollButton from './Component/ScrollButton';
 
 
 
@@ -21,7 +21,7 @@ const Layout = ({ children }: Props) => {
             <HeaderMenu />
             {children}
             <Footer />
-            <ScrollToTop/>
+            <ScrollButton/>
         </>
     )
 }
