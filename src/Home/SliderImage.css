@@ -1,0 +1,12 @@
+@media (max-width: 600px) {
+    .carousel-caption p {
+      font-size: 17px;
+      /* Các quy tắc khác tùy ý cho responsive design */
+    }
+  
+    .carousel-caption h1 {
+      font-size: 40px;
+      /* Các quy tắc khác tùy ý cho responsive design */
+    }
+  }
+  
