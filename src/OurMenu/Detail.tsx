@@ -23,7 +23,6 @@ function Detail() {
       setDetail(item);
       setShowModal(true);
     } else {
-      // Xử lý khi không tìm thấy item
     }
   }, [id]);
 
