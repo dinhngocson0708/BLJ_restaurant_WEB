@@ -1,11 +1,21 @@
 .carousel-item-container {
     position: relative;
   }
-  
+  .infor1{
+    font-size: 50px;
+    font-weight: 700;
+  }
+  .infor2{
+    font-size: 22px;
+    font-weight: 100;
+  }
   .carousel-item-image {
     width: 100%;
   }
-  
+  .row-ourmenu{
+    margin-left: 5px;
+    padding: 50px;
+  }
   .carousel-item-info {
     position: absolute;
     width: 40%;
@@ -40,4 +50,27 @@
     opacity: 1;
     transform: translateX(0); /* Khi hover, hiển thị phần tử từ bên trái vào */
   }
-  
+  @media only screen and (min-width: 46.25em) and (max-width: 63.9375em){
+    .carousel-item-image{
+        width: 100%;
+        margin-top: 20px;
+        margin-right: 1000px;
+        object-fit: cover;
+    }
+}
+@media (max-width: 740px) {
+  .carousel-item-image{
+    width: 100%;
+    margin-top: 20px;
+    object-fit: cover;
+}
+.infor1{
+  font-size: 30px;
+  font-weight: 700;
+}
+.infor2{
+  font-size: 13px;
+  font-weight: 400;
+}
+ 
+}

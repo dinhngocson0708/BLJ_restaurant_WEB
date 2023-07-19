@@ -13,7 +13,6 @@ const AboutRestaurant = () => {
                     Rolls Vietnamese Grill offers traditional Vietnamese street food using the best ingredients, fresh greens and grilled beef, pork, chicken, shrimp and salmon wrap in thin rice paper. A truly healthy and delicious choice. <br /><br /><br />We are located inside 99 Ranch Market.
                 </Col>
             </Col>
-
         </Row>
     )
 }
