@@ -4,12 +4,12 @@ import { Nav, Navbar, Container, NavDropdown, Button } from 'react-bootstrap';
 const HeaderMenu = () => {
     return (
         <>
-            <div style={{ backgroundColor: '#002d5b', color: 'white', display: 'flex', padding: '10px' }}>
-                <p style={{ color: 'white', margin: '0 0px',fontSize:'14px' }}><i className="fas fa-map-marker-alt" style={{ marginLeft: '100px', marginRight: '10px' }}></i>
+            <div style={{ backgroundColor: '#002d5b', color: 'white', display: 'flex', padding: '11px'}}>
+                <p style={{ color: 'white', margin: '0 0px',fontSize:'15px' }}><i className="fas fa-map-marker-alt" style={{ marginLeft: '100px', marginRight: '10px' }}></i>
                     Shops at Fairfax, 10780 Fairfax Blvd, Fairfax, VA 22030, USA</p>
                 <p style={{ color: 'white', margin: '0 50px' }}>
                     <i className="fa fa-fax" style={{ marginRight: '5px' }}></i>
-                    <a href='tel:(703) 910-3888' className="phone" style={{ color: 'white',fontSize:'14px'  }}>Tel: (703) 910-3888</a>
+                    <a href='tel:(703) 910-3888' className="phone" style={{ color: 'white',fontSize:'15px'  }}>Tel: (703) 910-3888</a>
                 </p>
             </div>
             <Navbar expand="lg" className="bg-body-restaurant">
