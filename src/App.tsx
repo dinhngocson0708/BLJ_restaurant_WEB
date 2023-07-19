@@ -12,10 +12,10 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Giả định một thời gian chờ trước khi chuyển trang hoàn tất
+   
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 2700);
 
     return () => clearTimeout(timeout);
   }, []);
