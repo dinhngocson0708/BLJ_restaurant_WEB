@@ -38,12 +38,31 @@
 .ourmenu__{
     position: absolute;
     color: aliceblue;
-    top: 180px;
-
-    margin-left: 40%;
+    padding: 11%;
+    margin-left: 30%;
+    text-align: center;
     font-weight: bold;
 }
-
+@media only screen and (max-width:46.1875em){
+    .ourmenu__{
+       
+        padding-top: 40%;
+        margin-left: 20%;
+      
+    }
+    div.col-md-4:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+@media only screen and (min-width:46.25em) and (max-width:63.9375em){
+    .ourmenu__{
+       
+        padding-top: 18%;
+        margin-left: 22%;
+      
+    }
+    
+}
 
 
 
