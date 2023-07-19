@@ -13,3 +13,16 @@
 .getintouch{
     margin-left: -70px;
 }
+.phone{
+    text-decoration: none;
+    color: inherit;
+}
+
+.phone:hover{
+    color: rgb(11, 156, 205);
+}
+.addres:hover {
+    color: rgb(11, 156, 205);
+    cursor: pointer;
+  }
+  
