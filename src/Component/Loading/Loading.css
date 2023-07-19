@@ -1,0 +1,103 @@
+.right-wrapper {
+    margin: 50px auto;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.spinnerIconWrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 130px; 
+    height: 130px; 
+    display: inline-block;
+    margin: 0 0 20px 0;
+}
+
+.spinnerIcon {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%;
+    border: solid 13px #1e8646; 
+    border-right: solid 13px rgba(223,223,194,0);
+    border-left: solid 13px rgba(223,223,194,0);
+    border-bottom: solid 13px rgba(223,223,194,0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(360deg);
+    animation: mouthAnimation 3s infinite cubic-bezier(.31,-.37,.52,.96);
+}
+
+.spinnerIconWrapper::before,
+.spinnerIconWrapper::after {
+    content: "";
+    width: 65px; 
+    height: 65px; 
+    border-radius: 50%;
+    background: #1e8646;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: leftEyeAnimation 3s infinite cubic-bezier(.455, .03, .515, .955);
+}
+
+.spinnerIconWrapper::after {
+    animation: rightEyeAnimation 3s infinite cubic-bezier(.455,.03,.515,.955);
+}
+
+@keyframes mouthAnimation {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(180deg);
+    }
+    40%, 100% {
+        transform: translate(-50%, -50%) rotateZ(1260deg);
+    }
+}
+
+@keyframes leftEyeAnimation {
+    0%, 50% {
+        width: 70px; 
+        height: 70px; 
+        transform: translate(-50%, -50%);
+    }
+    60%, 90% {
+        width: 20px; 
+        height: 20px; 
+        transform: translate(-150%, -50%); 
+    }
+    100% {
+        width: 70px; 
+        height: 70px; 
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes rightEyeAnimation {
+    0%, 50% {
+        width: 70px; 
+        height: 70px;
+        transform: translate(-50%, -50%);
+    }
+    60%, 70% {
+        width: 20px; 
+        height: 20px; 
+        transform: translate(50%, -50%); 
+    }
+    75% {
+        height: 2px; 
+    }
+    75%, 80%, 90% {
+        width: 20px; 
+        transform: translate(50%, -50%); 
+    }
+    80%, 90% {
+        height: 20px; 
+    }
+    100% {
+        width: 70px;
+        height: 70px; 
+        transform: translate(-50%, -50%);
+    }
+}
