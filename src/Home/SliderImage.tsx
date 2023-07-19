@@ -7,6 +7,7 @@ const SliderImage = () => {
                 <img
                     className="d-block img-fluid"
                     src="https://res.ringameal.com/Uploads/1070/26922b48-c304-4611-a1b2-0970a1d14a3c.jpg"
+                    alt="image"
                     style={{ objectFit: 'cover',height:'650px'}}
                 />
                 <Carousel.Caption>
@@ -18,6 +19,7 @@ const SliderImage = () => {
                 <img
                     className="d-block img-fluid"
                     src="https://res.ringameal.com/Uploads/1070/26922b48-c304-4611-a1b2-0970a1d14a3c.jpg"
+                    alt="image"
                     style={{ objectFit: 'cover',height:'650px'}}
                 />
                 <Carousel.Caption>

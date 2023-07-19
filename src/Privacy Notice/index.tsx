@@ -1,6 +1,6 @@
 // PrivacyNotice.tsx
 import React from "react";
-import { Container, Row, Col, Image} from "react-bootstrap";
+import { Container, Row, Col} from "react-bootstrap";
 import "./privacy.css";
 import Layout from "../Layout";
 

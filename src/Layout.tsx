@@ -1,6 +1,5 @@
 
 import type { ReactNode } from 'react';
-import { Container } from 'react-bootstrap';
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
