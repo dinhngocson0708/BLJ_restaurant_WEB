@@ -17,14 +17,13 @@ const OurMenu = () => {
     <div className="ourmenu" style={{ backgroundColor: "#F8F8FF" }}>
       <Row className="row-ourmenu">
         <Col md={5} className="infor1">
-          <div className="p-4">
           Our Menu
           <Col className="infor2">
             Find your favorite food! We are very pleased to welcome you as guests in our restaurant.
           </Col>
           <Button style={{width:'30%'}} variant="outline-danger" href="/ourmenu">See more</Button>
         </Col>
-        <Col className="p-0">
+        <Col>
           <Carousel>
             <CarouselItem>
               <div
