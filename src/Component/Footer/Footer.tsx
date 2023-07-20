@@ -9,7 +9,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 const Footer = () => {
     const menuItems = ['Gallery', 'Home', 'Our Menu', 'Privacy Notice', 'Contact'];
     const openingItems = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',];
-    const timeopening = ['9:00 AM - 5:00 PM', '9:00 AM - 5:00 PM', '9:00 AM - 5:00 PM', '9:00 AM - 5:00 PM', '9:00 AM - 5:00 PM', '9:00 AM - 5:00 PM', 'Closed'];
+    const timeopening = ['9:00 - 5:00 ', '9:00  - 5:00 ', '9:00  - 5:00 ', '9:00 - 5:00 ', '9:00 - 5:00 ', '9:00 - 5:00 ', 'Closed'];
     return (
         <>
         <div className='footer'>

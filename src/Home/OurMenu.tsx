@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Col, Row, Button, Carousel, CarouselItem } from "react-bootstrap";
 import "./OurMenu.css";
 
@@ -15,13 +15,13 @@ const OurMenu = () => {
 
   return (
     <div className="ourmenu" style={{ backgroundColor: "#F8F8FF" }}>
-      <Row style={{ marginLeft: "150px", padding: "50px" }}>
-        <Col md={5} style={{ fontSize: "50px", fontWeight: "700" }}>
+      <Row className="row-ourmenu">
+        <Col md={5} className="infor1">
           Our Menu
-          <Col style={{ fontSize: "22px", fontWeight: "100" }}>
+          <Col className="infor2">
             Find your favorite food! We are very pleased to welcome you as guests in our restaurant.
           </Col>
-          <Button variant="outline-danger" style={{ width: '40%' }} href="/ourmenu">See more</Button>
+          <Button variant="outline-danger" href="/ourmenu">See more</Button>
         </Col>
         <Col>
           <Carousel>

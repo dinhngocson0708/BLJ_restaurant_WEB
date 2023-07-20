@@ -2,8 +2,9 @@
 
 .footer {
     background-color: #e5e5e5;
-    padding: 50px;
-    color: rgb(24, 24, 81);
+    padding: 40px;
+    color: rgb(52, 52, 118);
+    justify-items: center;
 }
 
 .image {
@@ -16,7 +17,7 @@
 }
 
 .getintouch {
-    margin-left: -70px;
+    margin-left: -100px;
 }
 
 .phone {
@@ -41,7 +42,23 @@
     }
 
     .openinghour {
-        padding-right: 20px;
+        padding-right: 10px;
+        /* Các quy tắc khác tùy ý cho responsive design */
+    }
+
+    .getintouch {
+        margin-left: 0;
+        /* Các quy tắc khác tùy ý cho responsive design */
+    }
+}
+@media (min-width: 700px) {
+    .image {
+        width: 100%;
+        /* Các quy tắc khác tùy ý cho responsive design */
+    }
+
+    .openinghour {
+        padding-right: 10px;
         /* Các quy tắc khác tùy ý cho responsive design */
     }
 
