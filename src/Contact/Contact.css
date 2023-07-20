@@ -41,10 +41,15 @@ p{
 }
 @media only screen and (max-width:46.1875em){
     .title_contactUs{
-        padding-top: 20%;
-        margin-left:20%;
-        font-size: 40px;
+        margin-top: -42%;
+        margin-left:27%;
+        font-size: 30px;
     }
+    .imag_contact{
+        width: 100%;
+        height: auto;
+    }
+
 }
 @media only screen and (min-width:46.25em) and (max-width:63.9375em){
     .title_contactUs{
