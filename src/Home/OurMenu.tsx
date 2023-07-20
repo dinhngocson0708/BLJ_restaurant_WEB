@@ -17,13 +17,16 @@ const OurMenu = () => {
     <div className="ourmenu" style={{ backgroundColor: "#F8F8FF" }}>
       <Row className="row-ourmenu">
         <Col md={5} className="infor1">
+          <div className="p-4">
           Our Menu
           <Col className="infor2">
             Find your favorite food! We are very pleased to welcome you as guests in our restaurant.
           </Col>
           <Button variant="outline-danger" href="/ourmenu">See more</Button>
+          </div>
+         
         </Col>
-        <Col>
+        <Col className="p-0">
           <Carousel>
             <CarouselItem>
               <div

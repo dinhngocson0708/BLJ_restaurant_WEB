@@ -1,5 +1,5 @@
 import './Header.css'
-import { Nav, Navbar, Container, NavDropdown, Button } from 'react-bootstrap';
+import { Nav, Navbar, Container, NavDropdown, Button, Row, Col } from 'react-bootstrap';
 
 const HeaderMenu = () => {
     return (
@@ -12,6 +12,7 @@ const HeaderMenu = () => {
                     <a href='tel:(703) 910-3888' className="phone" style={{ color: 'white',fontSize:'15px'  }}>Tel: (703) 910-3888</a>
                 </p>
             </div>
+            
             <Navbar expand="lg" className="bg-body-restaurant">
                 <Container>
                     <Navbar.Brand href="#home"><img src="https://res.ringameal.com/Uploads/1070/ed3fdcc7-9a40-45c6-bf27-912838683456.jpg" alt="" style={{ objectFit: 'cover', width: '100%', height: '70px' }} /></Navbar.Brand>
