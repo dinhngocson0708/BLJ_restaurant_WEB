@@ -51,3 +51,24 @@ img {
 #scrollUp i {
   font-size: 20px;
 }
+@media only screen and (max-width:46.1875em){
+  .image-caption{
+      padding-top: 15%;
+      margin-left: 10%;
+      font-size: 30px;
+  }
+  .img{
+    width: 100%;
+  }
+
+}
+@media only screen and (min-width:46.25em) and (max-width:63.9375em){
+  .image-caption{
+     margin-top: -20%;
+     font-size: 40px;
+  }
+  .img{
+    width: 100%;
+  }
+  
+}
