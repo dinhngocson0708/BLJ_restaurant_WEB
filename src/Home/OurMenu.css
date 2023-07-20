@@ -50,6 +50,7 @@
     opacity: 1;
     transform: translateX(0); /* Khi hover, hiển thị phần tử từ bên trái vào */
   }
+   /* Tablet responsive*/ 
   @media only screen and (min-width: 46.25em) and (max-width: 63.9375em){
     .carousel-item-image{
         width: 100%;
@@ -58,6 +59,7 @@
         object-fit: cover;
     }
 }
+/* Mobile responsive */
 @media (max-width: 740px) {
   .carousel-item-image{
     width: 100%;

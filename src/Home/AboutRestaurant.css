@@ -17,7 +17,7 @@ border-bottom-left-radius: 50px;
     font-weight: 100;
     font-size: 19px;
 }
-
+/* Tablet responsive */
 @media only screen and (min-width: 46.25em) and (max-width: 63.9375em){
     .nameimage{
         width: 700px;
@@ -35,7 +35,7 @@ border-bottom-left-radius: 50px;
         font-weight: 100;
     }
 }
-/* Mobile with < 740px */
+/* Mobile responsive with < 740px */
 @media (max-width: 740px) {
     .nameimage{
         width: 100%;
