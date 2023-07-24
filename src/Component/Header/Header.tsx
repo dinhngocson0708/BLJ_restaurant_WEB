@@ -27,19 +27,6 @@ const HeaderMenu = () => {
                         <Nav className="me-auto w-100 justify-content-between">
                             <Nav.Link href="/home">HOME</Nav.Link>
                             <Nav.Link href="/ourmenu">OUR MENU</Nav.Link>
-                            <NavDropdown
-                                id="nav-dropdown-light-example"
-                                title="MENU"
-                                menuVariant="light"
-                            >
-                                <NavDropdown.Item href="/home">Home</NavDropdown.Item>
-                                <NavDropdown.Item href="/ourmenu">Our Menu</NavDropdown.Item>
-                                <NavDropdown.Item href="/privacy">
-                                    Privacy Notice
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="/contact">Contact</NavDropdown.Item>
-                                {/* <NavDropdown.Divider /> dùng để chia những menu con*/}
-                            </NavDropdown>
                             <Nav.Link href="/privacy">PRIVACY NOTICE</Nav.Link>
                             <Nav.Link href="/contact">CONTACT</Nav.Link>
                             <Button className='btn btn-danger'>ORDER ONLINE</Button>
