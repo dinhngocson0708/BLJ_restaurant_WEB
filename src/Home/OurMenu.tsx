@@ -21,7 +21,7 @@ const OurMenu = () => {
           <Col className="infor2">
             Find your favorite food! We are very pleased to welcome you as guests in our restaurant.
           </Col>
-          <Button variant="outline-danger" href="/ourmenu">See more</Button>
+          <Button style={{width:'30%'}} variant="outline-danger" href="/ourmenu">See more</Button>
         </Col>
         <Col>
           <Carousel>

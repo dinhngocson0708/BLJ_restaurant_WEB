@@ -37,8 +37,25 @@ p{
     left: 45%;
     color: #fff;
     font-size: 50px;
-    font-weight: 700;
-    text-transform: capitalize;
     font-weight: bold;
+}
+@media only screen and (max-width:46.1875em){
+    .title_contactUs{
+        margin-top: -42%;
+        margin-left:27%;
+        font-size: 30px;
+    }
+    .imag_contact{
+        width: 100%;
+        height: auto;
+    }
+
+}
+@media only screen and (min-width:46.25em) and (max-width:63.9375em){
+    .title_contactUs{
+       margin-top: -17%;
+       font-size: 40px;
+    }
+    
 }
 
