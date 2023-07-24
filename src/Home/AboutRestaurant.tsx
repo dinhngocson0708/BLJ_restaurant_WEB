@@ -3,7 +3,7 @@ import './AboutRestaurant.css';
 
 const AboutRestaurant = () => {
     return (
-        <Row>
+        <Row className='About'>
             <Col md={6}>
                 <img className="nameimage" src="https://res.ringameal.com/Uploads/1070/ed3fdcc7-9a40-45c6-bf27-912838683456.jpg" alt=""/>
             </Col>

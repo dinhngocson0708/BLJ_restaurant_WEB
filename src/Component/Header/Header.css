@@ -5,6 +5,7 @@
     left: 0;
     right: 0;
     z-index: 100;
+    
 }
 
 .bg-body-restaurant a{
@@ -22,3 +23,9 @@
     font-size: 14px;
    
 }
+@media (max-width: 768px) {
+    /* Khi màn hình nhỏ hơn hoặc bằng 768px, ẩn class 'header' */
+    .top-header {
+      display: none;
+    }
+  }

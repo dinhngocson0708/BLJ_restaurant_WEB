@@ -34,10 +34,11 @@
     cursor: pointer;
 }
 
-/* Nếu màn hình có chiều rộng nhỏ hơn hoặc bằng 600px */
-@media (max-width: 600px) {
+/* Nếu màn hình có chiều rộng nhỏ hơn hoặc bằng 740px */
+@media (max-width: 740px) {
     .image {
         width: 100%;
+        padding-bottom: 30px;
         /* Các quy tắc khác tùy ý cho responsive design */
     }
 
@@ -51,7 +52,7 @@
         /* Các quy tắc khác tùy ý cho responsive design */
     }
 }
-@media (min-width: 700px) {
+@media (min-width: 768px) {
     .image {
         width: 100%;
         /* Các quy tắc khác tùy ý cho responsive design */

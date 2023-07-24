@@ -12,8 +12,8 @@ const SliderImage = () => {
                    
                 />
                 <Carousel.Caption>
-                    <p style={{ marginRight: '950px', color: '#ff656a' }}>WELCOME TO</p>
-                    <h1 style={{ fontWeight: 'bold', marginRight: '950px' }}>ROLLS VIETNAMESE GRILL</h1>
+                    <p className='title1'>WELCOME TO</p>
+                    <h1 className='title2'>ROLLS VIETNAMESE GRILL</h1>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -24,8 +24,8 @@ const SliderImage = () => {
                   
                 />
                 <Carousel.Caption>
-                    <p style={{marginRight: '950px', color: '#ff656a' }}>WELCOME TO</p>
-                    <h1 style={{ fontWeight: 'bold', marginRight: '950px' }}>ROLLS VIETNAMESE GRILL</h1>
+                    <p className='title1'>WELCOME TO</p>
+                    <h1 className='title2'>ROLLS VIETNAMESE GRILL</h1>
                 </Carousel.Caption>
             </Carousel.Item>
 

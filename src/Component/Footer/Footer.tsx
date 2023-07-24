@@ -7,7 +7,7 @@ import './Footer.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Footer = () => {
-    const menuItems = ['Gallery', 'Home', 'Our Menu', 'Privacy Notice', 'Contact'];
+    const menuItems = ['Home', 'Our Menu', 'Menu', 'Privacy Notice', 'Contact'];
     const openingItems = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',];
     const timeopening = ['9:00 - 5:00 ', '9:00  - 5:00 ', '9:00  - 5:00 ', '9:00 - 5:00 ', '9:00 - 5:00 ', '9:00 - 5:00 ', 'Closed'];
     return (
@@ -15,7 +15,7 @@ const Footer = () => {
         <div className='footer'>
             <Container >
                 <Row>
-                    <Col xs={12} md={3}>
+                    <Col xs={12} md={3} className='pb-3'>
                         <Image className='image' src="https://res.ringameal.com/Uploads/1070/1437269a-8601-4e86-b82c-998f2d398085.jpg" thumbnail />
                     </Col>
                     <Col xs={12} md={2}>
