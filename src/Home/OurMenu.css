@@ -39,6 +39,7 @@
     text-align: left;
     float: left;
   }
+   /* Khi hover, hiển thị phần tử từ bên trái vào */
   .carousel-item-container .carousel-item-info {
     opacity: 0;
     transform: translateX(-100%);
@@ -47,7 +48,7 @@
   
   .carousel-item-container.hover .carousel-item-info {
     opacity: 1;
-    transform: translateX(0); /* Khi hover, hiển thị phần tử từ bên trái vào */
+    transform: translateX(0);
   }
    /* Tablet responsive*/ 
   @media only screen and (min-width: 46.25em) and (max-width: 63.9375em){
@@ -56,6 +57,14 @@
         margin-top: 20px;
         margin-right: 1000px;
         object-fit: cover;
+    }
+    .infor1{
+      font-size: 35px;
+      font-weight: 700;
+    }
+    .infor2{
+      font-size: 15px;
+      font-weight: 400;
     }
     
 }
