@@ -45,7 +45,7 @@ const OurMenu = () => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <img src="https://www.tasteatlas.com/images/toplistarticles/08c818739e4b48ce96d319c16f4cc0ca.jpg" alt="image"className="carousel-item-image" />
+                <img src="https://www.tasteatlas.com/images/toplistarticles/08c818739e4b48ce96d319c16f4cc0ca.jpg" alt="image" className="carousel-item-image" />
                 <div className="carousel-item-info">
                   <h3>Authentic Sushi</h3>
                   <p>Enjoy fresh and authentic sushi with a variety of flavors and textures.</p>

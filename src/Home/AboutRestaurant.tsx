@@ -1,20 +1,37 @@
 import { Row, Col } from 'react-bootstrap';
 import './AboutRestaurant.css';
+import { PrismicRichText, useAllPrismicDocumentsByType,PrismicImage} from '@prismicio/react';
 
 const AboutRestaurant = () => {
-    return (
-        <Row className='About'>
-            <Col md={6}>
-                <img className="nameimage" src="https://res.ringameal.com/Uploads/1070/ed3fdcc7-9a40-45c6-bf27-912838683456.jpg" alt=""/>
-            </Col>
-            <Col md={6} className='about'>
-                About Us
-                <Col className='aboutus'>
-                    Rolls Vietnamese Grill offers traditional Vietnamese street food using the best ingredients, fresh greens and grilled beef, pork, chicken, shrimp and salmon wrap in thin rice paper. A truly healthy and delicious choice. <br /><br /><br />We are located inside 99 Ranch Market.
+  const isMediumScreen = window.matchMedia("(min-width: 46.25em) and (max-width: 63.9375em)").matches;
+  const [aboutrestaurant] = useAllPrismicDocumentsByType('restaurantinfo');
+  // console.log('aaaaa', aboutrestaurant);
+
+  return (
+    <>
+      {aboutrestaurant &&
+        aboutrestaurant.map(function (el) {
+          return (
+            <Row className='About'>
+              <Col md={6}>
+                    <PrismicImage className='nameimage' field={el.data.restaurantcover} />
+              </Col>
+              <Col md={isMediumScreen ? 12 : 6}>
+                <span className='about' style={{ marginTop: '250px', marginLeft: '10px', fontSize: '40px' }}>
+                  <PrismicRichText field={el.data.title} />
+                </span>
+                <Col>
+                  <span className='aboutus' style={{ marginTop: '30px', fontSize: '20px', fontWeight: '100' }}>
+                    <PrismicRichText field={el.data.description} />
+                  </span>
                 </Col>
-            </Col>
-        </Row>
-    )
+              </Col>
+            </Row>
+          );
+        })
+      }
+    </>
+  )
 }
 
 export default AboutRestaurant;
