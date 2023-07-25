@@ -5,14 +5,17 @@
     color: #506172;
     font-size: 17px;
 }
-p{ 
-    color: #506172;
-    font-size: 17px;
-      
+
+.number_phone i,
+.number_phone .PrismicRichText {
+  display: inline-block;
 }
+
+
 .phone-link {
     text-decoration: none;
     color: inherit;
+    left: 5%;
 }
   
 .phone-link:hover {
@@ -33,12 +36,56 @@ p{
 }
 .title_contactUs{
     position: absolute;
-    top: 25%;
+    top: 35%;
     left: 45%;
     color: #fff;
     font-size: 50px;
     font-weight: bold;
 }
+.phone-icon{
+    display: inline-block;
+    display: flex; align-items: center; 
+  }
+.address {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+
+/* CSS code */
+.number_phone a {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .icon-wrapper {
+    margin-top: -15%;
+  }
+  
+  .phone-text {
+    margin-top: -5%;
+    margin-left: 5px; 
+  }
+
+
+.address {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .icon-address{
+    position: absolute;
+    margin-top: -1%;
+  }
+
+  .address-text{
+    position: absolute;
+    margin-top: 0%;
+    margin-left: 20px;
+  }
+  
+  
 @media only screen and (max-width:46.1875em){
     .title_contactUs{
         margin-top: -42%;
