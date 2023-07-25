@@ -1,12 +1,17 @@
 import './Header.css';
 import { Nav, Navbar, Container, Button } from 'react-bootstrap';
-import { PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react';
+import { PrismicImage, PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react';
 import MediaQuery from 'react-responsive';
 import { Link } from 'react-router-dom';
 
-const HeaderMenu = () => {
+  const HeaderMenu = () => {
   const [headerMenuDocuments] = useAllPrismicDocumentsByType('menu');
-  console.log('=====>0',headerMenuDocuments);
+  const [getLogo] = useAllPrismicDocumentsByType('restaurantinfo');
+
+  // if (!headerMenuDocuments) {
+  //   return null;
+  // }
+  // headerMenuDocuments.sort((a, b) => a.data.order - b.data.order);
 
   return (
     <>
@@ -26,7 +31,12 @@ const HeaderMenu = () => {
       </MediaQuery>
       <Navbar expand="lg" className="bg-body-restaurant">
         <Container>
-          <Navbar.Brand href="#home"><img src="https://res.ringameal.com/Uploads/1070/ed3fdcc7-9a40-45c6-bf27-912838683456.jpg" alt="" style={{ objectFit: 'cover', width: '100%', height: '70px' }} /></Navbar.Brand>
+          <Navbar.Brand href="#home">
+            {getLogo?.map(function(el){
+              return <PrismicImage field={el.data.restaurantlogo} style={{ objectFit: 'cover', width: '100%', height: '70px' }} />
+            })
+            }
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto w-100 justify-content-between">

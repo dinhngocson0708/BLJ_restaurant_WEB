@@ -1,36 +1,25 @@
 import { Carousel } from 'react-bootstrap';
 import './SliderImage.css';
+import { PrismicImage, useAllPrismicDocumentsByType } from '@prismicio/react';
 
 const SliderImage = () => {
-    return (
-        <Carousel>
-            <Carousel.Item>
-                <img
-                    className="imageslider"
-                    src="https://res.ringameal.com/Uploads/1070/26922b48-c304-4611-a1b2-0970a1d14a3c.jpg"
-                    alt="image"
-                   
-                />
-                <Carousel.Caption>
-                    <p className='title1'>WELCOME TO</p>
-                    <h1 className='title2'>ROLLS VIETNAMESE GRILL</h1>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="imageslider"
-                    src="https://res.ringameal.com/Uploads/1070/26922b48-c304-4611-a1b2-0970a1d14a3c.jpg"
-                    alt="image"
-                  
-                />
-                <Carousel.Caption>
-                    <p className='title1'>WELCOME TO</p>
-                    <h1 className='title2'>ROLLS VIETNAMESE GRILL</h1>
-                </Carousel.Caption>
-            </Carousel.Item>
+  const [slider] = useAllPrismicDocumentsByType('slider_image');
 
-        </Carousel>
-    )
+  return (
+    <Carousel>
+      {slider?.map(function (el) {
+        return (
+          <Carousel.Item key={el.id}> {/*Thêm key cho mỗi Carousel.Item*/}
+            <PrismicImage className='imageslider'field={el.data.imagecover_homepage} /> 
+            <Carousel.Caption>
+              <p className='title1'>WELCOME TO</p>
+              <h1 className='title2'>ROLLS VIETNAMESE GRILL</h1>
+            </Carousel.Caption>
+          </Carousel.Item>
+        );
+      })}
+    </Carousel>
+  );
 }
 
 export default SliderImage;

@@ -8,6 +8,35 @@ border-bottom-left-radius: 50px;
 .About{
     display: flex;
 }
+/* .about{
+    margin-top: 50px;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.aboutus{
+    font-weight: 100;
+    font-size: 90px;
+} */
+
+/* Tablet responsive */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em){
+    .nameimage{
+        width: 700px;
+        height: 550px;
+    }
+    .about{
+        margin-top: 25px;
+        margin-left: 10px;
+        font-size: 40px;
+        font-weight: 700;
+    }
+    .aboutus{
+        margin-top: 30px;
+        font-size: 20px;
+        font-weight: 100;
+    }
+}
 
 /* Mobile responsive with < 740px */
 @media (max-width: 740px) {
