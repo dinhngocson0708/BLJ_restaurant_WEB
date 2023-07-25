@@ -19,15 +19,8 @@ const Contact = () => {
     return (
       <div className="Contact_us">
         <Layout>
-          <PrismicImage field={banerimg?.data.menucover} />
-
-
-          {/* {banerimg.map((el) => (
-                  <div key={el.id}>
-                    <PrismicImage field={el.data.menucover} />
-                  </div>
-                 
-                ))} */}
+          <div className="imag_contact"><PrismicImage field={banerimg?.data.menucover} /></div>
+          
           <h1 className="title_contactUs">Contact Us</h1>
           <Container>
             <Row className="Contact">
