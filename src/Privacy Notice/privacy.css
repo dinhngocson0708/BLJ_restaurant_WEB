@@ -8,6 +8,10 @@
 .text-on-image {
   position: relative;
 }
+.image img{
+  height: 60%;
+  width: 100%;
+}
 .image-caption {
   position: absolute;
   top: 50%;
@@ -47,9 +51,6 @@
   .image-caption{
      margin-top: -20%;
      font-size: 40px;
-  }
-  .img{
-    width: 100%;
   }
   
 }
