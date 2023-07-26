@@ -31,7 +31,7 @@ const OurMenu = () => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2019/06/deep-dish-pizza-chicago.jpg" alt="image" className="carousel-item-image" />
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaSRnYalS8xJskrn2UcxS-MDvsqUtWOJtIhg&usqp=CAU" alt="image" className="carousel-item-image" />
                 <div className="carousel-item-info">
                   <h3>Deep Dish Pizza</h3>
                   <p>A delicious deep-dish pizza with a thick crust and savory toppings.</p>

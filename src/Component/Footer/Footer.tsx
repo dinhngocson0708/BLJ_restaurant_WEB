@@ -8,6 +8,7 @@ import { PrismicImage, PrismicText, useAllPrismicDocumentsByType } from '@prismi
 const Footer = () => {
     const [getinfo] = useAllPrismicDocumentsByType('restaurantinfo')
     const [getmenu] = useAllPrismicDocumentsByType('menu')
+    getmenu?.sort((a, b) => a.data.shortorder - b.data.shortorder)
     const openingItems = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',];
     const timeopening = ['9:00 - 5:00 ', '9:00  - 5:00 ', '9:00  - 5:00 ', '9:00 - 5:00 ', '9:00 - 5:00 ', '9:00 - 5:00 ', 'Closed'];
     return (

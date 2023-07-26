@@ -15,7 +15,6 @@ const HeaderMenu = () => {
   // const [topMenu, setTopMenu] = useState<MenuObj[]>([]);
   const [headerMenuDocuments] = useAllPrismicDocumentsByType('menu');
   headerMenuDocuments?.sort((a, b) => a.data.shortorder - b.data.shortorder);
-
   // {
   //   orderings: {
   //     field: 'document.data.shortorder',
@@ -25,8 +24,6 @@ const HeaderMenu = () => {
   // });
   
   const [getLogo] = useAllPrismicDocumentsByType('restaurantinfo');
-
-  
   // useEffect(() => {
   //   if(headerMenuDocuments && headerMenuDocuments.length > 0){
   //     let _webMenu: MenuObj[] = [];
@@ -75,7 +72,7 @@ const HeaderMenu = () => {
                   const linkUrl = el.data.link;
                   console.log('link ',linkUrl);
                   return (
-                    <Nav.Item key={el.id}>
+                    <Nav.Item key={el.id} className='hd' style={{fontSize:'18px',marginTop:'10px'}}>
                       <Link to={linkUrl[0].text} style={{textDecoration:'none'}}>
                         <PrismicRichText field={el.data.menuname} />
                       </Link>
