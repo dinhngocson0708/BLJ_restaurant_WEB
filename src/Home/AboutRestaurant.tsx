@@ -20,6 +20,7 @@ const AboutRestaurant = () => {
                 <span className='about' style={{ marginTop: '250px', marginLeft: '10px', fontSize: '40px' }}>
                   <PrismicRichText field={el.data.title} />
                 </span>
+                <br />
                 <Col>
                   <span className='aboutus' style={{ marginTop: '30px', fontSize: '20px', fontWeight: '100' }}>
                     <PrismicRichText field={el.data.description} />
