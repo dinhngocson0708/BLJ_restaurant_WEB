@@ -41,9 +41,9 @@ const Ourmenu = () => {
             <h4 className='category-name'>CHICKEN</h4>
             {chickenData?.map((item) => (
               <Col md={4} key={item.id}>
-                <Card className='thumbnail' style={{ width: '26rem' }}>
+                <Card className='thumbnail' style={{ width: '24rem' }}>
                   <Link to={`/detail/${item.id}`}>
-                    <Card.Img variant='top' src={item.data.image.url} />
+                    <Card.Img variant='top' src={item.data.image.url} className='image_detail' />
                   </Link>
                   <Card.Body>
                     <Card.Title className='name'  style={{ fontSize: '24px' }}>
@@ -60,7 +60,7 @@ const Ourmenu = () => {
             <h4 className='category-name'>RICE PLATE</h4>
             {riceplate?.map((item) => (
               <Col md={4} key={item.id}>
-                <Card className='thumbnail' style={{ width: '26rem' }}>
+                <Card className='thumbnail' style={{ width: '24rem' }}>
                   <Link to={`/detail/${item.id}`}>
                     <Card.Img variant='top' src={item.data.image.url} />
                   </Link>
@@ -79,7 +79,7 @@ const Ourmenu = () => {
             <h4 className='category-name'>FAMILY MEALS</h4>
             {family?.map((item) => (
               <Col md={4} key={item.id}>
-                <Card className='thumbnail' style={{ width: '26rem' }}>
+                <Card className='thumbnail' style={{ width: '24rem' }}>
                   <Link to={`/detail/${item.id}`}>
                     <Card.Img variant='top' src={item.data.image.url} />
                   </Link>
@@ -98,7 +98,7 @@ const Ourmenu = () => {
              <h4 className='category-name'>BEVERAGE</h4>
             {water?.map((item) => (
               <Col md={4} key={item.id}>
-                <Card className='thumbnail' style={{ width: '26rem' }}>
+                <Card className='thumbnail' style={{ width: '24rem' }}>
                   <Link to={`/detail/${item.id}`}>
                     <Card.Img variant='top' src={item.data.image.url} />
                   </Link>
