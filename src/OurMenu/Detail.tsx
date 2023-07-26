@@ -1,30 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { data } from './data';
 import { useNavigate, useParams } from 'react-router-dom';
+import { PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react';
 import './ourmenu.css';
-interface Item {
-  id: number;
-  title: string;
-  img: string;
-  price: number;
-  desc: string;
-}
 
 function Detail() {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const [detail, setDetail] = useState<Item | null>(null);
+  const [detail, setDetail] = useState<any | null>(null);
   const [showModal, setShowModal] = useState(false);
-
+  const [documents] = useAllPrismicDocumentsByType('our_menu');
   useEffect(() => {
-    const item = data.find((item) => item.id === Number(id));
+    const item = documents?.find((item) => item.id === id);
     if (item) {
       setDetail(item);
       setShowModal(true);
     } else {
     }
-  }, [id]);
+  }, [documents, id]);
 
   const handleClose = () => {
     setShowModal(false);
@@ -37,18 +30,25 @@ function Detail() {
         <div>
           <Modal show={showModal} onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title> <h4>{detail.title}</h4></Modal.Title>
+              <Modal.Title> <h4> <PrismicRichText field={detail.data.name}  /></h4></Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <img className="item__img" src={detail.img} alt={detail.title} />
-              <p>Price: {detail.price}$</p>
-              <p>Description: {detail.desc}</p>
+              <img className="item__img" src={detail.data.image.url} alt={detail.title} />
+              <p className='price'>Price: <PrismicRichText field={detail.data.price}/>$</p>
+              <p className='Description'>Description:<PrismicRichText field={detail.data.desc} /></p>
             </Modal.Body>
+            <p className='close'>
             <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Add-Cart
+              <Button variant="danger" onClick={handleClose}>
+                Close
               </Button>
             </Modal.Footer>
+            <Modal.Footer>
+              <Button variant="info" onClick={handleClose}>
+              Add-Cart
+              </Button>
+            </Modal.Footer>
+            </p>
           </Modal>
         </div>
       ) : (

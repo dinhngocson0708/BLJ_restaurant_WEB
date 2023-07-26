@@ -7,6 +7,7 @@ import Ourmenu from './OurMenu/Ourmenu';
 import Detail from './OurMenu/Detail';
 import PrivacyNotice from './Privacy Notice';
 import Loading from './Component/Loading/Loading';
+import OurMenu from './Home/OurMenu';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -28,7 +29,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/ourmenu" element={<Ourmenu />} />
+
+          <Route
+          path="/ourmenu"
+            
+           element={<Ourmenu/>}
+            />
+
+
           <Route path='/contact' element={<Contact />} />
           <Route path='/detail/:id' element={<Detail />} />
           <Route path='/privacy' element={<PrivacyNotice />} />
