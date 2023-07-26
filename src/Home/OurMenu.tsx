@@ -14,7 +14,7 @@ const OurMenu = () => {
   };
 
   return (
-    <div className="ourmenu" style={{ backgroundColor: "#F8F8FF" }}>
+    <div className="ourmenu" style={{ backgroundColor: "#F8F8FF",fontFamily:'Poppins, sans-serif' }}>
       <Row className="row-ourmenu">
         <Col md={5} className="infor1">
           Our Menu

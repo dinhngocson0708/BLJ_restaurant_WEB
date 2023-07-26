@@ -15,6 +15,7 @@ const HeaderMenu = () => {
   // const [topMenu, setTopMenu] = useState<MenuObj[]>([]);
   const [headerMenuDocuments] = useAllPrismicDocumentsByType('menu');
   headerMenuDocuments?.sort((a, b) => a.data.shortorder - b.data.shortorder);
+  
   // {
   //   orderings: {
   //     field: 'document.data.shortorder',

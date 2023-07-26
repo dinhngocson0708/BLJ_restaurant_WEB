@@ -4,12 +4,12 @@
 
 .infor1 {
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .infor2 {
-  font-size: 22px;
-  font-weight: 100;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .carousel-item-image {
@@ -82,7 +82,7 @@
     position: absolute;
     width: 40%;
     height: 50%;
-    top: 180px;
+    top: 215px;
     padding-left: 8px;
     background-color: rgb(255, 255, 255);
   }
@@ -98,20 +98,33 @@
   }
 
   .infor1 {
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 70;
   }
   .infor2 {
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 40;
   }
   .carousel-item-info {
     position: absolute;
     width: 60%;
     height: 50%;
-    top: 180px;
+    top: 100px;
     padding-left: 8px;
     background-color: rgb(255, 255, 255);
+  }
+  .carousel-item-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    text-align: left;
+  }
+  .carousel-item-info p {
+    font-size: 12px;
+    margin-bottom: 1px;
+    color: rgb(29, 24, 24);
+    text-align: left;
+    float: left;
   }
 }
 @media (max-width: 790px) {
@@ -124,4 +137,5 @@
     font-size: 18px;
     font-weight: 400;
   }
+  
 }
