@@ -25,10 +25,11 @@ const PrivacyNotice: React.FC = () => {
           <p>No data found.</p>
         )}
       </div>
+      <div className="image-caption">Privacy Notice</div>
       <Container className="text-right">
         <Row>
           <Col sm={6} className="text-right">
-            <div className="image-caption">Privacy Notice</div>
+            
           </Col>
         </Row>
         <h2 className="text1">Privacy Notice</h2>
