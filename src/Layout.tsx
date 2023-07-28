@@ -8,10 +8,6 @@ import HeaderMenu from './Component/Header/Header';
 import Footer from './Component/Footer/Footer';
 import ScrollToTop from './Component/ScrollButton';
 
-
-
-
-
 export type Props = {
     children: ReactNode;
 }
@@ -21,7 +17,6 @@ const Layout = ({ children }: Props) => {
         <>
             <HeaderMenu />
             {children}
-            <br></br>
             <Footer />
             <ScrollToTop/>
             

@@ -3,15 +3,43 @@ import { Nav, Navbar, Container, Button } from 'react-bootstrap';
 import { PrismicImage, PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react';
 import MediaQuery from 'react-responsive';
 import { Link } from 'react-router-dom';
+// import {useState, useEffect} from 'react'
 
-  const HeaderMenu = () => {
+// interface MenuObj{
+//   MenuName: string,
+//   MenuHref: string,
+//   SortOrder: number
+// }
+
+const HeaderMenu = () => {
+  // const [topMenu, setTopMenu] = useState<MenuObj[]>([]);
   const [headerMenuDocuments] = useAllPrismicDocumentsByType('menu');
+  headerMenuDocuments?.sort((a, b) => a.data.shortorder - b.data.shortorder);
+  
+  // {
+  //   orderings: {
+  //     field: 'document.data.shortorder',
+  //     direction: 'asc',
+  //   },
+    
+  // });
+  
   const [getLogo] = useAllPrismicDocumentsByType('restaurantinfo');
-
-  // if (!headerMenuDocuments) {
-  //   return null;
-  // }
-  // headerMenuDocuments.sort((a, b) => a.data.order - b.data.order);
+  // useEffect(() => {
+  //   if(headerMenuDocuments && headerMenuDocuments.length > 0){
+  //     let _webMenu: MenuObj[] = [];
+  //     for(let i:number = 0; i < headerMenuDocuments.length; i++){
+  //       let menuItem: MenuObj = {
+  //         MenuName: headerMenuDocuments[i].data.menuname[0].text,
+  //         MenuHref: headerMenuDocuments[i].data.link[0].text,
+  //         SortOrder: headerMenuDocuments[i].data.shortorder,
+  //       }
+  //       _webMenu.push(menuItem);
+  //     }
+  //     _webMenu.sort((a, b) => (a.SortOrder > b.SortOrder) ? 1 : -1);
+  //     setTopMenu([..._webMenu]);
+  //   }
+  // },[headerMenuDocuments?.length])
 
   return (
     <>
@@ -45,7 +73,7 @@ import { Link } from 'react-router-dom';
                   const linkUrl = el.data.link;
                   console.log('link ',linkUrl);
                   return (
-                    <Nav.Item key={el.id}>
+                    <Nav.Item key={el.id} className='hd' style={{fontSize:'18px',marginTop:'10px'}}>
                       <Link to={linkUrl[0].text} style={{textDecoration:'none'}}>
                         <PrismicRichText field={el.data.menuname} />
                       </Link>
@@ -53,6 +81,15 @@ import { Link } from 'react-router-dom';
                   );
                 })
               ) : null}
+              {/* {topMenu?.map(function(el){
+                return (
+                  <Nav.Item key={el.MenuHref}>
+                    <Link to={el.MenuHref} style={{textDecoration:'none'}}>
+                      {el.MenuName}
+                    </Link>
+                  </Nav.Item>
+                );
+              })} */}
               <Button className='btn btn-danger'>ORDER ONLINE</Button>
             </Nav>
           </Navbar.Collapse>
