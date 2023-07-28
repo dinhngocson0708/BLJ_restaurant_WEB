@@ -108,6 +108,7 @@ p.address {
   .address-text {
     position: static; 
     transform: none; 
+    margin-left: 4.5px;
   }
 }
 

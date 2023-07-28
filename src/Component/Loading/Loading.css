@@ -105,7 +105,7 @@
   /* Mobile Responsiveness */
   @media only screen and (max-width: 767px) {
     .right-wrapper {
-      margin-top: 40%; 
+      margin-top: 60%; 
     }
   
     .spinnerIconWrapper {
@@ -129,7 +129,7 @@
   /* Tablet Responsiveness */
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .right-wrapper {
-      margin-top: 30%; 
+      margin-top: 40%; 
     }
   
     .spinnerIconWrapper {

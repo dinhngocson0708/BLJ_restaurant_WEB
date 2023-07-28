@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import './Footer.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Link } from 'react-router-dom';
 import { PrismicImage, PrismicText, useAllPrismicDocumentsByType } from '@prismicio/react';
 
 const Footer = () => {
@@ -26,7 +27,8 @@ const Footer = () => {
                         <Col xs={12} md={2}>
                             <h4>Menu</h4>
                             {getmenu?.map(function (el) {
-                                return <p><PrismicText field={el.data.menuname} /></p>
+                                 const linkUrl = el.data.link;
+                                return <Link to={linkUrl[0].text} className='menufooter'><p><PrismicText field={el.data.menuname} /></p></Link>
                             })}
                         </Col>
                         <Col xs={12} md={4}>
