@@ -64,7 +64,7 @@ const Contact = () => {
                         </svg>
                       </span>{" "}
                       <span className="address-text">
-                        <PrismicRichText field={el.data.address} />
+                         <PrismicRichText field={el.data.address} />
                       </span>
                     </p>
                   </div>
