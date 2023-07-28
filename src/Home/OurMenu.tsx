@@ -12,16 +12,17 @@ const OurMenu = () => {
   const handleMouseLeave = () => {
     setHovered(false);
   };
-
+  const isMediumScreen = window.matchMedia("(min-width: 46.25em) and (max-width: 63.9375em)").matches;
   return (
-    <div className="ourmenu" style={{ backgroundColor: "#F8F8FF" }}>
+    <div className="ourmenu" style={{ backgroundColor: "#F8F8FF",fontFamily:'Poppins, sans-serif' }}>
       <Row className="row-ourmenu">
-        <Col md={5} className="infor1">
-          Our Menu
-          <Col className="infor2">
-            Find your favorite food! We are very pleased to welcome you as guests in our restaurant.
-          </Col>
-          <Button style={{width:'30%'}} variant="outline-danger" href="/ourmenu">See more</Button>
+        <Col md={isMediumScreen ? 12 : 5}>
+          <h3 className="infor1">Our Menu</h3>
+          <br />
+          <Col>
+            <h6 className="infor2">Find your favorite food! We are very pleased to <br /> welcome you as guests in our restaurant.</h6>
+          </Col> <br /><br />
+          <Button style={{width:'30%'}} className="btn" variant="outline-danger" href="/ourmenu">See more</Button>
         </Col>
         <Col>
           <Carousel>
@@ -35,7 +36,7 @@ const OurMenu = () => {
                 <div className="carousel-item-info">
                   <h3>Deep Dish Pizza</h3>
                   <p>A delicious deep-dish pizza with a thick crust and savory toppings.</p>
-                  <p>Price : 10$</p>
+                  <b>10$</b>
                 </div>
               </div>
             </CarouselItem>
@@ -49,7 +50,7 @@ const OurMenu = () => {
                 <div className="carousel-item-info">
                   <h3>Authentic Sushi</h3>
                   <p>Enjoy fresh and authentic sushi with a variety of flavors and textures.</p>
-                  <p>Price : 10$</p>
+                  <b>10$</b>
                 </div>
               </div>
             </CarouselItem>

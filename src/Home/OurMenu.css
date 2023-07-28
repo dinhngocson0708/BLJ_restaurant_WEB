@@ -3,13 +3,14 @@
 }
 
 .infor1 {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 700;
+  font-family:"Poppins",sans-serif;
 }
 
 .infor2 {
-  font-size: 22px;
-  font-weight: 100;
+  font-size: 17px;
+  font-family:"Poppins",sans-serif;
 }
 
 .carousel-item-image {
@@ -18,14 +19,15 @@
 }
 
 .row-ourmenu {
-  margin-left: 0px;
+  margin-left: 50px;
+  padding: 50px;
 }
 
 .carousel-item-info {
   position: absolute;
-  width: 40%;
+  width: 35%;
   height: 40%;
-  top: 230px;
+  top: 210px;
   padding-left: 8px;
   background-color: rgb(255, 254, 252);
 }
@@ -63,14 +65,13 @@
   .carousel-item-image {
     width: 100%;
     margin-top: 20px;
-    margin-right: 1000px;
+    margin-right: 900px;
     object-fit: cover;
   }
 
   .infor1 {
     font-size: 40px;
     font-weight: 700;
-    width: 100%;
   }
 
   .infor2 {
@@ -80,11 +81,15 @@
 
   .carousel-item-info {
     position: absolute;
-    width: 40%;
+    width: 35%;
     height: 50%;
-    top: 180px;
+    top: 215px;
     padding-left: 8px;
     background-color: rgb(255, 255, 255);
+  }
+  .row-ourmenu {
+    margin-left: 0px;
+    padding: 50px;
   }
 
 }
@@ -98,20 +103,38 @@
   }
 
   .infor1 {
-    font-size: 30px;
+    font-size: 16px;
     font-weight: 700;
+    font-family:"Poppins",sans-serif;
   }
   .infor2 {
-    font-size: 13px;
-    font-weight: 400;
+    font-size: 1px;
+    font-family:"Poppins",sans-serif;
   }
   .carousel-item-info {
     position: absolute;
     width: 60%;
     height: 50%;
-    top: 180px;
+    top: 100px;
     padding-left: 8px;
     background-color: rgb(255, 255, 255);
+  }
+  .carousel-item-info h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    text-align: left;
+  }
+  .carousel-item-info p {
+    font-size: 12px;
+    margin-bottom: 1px;
+    color: rgb(29, 24, 24);
+    text-align: left;
+    float: left;
+  }
+  .row-ourmenu {
+    margin-left: 0px;
+    padding: 0px;
   }
 }
 @media (max-width: 790px) {
@@ -121,7 +144,32 @@
     width: 100%;
   }
   .infor2 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
+  }
+  .row-ourmenu {
+    margin-left: 0px;
+    padding: 10px;
+  }
+  .carousel-item-info {
+    position: absolute;
+    width: 35%;
+    height: 35%;
+    top: 240px;
+    padding-left: 8px;
+    background-color: rgb(255, 255, 255);
+  }
+  .carousel-item-info h3 {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    text-align: left;
+  }
+  .carousel-item-info p {
+    font-size: 12px;
+    margin-bottom: 1px;
+    color: rgb(29, 24, 24);
+    text-align: left;
+    float: left;
   }
 }
