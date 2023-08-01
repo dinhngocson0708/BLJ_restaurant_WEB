@@ -5,7 +5,6 @@ import { PrismicRichText, useAllPrismicDocumentsByType,PrismicImage} from '@pris
 const AboutRestaurant = () => {
   const isMediumScreen = window.matchMedia("(min-width: 46.25em) and (max-width: 63.9375em)").matches;
   const [aboutrestaurant] = useAllPrismicDocumentsByType('restaurantinfo');
-  // console.log('aaaaa', aboutrestaurant);
 
   return (
     <>
