@@ -59,7 +59,7 @@ const HeaderMenu = () => {
       </MediaQuery>
       <Navbar expand="lg" className="bg-body-restaurant">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/home">
             {getLogo?.map(function(el){
               return <PrismicImage field={el.data.restaurantlogo} style={{ objectFit: 'cover', width: '100%', height: '70px' }} />
             })
