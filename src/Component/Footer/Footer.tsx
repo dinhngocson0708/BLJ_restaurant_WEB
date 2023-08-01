@@ -8,10 +8,12 @@ import { PrismicImage, PrismicText, useAllPrismicDocumentsByType } from '@prismi
 
 const Footer = () => {
     const [getinfo] = useAllPrismicDocumentsByType('restaurantinfo')
+    console.log('helo------------------------>',getinfo)
     const [getmenu] = useAllPrismicDocumentsByType('menu')
     getmenu?.sort((a, b) => a.data.shortorder - b.data.shortorder)
     const openingItems = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',];
     const timeopening = ['9:00 - 5:00 ', '9:00  - 5:00 ', '9:00  - 5:00 ', '9:00 - 5:00 ', '9:00 - 5:00 ', '9:00 - 5:00 ', 'Closed'];
+
     return (
         <>
             <div className='footer'>
@@ -40,8 +42,8 @@ const Footer = () => {
                                     ))}
                                 </Col>
                                 <Col>
-                                    {timeopening.map((item) => (
-                                        <p>{item}</p>
+                                    {getinfo?.map((item) => (
+                                    <p><PrismicText field={item.data.body.text} /></p>
                                     ))}
                                 </Col>
                             </Row>
