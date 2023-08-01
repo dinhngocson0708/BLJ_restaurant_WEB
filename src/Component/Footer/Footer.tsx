@@ -21,8 +21,10 @@ const Footer = () => {
                     <Row>
                         {getinfo?.map(function (el) {
                             return (
-                                <Col xs={12} md={3} className='pb-3'>
-                                    <PrismicImage field={el.data.restaurantlogo} className='thumbnail' />
+                                <Col xs={12} md={3} className='pb-3' >
+                                    <Link to={"/home"}>
+                                        <PrismicImage field={el.data.restaurantlogo} className='thumbnail'/>
+                                    </Link>
                                 </Col>
                             );
                         })}
