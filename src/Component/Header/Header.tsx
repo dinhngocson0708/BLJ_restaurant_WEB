@@ -13,12 +13,12 @@ const HeaderMenu = () => {
       <MediaQuery maxWidth={768}>
         {(matches) => (
           matches ? null : (
-            <div style={{ backgroundColor: '#002d5b', color: 'white', display: 'flex', alignItems:'center' }}>
-            <i className="fas fa-map-marker-alt" style={{ marginLeft: '110px', marginRight: '10px' }}></i>
+            <div style={{ backgroundColor: '#002d5b', color: 'white', display: 'flex', alignItems:'center'  }}>
+            <i className="fas fa-map-marker-alt" style={{ marginLeft: '110px', marginRight: '10px' ,marginTop:'-15px'}}></i>
             {getLogo?.map(function (el) {
-              return <PrismicRichText field={el.data.address} />
+              return < PrismicRichText field={el.data.address}  />
             })}
-            <i className="fa fa-fax" style={{ marginLeft:'50px', marginRight:'10px',alignItems:'center' }}></i>
+            <i className="fa fa-fax" style={{ marginLeft:'50px', marginRight:'10px',alignItems:'center',marginTop:'-15px' }}></i>
             {getLogo?.map(function (el) {
               return <PrismicRichText field={el.data.phone_number} />
             })}

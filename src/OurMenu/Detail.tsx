@@ -50,7 +50,7 @@ function Detail() {
             </Modal.Footer>
             <Modal.Footer>
               <Button className='add-cart' variant="info" onClick={handleAddcart}>
-              Add-Cart
+              Buy
               </Button>
             </Modal.Footer>
             </p>

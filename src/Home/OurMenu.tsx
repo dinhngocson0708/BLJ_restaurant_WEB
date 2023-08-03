@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Col, Row, Button, Carousel, CarouselItem } from "react-bootstrap";
 import "./OurMenu.css";
+import { Link } from "react-router-dom";
 
 const OurMenu = () => {
   const [hovered, setHovered] = useState(false);
@@ -22,7 +23,7 @@ const OurMenu = () => {
           <Col>
             <h6 className="infor2">Find your favorite food! We are very pleased to<br />welcome you as guests in our restaurant.</h6>
           </Col> <br /><br />
-          <Button style={{width:'30%'}} className="btn" variant="outline-danger" href="/ourmenu">See more</Button>
+          <Link style={{width:'30%'}} className="seemore" to="/ourmenu">See more</Link>
         </Col>
         <Col>
           <Carousel>
