@@ -23,6 +23,11 @@ function Detail() {
     setShowModal(false);
     navigate("/ourmenu");
   };
+  const handleAddcart = () => {
+    setShowModal(false);
+    alert('đã thêm vào giỏ hàng thành công')
+    navigate("/ourmenu");
+  };
 
   return (
     <div>
@@ -33,18 +38,18 @@ function Detail() {
               <Modal.Title> <h4> <PrismicRichText field={detail.data.name}  /></h4></Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <img className="item__img" src={detail.data.image.url} alt={detail.title} />
-              <p className='price'>Price: <PrismicRichText field={detail.data.price}/>$</p>
-              <p className='Description'>Description:<PrismicRichText field={detail.data.desc} /></p>
+              <img className="detail__img" src={detail.data.image.url} alt={detail.title} />
+              <p className='price'> <PrismicRichText field={detail.data.price}/>$</p>
+              <p className='Description'><PrismicRichText field={detail.data.desc} /></p>
             </Modal.Body>
             <p className='close'>
             <Modal.Footer>
-              <Button variant="danger" onClick={handleClose}>
+              <Button className='close' variant="danger" onClick={handleClose}>
                 Close
               </Button>
             </Modal.Footer>
             <Modal.Footer>
-              <Button variant="info" onClick={handleClose}>
+              <Button className='add-cart' variant="info" onClick={handleAddcart}>
               Add-Cart
               </Button>
             </Modal.Footer>
@@ -53,7 +58,8 @@ function Detail() {
         </div>
       ) : (
         <p>Loading...</p>
-      )}
+      )
+      }
     </div>
   );
 }

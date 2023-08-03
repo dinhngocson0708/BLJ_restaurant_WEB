@@ -5,13 +5,34 @@ import './Footer.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from 'react-router-dom';
 import { PrismicImage, PrismicText, useAllPrismicDocumentsByType } from '@prismicio/react';
+import { useEffect, useState } from 'react';
 
 const Footer = () => {
-    const [getinfo] = useAllPrismicDocumentsByType('restaurantinfo')
+    const [getinfo] = useAllPrismicDocumentsByType('restaurantinfo');
     const [getmenu] = useAllPrismicDocumentsByType('menu')
     getmenu?.sort((a, b) => a.data.shortorder - b.data.shortorder)
-    const openingItems = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',];
-    const timeopening = ['9:00 - 5:00 ', '9:00  - 5:00 ', '9:00  - 5:00 ', '9:00 - 5:00 ', '9:00 - 5:00 ', '9:00 - 5:00 ', 'Closed'];
+   
+
+    const renderOpenHours = () => {
+        if(getinfo){
+            let openHours = getinfo[0]?.data?.body[0].items;
+            return openHours.map((item: any) => {
+                    return(
+                    <Row className='openinghour'>
+                        <Col>
+                        {item.day[0].text}
+                        </Col>
+                        <Col>
+                        {item.hour[0].text}
+                        </Col>
+                    </Row>
+                )
+            })
+        }
+        return <></>
+    }
+
+
     return (
         <>
             <div className='footer'>
@@ -21,7 +42,7 @@ const Footer = () => {
                             return (
                                 <Col xs={12} md={3} className='pb-3' >
                                     <Link to={"/home"}>
-                                        <PrismicImage field={el.data.restaurantlogo} className='thumbnail'/>
+                                        <PrismicImage field={el.data.restaurantlogo} className='thumbnail' />
                                     </Link>
                                 </Col>
                             );
@@ -29,24 +50,13 @@ const Footer = () => {
                         <Col xs={12} md={2}>
                             <h4>Menu</h4>
                             {getmenu?.map(function (el) {
-                                 const linkUrl = el.data.link;
+                                const linkUrl = el.data.link;
                                 return <Link to={linkUrl[0].text} className='menufooter'><p><PrismicText field={el.data.menuname} /></p></Link>
                             })}
                         </Col>
                         <Col xs={12} md={4}>
                             <h4>Opening Hours</h4>
-                            <Row className='openinghour'>
-                                <Col>
-                                    {openingItems.map((item) => (
-                                        <p>{item}</p>
-                                    ))}
-                                </Col>
-                                <Col>
-                                    {timeopening.map((item) => (
-                                        <p>{item}</p>
-                                    ))}
-                                </Col>
-                            </Row>
+                            {renderOpenHours()}
                         </Col>
                         <Col xs={12} md={3} className='getintouch'>
                             <h4>Get In Touch</h4>

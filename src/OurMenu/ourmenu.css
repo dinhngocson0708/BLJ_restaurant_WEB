@@ -77,6 +77,7 @@ h4.category-name{
 }
 .price{
     display: flex;
+    font-size: 20px;
    
 }
 .Description{
@@ -86,13 +87,17 @@ h4.category-name{
     display: flex;
     justify-content: space-between;
 }
-.image_detail{
+.detail__img{
     width: 100%;
     height: auto;
 }
-
-
-
-
-
-
+.add-cart{
+    color: #e5e5e5 ;
+}
+.add-cart:hover{
+    background-color: #FFC300;
+    color: #e5e5e5;
+}
+.close:hover{
+    background-color: #e5e5e5;
+}
