@@ -5,7 +5,6 @@ import './Footer.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from 'react-router-dom';
 import { PrismicImage, PrismicText, useAllPrismicDocumentsByType } from '@prismicio/react';
-import { useEffect, useState } from 'react';
 
 const Footer = () => {
     const [getinfo] = useAllPrismicDocumentsByType('restaurantinfo');
