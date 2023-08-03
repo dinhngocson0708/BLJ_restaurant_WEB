@@ -20,7 +20,7 @@ const OurMenu = () => {
           <h3 className="infor1">Our Menu</h3>
           <br />
           <Col>
-            <h6 className="infor2">Find your favorite food! We are very pleased to <br /> welcome you as guests in our restaurant.</h6>
+            <h6 className="infor2">Find your favorite food! We are very pleased to<br />welcome you as guests in our restaurant.</h6>
           </Col> <br /><br />
           <Button style={{width:'30%'}} className="btn" variant="outline-danger" href="/ourmenu">See more</Button>
         </Col>
@@ -34,10 +34,10 @@ const OurMenu = () => {
               >
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaSRnYalS8xJskrn2UcxS-MDvsqUtWOJtIhg&usqp=CAU" alt="image" className="carousel-item-image" />
                 <div className="carousel-item-info">
-                  <h3>Deep Dish Pizza</h3>
+                  <h3>#1 Deep Dish Pizza</h3>
                   <hr></hr>
-                  <p>A delicious deep-dish pizza with a thick crust and savory toppings.</p>
-                  <b>10$</b>
+                  <p>A delicious deep-dish pizza with a thick crust and savory toppings.</p><br />
+                  <h6 style={{color:'#4d4df0'}}>$ 10.06</h6>
                 </div>
               </div>
             </CarouselItem>
@@ -49,10 +49,10 @@ const OurMenu = () => {
               >
                 <img src="https://www.tasteatlas.com/images/toplistarticles/08c818739e4b48ce96d319c16f4cc0ca.jpg" alt="image" className="carousel-item-image" />
                 <div className="carousel-item-info">
-                  <h3>Authentic Sushi</h3>
+                  <h3>#2 Authentic Sushi</h3>
                   <hr></hr>
-                  <p>Enjoy fresh and authentic sushi with a variety of flavors and textures.</p>
-                  <b>10$</b>
+                  <p>Enjoy your meal with Hamburger mix with fresh beef and vegetables.</p><br />
+                  <h6 style={{color:'#4d4df0'}}>$ 20.03</h6>
                 </div>
               </div>
             </CarouselItem>
