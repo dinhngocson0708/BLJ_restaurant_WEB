@@ -26,8 +26,8 @@
 .carousel-item-info {
   position: absolute;
   width: 35%;
-  height: 45%;
-  top: 190px;
+  height: 50%;
+  top: 168px;
   padding-left: 5px;
   background-color: rgb(255, 254, 252);
 }
@@ -37,7 +37,7 @@
   font-size: 20px;
   font-weight: bold;
   text-align: left;
-  color: rgb(152, 147, 147);
+  color: rgb(109, 107, 107);
 }
 
 .carousel-item-info p {
