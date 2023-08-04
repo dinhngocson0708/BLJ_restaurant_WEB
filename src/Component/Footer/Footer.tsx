@@ -11,7 +11,6 @@ const Footer = () => {
     const [getmenu] = useAllPrismicDocumentsByType('menu')
     getmenu?.sort((a, b) => a.data.shortorder - b.data.shortorder)
    
-
     const renderOpenHours = () => {
         if(getinfo){
             let openHours = getinfo[0]?.data?.body[0].items;
@@ -30,8 +29,6 @@ const Footer = () => {
         }
         return <></>
     }
-
-
     return (
         <>
             <div className='footer'>

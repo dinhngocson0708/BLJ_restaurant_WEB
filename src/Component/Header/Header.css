@@ -1,10 +1,14 @@
 .bg-body-restaurant {
     background-color: rgb(255, 255, 255);
-   
-    
+    position:sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
 }
 
-.bg-body-restaurant a{
+.bg-body-restaurant a {
     color: #002E5B;
     font-weight: 600;
 }
@@ -16,8 +20,9 @@
 
 #basic-navbar-nav {
     margin-left: 50px;
-   
+
 }
-div.hd.nav-item p{
+
+div.hd.nav-item p {
     text-transform: uppercase;
 }

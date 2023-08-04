@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Col, Row, Button, Carousel, CarouselItem } from "react-bootstrap";
+import { Col, Row, Carousel, CarouselItem } from "react-bootstrap";
 import "./OurMenu.css";
 
 const OurMenu = () => {
@@ -14,7 +14,7 @@ const OurMenu = () => {
   };
   const isMediumScreen = window.matchMedia("(min-width: 46.25em) and (max-width: 63.9375em)").matches;
   return (
-    <div className="ourmenu" style={{ backgroundColor: "#F8F8FF",fontFamily:'Poppins, sans-serif' }}>
+    <div className="ourmenu" style={{ backgroundColor: "#F8F8FF", fontFamily: 'Poppins, sans-serif' }}>
       <Row className="row-ourmenu">
         <Col md={isMediumScreen ? 12 : 5}>
           <h3 className="infor1">Our Menu</h3>
@@ -22,7 +22,9 @@ const OurMenu = () => {
           <Col>
             <h6 className="infor2">Find your favorite food! We are very pleased to<br />welcome you as guests in our restaurant.</h6>
           </Col> <br /><br />
-          <Button style={{width:'30%'}} className="btn" variant="outline-danger" href="/ourmenu">See more</Button>
+          <button className="glow-on-hover" type="button" style={{ outline: '1px solid #E33539' }}>
+            <a href="/ourmenu" style={{ textDecoration: "none", color: '#E33539' }}>See more</a>
+          </button>
         </Col>
         <Col>
           <Carousel>
@@ -37,7 +39,7 @@ const OurMenu = () => {
                   <h3>#1 Deep Dish Pizza</h3>
                   <hr></hr>
                   <p>A delicious deep-dish pizza with a thick crust and savory toppings.</p><br />
-                  <h6 style={{color:'#4d4df0'}}>$ 10.06</h6>
+                  <h6 style={{ color: '#4d4df0' }}>$ 10.06</h6>
                 </div>
               </div>
             </CarouselItem>
@@ -52,7 +54,7 @@ const OurMenu = () => {
                   <h3>#2 Authentic Sushi</h3>
                   <hr></hr>
                   <p>Enjoy your meal with Hamburger mix with fresh beef and vegetables.</p><br />
-                  <h6 style={{color:'#4d4df0'}}>$ 20.03</h6>
+                  <h6 style={{ color: '#4d4df0' }}>$ 20.03</h6>
                 </div>
               </div>
             </CarouselItem>
