@@ -37,6 +37,7 @@ h4.category-name{
     transform: scale(1.1);
     
 }
+
 .ourmenu__{
     position: absolute;
     color: aliceblue;
@@ -53,6 +54,9 @@ h4.category-name{
         margin-left: 20%;
         font-size: 30px;
       
+    }
+    .thumbnail{
+        text-align: center;
     }
     .item__img{
         max-width:100%;

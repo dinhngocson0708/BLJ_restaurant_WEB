@@ -47,7 +47,7 @@ const HeaderMenu = () => {
                   console.log('link ', linkUrl);
                   return (
                     <Nav.Item key={el.id} className='hd' style={{ fontSize: '15px', marginTop: '10px' }}>
-                      < Nav.Link href={linkUrl[0].text} style={{ textDecoration: 'none' }}>
+                      <Nav.Link href={linkUrl[0].text} style={{ textDecoration: 'none' }}>
                         <PrismicRichText field={el.data.menuname} />
                       </Nav.Link>
                     </Nav.Item>

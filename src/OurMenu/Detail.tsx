@@ -25,7 +25,7 @@ function Detail() {
   };
   const handleAddcart = () => {
     setShowModal(false);
-    alert('đã thêm vào giỏ hàng thành công')
+    alert('mua thành công')
     navigate("/ourmenu");
   };
 
@@ -49,8 +49,8 @@ function Detail() {
               </Button>
             </Modal.Footer>
             <Modal.Footer>
-              <Button className='add-cart' variant="info" onClick={handleAddcart}>
-              Add-Cart
+              <Button className='add-cart' variant="danger" onClick={handleAddcart}>
+              Buy
               </Button>
             </Modal.Footer>
             </p>
