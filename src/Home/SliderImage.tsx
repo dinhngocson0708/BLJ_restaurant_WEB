@@ -1,10 +1,10 @@
 import { Carousel } from 'react-bootstrap';
 import './SliderImage.css';
-import { PrismicImage, useAllPrismicDocumentsByType } from '@prismicio/react';
+import { PrismicImage, PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react';
 
 const SliderImage = () => {
   const [slider] = useAllPrismicDocumentsByType('slider_image');
-
+  const [getName]= useAllPrismicDocumentsByType('restaurantinfo');
   return (
     <Carousel>
       {slider?.map(function (el) {
@@ -13,7 +13,10 @@ const SliderImage = () => {
             <PrismicImage className='imageslider'field={el.data.imagecover_homepage} /> 
             <Carousel.Caption>
               <p className='title1'>WELCOME TO</p>
-              <h1 className='title2'>ROLLS VIETNAMESE GRILL</h1>
+              {getName?.map(function(el){
+                return <h1 className='title2'><PrismicRichText field={el.data.restaurantname} /></h1>
+              })
+              }
             </Carousel.Caption>
           </Carousel.Item>
         );
