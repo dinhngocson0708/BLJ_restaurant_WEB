@@ -20,6 +20,7 @@
     font-size: 70px;
     margin-bottom: 195px;
     margin-right: 1500px;
+    text-transform: uppercase; 
 }
 
 @media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {

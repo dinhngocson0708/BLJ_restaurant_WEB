@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Col, Row, Carousel, CarouselItem } from "react-bootstrap";
 import "./OurMenu.css";
+import { PrismicImage, PrismicRichText, useAllPrismicDocumentsByType } from "@prismicio/react";
 
 const OurMenu = () => {
+  const [food] = useAllPrismicDocumentsByType('our_menu');
+  const [inforRes] = useAllPrismicDocumentsByType('restaurantinfo')
   const [hovered, setHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -20,44 +23,39 @@ const OurMenu = () => {
           <h3 className="infor1">Our Menu</h3>
           <br />
           <Col>
-            <h6 className="infor2">Find your favorite food! We are very pleased to<br />welcome you as guests in our restaurant.</h6>
+            {inforRes?.map(function (el) {
+              return <h6 className="infor2"><PrismicRichText field={el.data.ourmenudescription} /></h6>
+            })
+            }
           </Col> <br /><br />
-          <button className="glow-on-hover" type="button" style={{ outline: '1px solid #E33539' }}>
-            <a href="/ourmenu" style={{ textDecoration: "none", color: '#E33539' }}>See more</a>
-          </button>
+          <a href="/ourmenu" style={{ textDecoration: "none" }}>
+            <button className="glow-on-hover" type="button" style={{ outline: '1px solid #E33539' }}><span style={{ color: '#ff656a' }}>See more</span></button>
+          </a>
         </Col>
         <Col>
           <Carousel>
-            <CarouselItem>
-              <div
-                className={`carousel-item-container ${hovered ? "hover" : ""}`}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaSRnYalS8xJskrn2UcxS-MDvsqUtWOJtIhg&usqp=CAU" alt="image" className="carousel-item-image" />
-                <div className="carousel-item-info">
-                  <h3>#1 Deep Dish Pizza</h3>
-                  <hr></hr>
-                  <p>A delicious deep-dish pizza with a thick crust and savory toppings.</p><br />
-                  <h6 style={{ color: '#4d4df0' }}>$ 10.06</h6>
-                </div>
-              </div>
-            </CarouselItem>
-            <CarouselItem>
-              <div
-                className={`carousel-item-container ${hovered ? "hover" : ""}`}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                <img src="https://www.tasteatlas.com/images/toplistarticles/08c818739e4b48ce96d319c16f4cc0ca.jpg" alt="image" className="carousel-item-image" />
-                <div className="carousel-item-info">
-                  <h3>#2 Authentic Sushi</h3>
-                  <hr></hr>
-                  <p>Enjoy your meal with Hamburger mix with fresh beef and vegetables.</p><br />
-                  <h6 style={{ color: '#4d4df0' }}>$ 20.03</h6>
-                </div>
-              </div>
-            </CarouselItem>
+            {food?.map((el, index) => {
+              if (el.data.bestseller === true) {
+                return (
+                  <CarouselItem key={index}>
+                    <div
+                      className={`carousel-item-container ${hovered ? "hover" : ""}`}
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <PrismicImage className="carousel-item-image" field={el.data.image}/>
+                      <div className="carousel-item-info">
+                        <h3><PrismicRichText field={el.data.name} /></h3>
+                        <hr></hr>
+                        <p><PrismicRichText field={el.data.desc} /></p><br />
+                         <p>$ <PrismicRichText field={el.data.price}/></p> 
+                      </div>
+                    </div>
+                  </CarouselItem>
+                );
+              }
+              return null;
+            })}
           </Carousel>
         </Col>
       </Row>

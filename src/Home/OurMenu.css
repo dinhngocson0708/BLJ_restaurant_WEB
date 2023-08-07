@@ -14,8 +14,9 @@
 }
 
 .carousel-item-image {
-  width: 100%;
-  height: auto;
+  width: 47rem;
+  height: 380px;
+
 }
 
 .row-ourmenu {
@@ -27,7 +28,7 @@
   position: absolute;
   width: 35%;
   height: 50%;
-  top: 168px;
+  top: 190px;
   padding-left: 5px;
   background-color: rgb(255, 254, 252);
 }
