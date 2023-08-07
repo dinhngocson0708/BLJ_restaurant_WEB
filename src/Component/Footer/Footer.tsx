@@ -5,14 +5,12 @@ import './Footer.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from 'react-router-dom';
 import { PrismicImage, PrismicText, useAllPrismicDocumentsByType } from '@prismicio/react';
-import { useEffect, useState } from 'react';
 
 const Footer = () => {
     const [getinfo] = useAllPrismicDocumentsByType('restaurantinfo');
     const [getmenu] = useAllPrismicDocumentsByType('menu')
     getmenu?.sort((a, b) => a.data.shortorder - b.data.shortorder)
    
-
     const renderOpenHours = () => {
         if(getinfo){
             let openHours = getinfo[0]?.data?.body[0].items;
@@ -31,8 +29,6 @@ const Footer = () => {
         }
         return <></>
     }
-
-
     return (
         <>
             <div className='footer'>

@@ -6,8 +6,8 @@ import Col from 'react-bootstrap/Col';
 import Layout from '../Layout';
 import './ourmenu.css';
 import { Link } from 'react-router-dom';
-import { PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react';
-import { text } from 'stream/consumers';
+import { PrismicRichText, useAllPrismicDocumentsByType, usePrismicDocumentByUID } from '@prismicio/react';
+import { PrismicImage } from '@prismicio/react'
 const Ourmenu = () => {
   interface Category {
     type: string;
@@ -17,6 +17,7 @@ const Ourmenu = () => {
   const [category,setCategory]=useState([]);
   const [food,setFood]=React.useState<any[]>([]);
   const [documents] = useAllPrismicDocumentsByType('our_menu');
+  const [banerimg] = usePrismicDocumentByUID('menu', 'contact');
   useEffect(()=>{
     if(documents && documents.length>0){
       const categorys: Category[] = [];
@@ -26,9 +27,9 @@ const Ourmenu = () => {
       });
       
       const unicate:any= unique(categorys);
-      console.log("unique",unicate);
+  
       setCategory(unicate);
-      console.log("A quang",category);
+   
       const foods:any= [];
       for (let i = 0; i < unicate.length; i++) {
         const Data = documents?.filter((item) =>
@@ -39,7 +40,6 @@ const Ourmenu = () => {
        
       }
       setFood(foods)
-      console.log("FOOOOOOOOOD==================>",food)
     
     }
     function unique(documents: any) {
@@ -62,7 +62,7 @@ const Ourmenu = () => {
     <div>
       <Layout>
         <h1 className='ourmenu__'>Our Menu</h1>
-        <img src='https://get.ringameal.com/App_Themes/Template04/img/bgHeaderPage.jpg' width='100%' />
+        <div><PrismicImage field={banerimg?.data.menucover} width='100%'  /></div>
         <Container>
           <Row>
             {category.map((category, index) => (
