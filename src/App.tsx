@@ -7,6 +7,7 @@ import Ourmenu from './OurMenu/Ourmenu';
 import Detail from './OurMenu/Detail';
 import PrivacyNotice from './Privacy Notice';
 import Loading from './Component/Loading/Loading';
+import Gallery from './Gallery/Gallery';
 
 
 
@@ -14,10 +15,10 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-   
+
     const timeout = setTimeout(() => {
       setLoading(false);
-    },2700);
+    }, 2700);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -32,12 +33,12 @@ function App() {
           <Route path="/home" element={<Home />} />
 
           <Route
-          path="/ourmenu"
-            
-           element={<Ourmenu/>}
-            />
+            path="/ourmenu"
 
+            element={<Ourmenu />}
+          />
 
+          <Route path='/gallery' element={<Gallery/>} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/detail/:id' element={<Detail />} />
           <Route path='/privacy' element={<PrivacyNotice />} />

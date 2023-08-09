@@ -3,6 +3,8 @@ import { Modal, Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react';
 import './ourmenu.css';
+import Layout from '../Layout';
+import Ourmenu from './Ourmenu';
 
 function Detail() {
   const navigate = useNavigate();
@@ -31,6 +33,8 @@ function Detail() {
 
   return (
     <div>
+
+      <Ourmenu/>
       {detail ? (
         <div>
           <Modal show={showModal} onHide={handleClose}>
@@ -50,7 +54,7 @@ function Detail() {
             </Modal.Footer>
             <Modal.Footer>
               <Button className='add-cart' variant="warning" onClick={handleAddcart}>
-              Buy
+              Add-cart
               </Button>
             </Modal.Footer>
             </p>

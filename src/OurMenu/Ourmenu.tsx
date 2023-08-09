@@ -66,12 +66,12 @@ const Ourmenu = () => {
         <Container>
           <Row>
             {category.map((category, index) => (
-              <Row key={index}>
+              <Row key={index} >
                 <h4 className='category-name'>{category}</h4>
                 
                 {food[index]?.map((item: any) => (
                   <Col md={4} key={item.id}>
-                    <Card className="thumbnail" style={{ width: "26rem" }}>
+                    <Card className="thumbnail"  style={{ width: "26rem" }}>
                       <Link to={`/detail/${item.id}`}>
                         <Card.Img variant="top" src={item.data.image.url} />
                       </Link>
