@@ -5,7 +5,6 @@ import {removeCart,decreaseItemQuantity,increaseItemQuantity} from '../Component
 
 const ShopingCardInfo = () => {
     const dispatch=useDispatch();
-    
     const {items} = useSelector((state:any) => state.shopingCarRedux);
     return (
         <Layout>
@@ -73,7 +72,7 @@ const ShopingCardInfo = () => {
                           <div className="form-outline">
                             <input
                               id="form1"
-                              
+                              min=
                               name="quantity"
                               value={data.quantity}
                               type="number"
@@ -94,7 +93,7 @@ const ShopingCardInfo = () => {
                         </div>
 
                         <p className="text-start text-md-center">
-                          <strong>{data.price}$</strong>
+                          <strong>{data.price}</strong>
                         </p>
                       </div>
                       <hr className="my-4" />
