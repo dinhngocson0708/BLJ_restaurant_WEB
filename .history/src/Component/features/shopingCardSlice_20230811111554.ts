@@ -1,3 +1,4 @@
+import { number } from '@prismicio/client/dist/helpers/isFilled';
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
@@ -6,7 +7,6 @@ interface foodObj{
   name: string,
   price: number,
   image:string,
-  
 }
 
 export interface ShopingCardState {
@@ -19,33 +19,23 @@ const initialState: ShopingCardState = {
 
 export const shopingCardSlice = createSlice({
   name: 'shopingCart',
-  initialState,
+  initialState:{},
   reducers: {
     addToCart: (state, action: PayloadAction<foodObj>) => {
       const {name, price,id,image} = action.payload;
       state.items.push({
-        name, price,id,image
+        name, price,id,image,
       })
-      localStorage.setItem("cart",JSON.stringify(state.items))
     },
     removeCart: (state, action: PayloadAction<string>) => {
       const itemIdToRemove = action.payload;
       state.items = state.items.filter((item) => item.id !== itemIdToRemove);
     },
-    increaseItemQuantity: (state, action) => {
-      state.items = state.items.map((item) => {
-        if (item.id === action.payload) {
-          return { ...item, quantity: item. + 1 };
-        }
-        return item;
-      });
-    },
-   
     
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { addToCart,removeCart,increaseItemQuantity} = shopingCardSlice.actions
+export const { addToCart,removeCart} = shopingCardSlice.actions
 
 export default shopingCardSlice.reducer
