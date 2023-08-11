@@ -5,8 +5,11 @@ import { PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react'
 import './ourmenu.css';
 import Layout from '../Layout';
 import Ourmenu from './Ourmenu';
+import { useSelector, useDispatch } from 'react-redux';
+import {addToCard} from '../Component/features/shopingCardSlice'
 
 function Detail() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [detail, setDetail] = useState<any | null>(null);
@@ -26,12 +29,23 @@ function Detail() {
     navigate("/ourmenu");
   };
   const handleAddcart = () => {
-    setShowModal(false);
-    alert('mua thành công')
-    navigate("/ourmenu");
+    //console.log(detail);
+    if(detail && detail.data){
+      const {name, price} = detail.data;
+      console.log(name, price);
+      dispatch(addToCard({
+        name: name[0].text,
+        price: parseFloat(price[0].text) 
+      }))
+      setShowModal(false);
+    }
+    // setShowModal(false);
+    // alert('mua thành công')
+    // navigate("/ourmenu");
   };
 
   return (
+    
     <div>
 
       <Ourmenu/>

@@ -1,12 +1,26 @@
+import React, { useEffect } from "react";
 import './Header.css';
 import { Nav, Navbar, Container, Button } from 'react-bootstrap';
 import { PrismicImage, PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react';
 import MediaQuery from 'react-responsive';
+import {MDBNavbar,MDBContainer,MDBIcon,MDBNavbarLink,MDBNavbarBrand,MDBBadge} from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 
+//import { getCartTotal } from "../features/cartSlice";
 const HeaderMenu = () => {
+  
   const [headerMenuDocuments] = useAllPrismicDocumentsByType('menu');
   headerMenuDocuments?.sort((a, b) => a.data.shortorder - b.data.shortorder);
   const [getLogo] = useAllPrismicDocumentsByType('restaurantinfo');
+  //const xxx = useSelector((state) => state.shopingCart);
+
+  //console.log('HD',xxx);
+  const dispatch = useDispatch();
+  // useEffect(() => {
+  //   //dispatch(getCartTotal());
+  // }, [cart]);
+
 
   return (
     <>
@@ -44,7 +58,7 @@ const HeaderMenu = () => {
               {headerMenuDocuments && headerMenuDocuments.length > 0 ? (
                 headerMenuDocuments.map(function (el) {
                   const linkUrl = el.data.link;
-                  console.log('link ', linkUrl);
+                  //console.log('link ', linkUrl);
                   return (
                     <Nav.Item key={el.id} className='hd' style={{ fontSize: '15px', marginTop: '10px' }}>
                       <Nav.Link href={linkUrl[0].text} style={{ textDecoration: 'none' }}>
@@ -54,7 +68,12 @@ const HeaderMenu = () => {
                   );
                 })
               ) : null}
-              <Button className='btn btn-danger'>ORDER ONLINE</Button>
+              <Button className='btn btn-danger'>
+                <MDBIcon fas icon="shopping-cart" size="lg" color='white'>
+                    <Link to="/cart">Cart(0)</Link>
+                  
+                </MDBIcon>
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
