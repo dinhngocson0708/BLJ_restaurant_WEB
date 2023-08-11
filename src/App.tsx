@@ -8,7 +8,7 @@ import Detail from './OurMenu/Detail';
 import PrivacyNotice from './Privacy Notice';
 import Loading from './Component/Loading/Loading';
 import Gallery from './Gallery/Gallery';
-
+import ShopingCardInfo from './ShopingCartInfo'
 
 
 function App() {
@@ -42,6 +42,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/detail/:id' element={<Detail />} />
           <Route path='/privacy' element={<PrivacyNotice />} />
+          <Route path='/cart' element={<ShopingCardInfo />} />
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       )}

@@ -3,7 +3,7 @@ import shopingCardReducer from '../features/shopingCardSlice'
 
 export const store = configureStore({
   reducer: {
-    counter: shopingCardReducer,
+    shopingCarRedux: shopingCardReducer,
   },
 })
 

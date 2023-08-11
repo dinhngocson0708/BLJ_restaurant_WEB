@@ -6,7 +6,7 @@ import './ourmenu.css';
 import Layout from '../Layout';
 import Ourmenu from './Ourmenu';
 import { useSelector, useDispatch } from 'react-redux';
-import {addToCard} from '../Component/features/shopingCardSlice'
+import {addToCart} from '../Component/features/shopingCardSlice'
 
 function Detail() {
   const dispatch = useDispatch();
@@ -29,13 +29,17 @@ function Detail() {
     navigate("/ourmenu");
   };
   const handleAddcart = () => {
-    //console.log(detail);
+    console.log("-----------------detail",detail);
     if(detail && detail.data){
-      const {name, price} = detail.data;
-      console.log(name, price);
-      dispatch(addToCard({
+      const {name, price,image} = detail.data;
+      const {id}=detail;
+      console.log("consoleog---------------------------",name, price,image);
+      dispatch(addToCart({
         name: name[0].text,
-        price: parseFloat(price[0].text) 
+        price: parseFloat(price[0].text),
+        id:id,
+        image:image.url,
+        
       }))
       setShowModal(false);
     }

@@ -13,9 +13,9 @@ const HeaderMenu = () => {
   const [headerMenuDocuments] = useAllPrismicDocumentsByType('menu');
   headerMenuDocuments?.sort((a, b) => a.data.shortorder - b.data.shortorder);
   const [getLogo] = useAllPrismicDocumentsByType('restaurantinfo');
-  //const xxx = useSelector((state) => state.shopingCart);
+  const {items} = useSelector((state:any) => state.shopingCarRedux);
 
-  //console.log('HD',xxx);
+  console.log('HD-------------------',items);
   const dispatch = useDispatch();
   // useEffect(() => {
   //   //dispatch(getCartTotal());
@@ -70,7 +70,7 @@ const HeaderMenu = () => {
               ) : null}
               <Button className='btn btn-danger'>
                 <MDBIcon fas icon="shopping-cart" size="lg" color='white'>
-                    <Link to="/cart">Cart(0)</Link>
+                    <Link to="/cart">Cart({items.length})</Link>
                   
                 </MDBIcon>
               </Button>
