@@ -8,8 +8,9 @@ import Detail from './OurMenu/Detail';
 import PrivacyNotice from './Privacy Notice';
 import Loading from './Component/Loading/Loading';
 import Gallery from './Gallery/Gallery';
-
-
+import Signup from './Signup';
+import Login from './Login';
+import Logout from './Logout';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,12 +39,15 @@ function App() {
             element={<Ourmenu />}
           />
 
-          <Route path='/gallery' element={<Gallery/>} />
+          <Route path='/gallery' element={<Gallery />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/detail/:id' element={<Detail />} />
           <Route path='/privacy' element={<PrivacyNotice />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
+
       )}
     </BrowserRouter>
   );

@@ -1,27 +1,83 @@
 .bg-body-restaurant {
     background-color: rgb(255, 255, 255);
-    position:sticky;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
 }
-
-.bg-body-restaurant a {
-    color: #002E5B;
-    font-weight: 600;
+.menudrop{
+    margin-left: 22px;
+}
+#dropdown-basic {
+    border: white;
+    background-color: rgb(210, 82, 82);
+    border-radius: 50px;
+    margin-left: 50px;
+    height: 50px;
+    width: auto;
+    align-items: center;
 }
 
-.bg-body-restaurant a:hover {
+#dropdown-basic p {
+    margin-top: 6.5px;
+}
+
+.person1 {
+    margin-top: 10px;
+}
+
+.user {
+    margin-left: 10px;
+}
+
+.person {
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.signup {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #002E5B;
+    font-weight: 500;
+}
+
+.signup:hover {
     text-decoration: none;
     color: #ff656a;
 }
 
-#basic-navbar-nav {
-    margin-left: 50px;
-
+.login {
+    text-decoration: none;
+    color: #002E5B;
+    font-weight: 500;
 }
+
+.login:hover {
+    color: #ff656a;
+    text-decoration: none;
+}
+
+#basic-navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 div.hd.nav-item p {
     text-transform: uppercase;
+    color: #002E5B;
+    text-decoration: none;
+}
+
+div.hd.nav-item p:hover {
+    color: #ff656a;
 }
