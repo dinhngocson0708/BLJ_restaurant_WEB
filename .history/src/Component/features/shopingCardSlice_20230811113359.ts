@@ -60,6 +60,6 @@ export const shopingCardSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { addToCart,removeCart,decreaseItemQuantity,increaseItemQuantity} = shopingCardSlice.actions
+export const { addToCart,removeCart,DE} = shopingCardSlice.actions
 
 export default shopingCardSlice.reducer

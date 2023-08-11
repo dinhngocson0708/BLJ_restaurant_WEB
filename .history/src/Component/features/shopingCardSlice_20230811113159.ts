@@ -37,18 +37,17 @@ export const shopingCardSlice = createSlice({
       const itemIdToRemove = action.payload;
       state.items = state.items.filter((item) => item.id !== itemIdToRemove);
     },
-    increaseItemQuantity: (state, action: PayloadAction<string>) => {
+    increaseItemQuantity: (state, action: PayloadAction<foodObj>) => {
      
       state.items = state.items.map((item) => {
-        if (item.id === action.payload) {
+        if (item.id === ) {
           return { ...item, quantity: item.quantity + 1 };
         }
         return item;
       });
     },
     decreaseItemQuantity: (state, action) => {
-     
-      state.items = state.items.map((item) => {
+      state.cart = state.cart.map((item) => {
         if (item.id === action.payload) {
           return { ...item, quantity: item.quantity - 1 };
         }
@@ -60,6 +59,6 @@ export const shopingCardSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { addToCart,removeCart,decreaseItemQuantity,increaseItemQuantity} = shopingCardSlice.actions
+export const { addToCart,removeCart} = shopingCardSlice.actions
 
 export default shopingCardSlice.reducer

@@ -39,7 +39,7 @@ function Detail() {
         price: parseFloat(price[0].text),
         id:id,
         image:image.url,
-        quantity:1
+        
       }))
       setShowModal(false);
     }

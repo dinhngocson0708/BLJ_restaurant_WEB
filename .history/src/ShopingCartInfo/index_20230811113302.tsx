@@ -1,7 +1,7 @@
 import Layout from "../Layout";
 import { Container } from 'react-bootstrap'
 import { useDispatch, useSelector } from "react-redux";
-import {removeCart,decreaseItemQuantity,increaseItemQuantity} from '../Component/features/shopingCardSlice'
+import {removeCart} from '../Component/features/shopingCardSlice'
 
 const ShopingCardInfo = () => {
     const dispatch=useDispatch();
@@ -84,9 +84,9 @@ const ShopingCardInfo = () => {
 
                           <button
                             className="btn btn-primary px-3 ms-2"
-                            onClick={() =>
-                              dispatch(increaseItemQuantity(data.id))
-                            }
+                            // onClick={() =>
+                            //   dispatch(increaseItemQuantity(data.id))
+                            // }
                           >
                             <i className="fas fa-plus"></i>
                           </button>

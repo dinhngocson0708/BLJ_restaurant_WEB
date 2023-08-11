@@ -47,8 +47,7 @@ export const shopingCardSlice = createSlice({
       });
     },
     decreaseItemQuantity: (state, action) => {
-     
-      state.items = state.items.map((item) => {
+      state.cart = state.cart.map((item) => {
         if (item.id === action.payload) {
           return { ...item, quantity: item.quantity - 1 };
         }
@@ -60,6 +59,6 @@ export const shopingCardSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { addToCart,removeCart,decreaseItemQuantity,increaseItemQuantity} = shopingCardSlice.actions
+export const { addToCart,removeCart} = shopingCardSlice.actions
 
 export default shopingCardSlice.reducer

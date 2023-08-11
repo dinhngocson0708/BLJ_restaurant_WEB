@@ -1,7 +1,7 @@
 import Layout from "../Layout";
 import { Container } from 'react-bootstrap'
 import { useDispatch, useSelector } from "react-redux";
-import {removeCart,decreaseItemQuantity,increaseItemQuantity} from '../Component/features/shopingCardSlice'
+import {removeCart} from '../Component/features/shopingCardSlice'
 
 const ShopingCardInfo = () => {
     const dispatch=useDispatch();
