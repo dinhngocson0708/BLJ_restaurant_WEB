@@ -6,6 +6,7 @@ interface foodObj{
   name: string,
   price: number,
   image:string,
+  
 }
 
 export interface ShopingCardState {
@@ -23,13 +24,18 @@ export const shopingCardSlice = createSlice({
     addToCart: (state, action: PayloadAction<foodObj>) => {
       const {name, price,id,image} = action.payload;
       state.items.push({
-        name, price,id,image,
+        name, price,id,image
       })
+      localStorage.setItem("cart",JSON.stringify(state.items))
     },
     removeCart: (state, action: PayloadAction<string>) => {
       const itemIdToRemove = action.payload;
       state.items = state.items.filter((item) => item.id !== itemIdToRemove);
     },
+    // increament---
+
+    
+   
     
   },
 })

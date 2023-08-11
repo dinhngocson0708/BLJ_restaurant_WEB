@@ -7,6 +7,7 @@ import Layout from '../Layout';
 import Ourmenu from './Ourmenu';
 import { useSelector, useDispatch } from 'react-redux';
 import {addToCart} from '../Component/features/shopingCardSlice'
+import { number } from '@prismicio/client/dist/helpers/isFilled';
 
 function Detail() {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ function Detail() {
   const handleAddcart = () => {
     console.log("-----------------detail",detail);
     if(detail && detail.data){
-      const {name, price,image} = detail.data;
+      const {name, price,image,quantity} = detail.data;
       const {id}=detail;
       console.log("consoleog---------------------------",name, price,image);
       dispatch(addToCart({
@@ -39,6 +40,7 @@ function Detail() {
         price: parseFloat(price[0].text),
         id:id,
         image:image.url,
+       
         
       }))
       setShowModal(false);

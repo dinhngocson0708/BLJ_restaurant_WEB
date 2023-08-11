@@ -2,9 +2,10 @@ import Layout from "../Layout";
 import { Container } from 'react-bootstrap'
 import { useDispatch, useSelector } from "react-redux";
 import {removeCart} from '../Component/features/shopingCardSlice'
-
+import { useState } from "react";
 const ShopingCardInfo = () => {
     const dispatch=useDispatch();
+    const quantity=useState('0');
     const {items} = useSelector((state:any) => state.shopingCarRedux);
     return (
         <Layout>
@@ -95,7 +96,7 @@ const ShopingCardInfo = () => {
                         </div>
 
                         <p className="text-start text-md-center">
-                          <strong>{data.price}</strong>
+                          <strong>{data.price}$</strong>
                         </p>
                       </div>
                       <hr className="my-4" />
