@@ -72,7 +72,7 @@ const ShopingCardInfo = () => {
                           <div className="form-outline">
                             <input
                               id="form1"
-                              
+                              mi
                               name="quantity"
                               value={data.quantity}
                               type="number"

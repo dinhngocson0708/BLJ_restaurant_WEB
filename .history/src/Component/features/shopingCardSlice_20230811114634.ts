@@ -50,6 +50,9 @@ export const shopingCardSlice = createSlice({
      
       state.items = state.items.map((item) => {
         if(item.quantity==1){
+          
+            const itemIdToRemove = action.payload;
+            state.items = state.items.filter((item) => item.id !== itemIdToRemove);
             return item;
         }else{
           if (item.id === action.payload) {

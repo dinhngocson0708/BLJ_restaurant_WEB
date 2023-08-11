@@ -49,8 +49,8 @@ export const shopingCardSlice = createSlice({
     decreaseItemQuantity: (state, action) => {
      
       state.items = state.items.map((item) => {
-        if(item.quantity==1){
-            return item;
+        if(item.quantity==0){
+          
         }else{
           if (item.id === action.payload) {
             return { ...item, quantity: item.quantity - 1 };
