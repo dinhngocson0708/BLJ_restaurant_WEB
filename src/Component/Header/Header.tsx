@@ -4,14 +4,14 @@ import { Nav, Navbar, Container, Dropdown,Button } from 'react-bootstrap';
 import { PrismicImage, PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react';
 import MediaQuery from 'react-responsive';
 import {MDBNavbar,MDBContainer,MDBIcon,MDBNavbarLink,MDBNavbarBrand,MDBBadge} from 'mdb-react-ui-kit';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 //import { getCartTotal } from "../features/cartSlice";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const HeaderMenu = () => {
-  
+  const navigate = useNavigate();
   const [headerMenuDocuments] = useAllPrismicDocumentsByType('menu');
   headerMenuDocuments?.sort((a, b) => a.data.shortorder - b.data.shortorder);
   const [getLogo] = useAllPrismicDocumentsByType('restaurantinfo');
@@ -25,6 +25,25 @@ const HeaderMenu = () => {
   };
 
   console.log('HD-------------------',items);
+  const itemnew:any=[];
+    items?.map((data:any)=>{
+            
+        if(data.userName===JSON.stringify(localStorage.getItem('loggedInUsername'))){
+            console.log("data",data)
+           itemnew.push(data)
+        }else{
+            console.log("quang")
+        }
+    })
+    console.log("new=====",itemnew)
+  const  navigateCart=()=>{
+    if(localStorage.getItem('loggedInUsername')){
+        navigate('/cart')
+    }else{
+      alert("Gior hàng đang trống.Vui lòng add to cart")
+      navigate('/')
+    }
+  }
   const dispatch = useDispatch();
   // useEffect(() => {
   //   //dispatch(getCartTotal());
@@ -119,7 +138,8 @@ const HeaderMenu = () => {
               </p>
             )}
              <p className="iconson" >
-                    <Link to="/cart" className="quantity"><MDBIcon fas icon="shopping-cart" size="lg" >{cartItems ? cartItems.length :null}</MDBIcon></Link>  
+                <Button  className="quantity" onClick={navigateCart}><MDBIcon fas icon="shopping-cart" size="lg"  >{itemnew ? itemnew.length :0}</MDBIcon></Button>  
+
               </p>
             
           </Navbar.Collapse>

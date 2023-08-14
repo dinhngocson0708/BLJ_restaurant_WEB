@@ -16,6 +16,7 @@ function Detail() {
   const [detail, setDetail] = useState<any | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [documents] = useAllPrismicDocumentsByType('our_menu');
+  const { items } = useSelector((state: any) => state.shopingCarRedux);
   useEffect(() => {
     const item = documents?.find((item) => item.id === id);
     if (item) {
@@ -30,21 +31,31 @@ function Detail() {
     navigate("/ourmenu");
   };
   const handleAddcart = () => {
-    console.log("-----------------detail",detail);
-    if(detail && detail.data){
-      const {name, price,image,quantity,totalPrice} = detail.data;
-      const {id}=detail;
-      console.log("consoleog---------------------------",name, price,image);
-      dispatch(addToCart({
-        name: name[0].text,
-        price: parseFloat(price[0].text),
-        id:id,
-        image:image.url,
-        quantity:1,
-        totalpriceitem: parseFloat(price[0].text)
-      }))
-      setShowModal(false);
+
+    if(localStorage.getItem('loggedInUsername')){
+      const userName=JSON.stringify(localStorage.getItem('loggedInUsername'))
+      console.log("-----------------detail",detail);
+      if(detail && detail.data){
+        const {name, price,image,quantity,totalPrice} = detail.data;
+        const {id}=detail;
+        console.log("consoleog---------------------------",name, price,image);
+        dispatch(addToCart({
+          name: name[0].text,
+          price: parseFloat(price[0].text),
+          id:id,
+          image:image.url,
+          quantity:1,
+          totalpriceitem: parseFloat(price[0].text),
+          userName:userName
+        }))
+        setShowModal(false);
+      }
+    }else{
+      alert('vui lòng đăng nhập trước khi thêm sản phẩm vào giỏ hàng')
+      navigate('/login')
+      
     }
+   
     // setShowModal(false);
     // alert('mua thành công')
     // navigate("/ourmenu");

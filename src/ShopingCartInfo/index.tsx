@@ -18,6 +18,17 @@ const ShopingCardInfo = () => {
     // }
     // const cartString = localStorage.getItem('cart');
     // const cartStorage = JSON.parse(cartString|| '[]');
+    const itemnew:any=[];
+    items?.map((data:any)=>{
+            
+        if(data.userName===JSON.stringify(localStorage.getItem('loggedInUsername'))){
+            console.log("data",data)
+           itemnew.push(data)
+        }else{
+            console.log("quang")
+        }
+    })
+    console.log("new=====",itemnew)
     return (
         <Layout>
             {/* <h1>Hello</h1>
@@ -28,6 +39,7 @@ const ShopingCardInfo = () => {
              */}
 
             <section className="h-100 gradient-custom">
+                <h3 style={{color:'skyblue', textAlign:'center',paddingTop:'10px'}}> My Shopping cart</h3>
                 <div className="container py-5">
                     <div className="row d-flex justify-content-center my-4">
                         <div className="col-md-8">
@@ -73,7 +85,7 @@ const ShopingCardInfo = () => {
                                 </div>
 
                                 <div className="card-body">
-                                    {items?.map((data:any) => (
+                                    {itemnew?.map((data:any) => (
                                         <div className="row my-7">
                                             <div className="col-xl-3 col-md-12 mb-4 mb-lg-0">
                                                 <div className="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">

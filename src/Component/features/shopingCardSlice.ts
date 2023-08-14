@@ -7,17 +7,18 @@ interface foodObj {
   price: number,
   image: string,
   quantity: number,
-  totalpriceitem: number
-
+  totalpriceitem: number,
+  userName: string
 }
 
 export interface ShopingCardState {
   items: foodObj[],
   
 }
-
+const cartData = localStorage.getItem('cart');
+const data = cartData !== null ? JSON.parse(cartData) : [];
 const initialState: ShopingCardState = {
-  items: [],
+  items: data ,
 
 }
 const selectItems = (state: any) => state.shopingCarRedux.items;
@@ -35,9 +36,9 @@ export const shopingCardSlice = createSlice({
   reducers: {
     addToCart: (state, action: PayloadAction<foodObj>) => {
       
-      const { name, price, id, image, quantity, totalpriceitem } = action.payload;
+      const { name, price, id, image, quantity, totalpriceitem,userName } = action.payload;
       state.items.push({
-        name, price, id, image, quantity, totalpriceitem
+        name, price, id, image, quantity, totalpriceitem, userName
         
       });
       localStorage.setItem("cart", JSON.stringify(state.items));
@@ -45,6 +46,7 @@ export const shopingCardSlice = createSlice({
     removeCart: (state, action: PayloadAction<string>) => {
       const itemIdToRemove = action.payload;
       state.items = state.items.filter((item) => item.id !== itemIdToRemove);
+      localStorage.removeItem(itemIdToRemove)
     },
     increaseItemQuantity: (state, action) => {
       state.items = state.items.map((item) => {
