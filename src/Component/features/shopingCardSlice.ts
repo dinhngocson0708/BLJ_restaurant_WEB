@@ -1,32 +1,46 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-
-interface foodObj{
-  id:string,
+import { createSelector } from '@reduxjs/toolkit';
+interface foodObj {
+  id: string,
   name: string,
   price: number,
-  image:string,
-  
+  image: string,
+  quantity: number,
+  totalpriceitem: number
+
 }
 
 export interface ShopingCardState {
-  items: foodObj[]
+  items: foodObj[],
+  
 }
 
 const initialState: ShopingCardState = {
   items: [],
-}
 
+}
+const selectItems = (state: any) => state.shopingCarRedux.items;
+
+export const selectTotalPrice = createSelector(selectItems, (items) => {
+  return items.reduce((total: number, product: foodObj) => total + product.totalpriceitem, 0);
+});
+export const selectTotalQuantity = createSelector(selectItems, (items) => {
+  return items.reduce((total: number, product: foodObj) => total + product.quantity, 0);
+});
 export const shopingCardSlice = createSlice({
   name: 'shopingCart',
   initialState,
+  
   reducers: {
     addToCart: (state, action: PayloadAction<foodObj>) => {
-      const {name, price,id,image} = action.payload;
+      
+      const { name, price, id, image, quantity, totalpriceitem } = action.payload;
       state.items.push({
-        name, price,id,image
-      })
-      localStorage.setItem("cart",JSON.stringify(state.items))
+        name, price, id, image, quantity, totalpriceitem
+        
+      });
+      localStorage.setItem("cart", JSON.stringify(state.items));
     },
     removeCart: (state, action: PayloadAction<string>) => {
       const itemIdToRemove = action.payload;
@@ -35,31 +49,35 @@ export const shopingCardSlice = createSlice({
     increaseItemQuantity: (state, action) => {
       state.items = state.items.map((item) => {
         if (item.id === action.payload) {
-          return { ...item, quantity: item.quantity + 1 };
+          const newQuantity = item.quantity + 1;
+          return {
+            ...item,
+            quantity: newQuantity,
+            totalpriceitem: item.price * newQuantity,
+          };
         }
         return item;
       });
     },
-    decreaseItemQuantity: (state, action) => {
-     
-      state.items = state.items.map((item) => {
-        if(item.quantity==1){
-            return item;
-        }else{
-          if (item.id === action.payload) {
-            return { ...item, quantity: item.quantity - 1 };
-          }
-        }
-        
-        return item;
-      });
-    },
-   
     
+    decreaseItemQuantity: (state, action) => {
+      state.items = state.items.map((item) => {
+        if (item.id === action.payload && item.quantity > 1) {
+          const newQuantity = item.quantity - 1;
+          return {
+            ...item,
+            quantity: newQuantity,
+            totalpriceitem: item.price * newQuantity,
+          };
+        }
+        return item;
+      });
+    },
+
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { addToCart,removeCart,increaseItemQuantity} = shopingCardSlice.actions
+export const { addToCart, removeCart, increaseItemQuantity, decreaseItemQuantity } = shopingCardSlice.actions
 
 export default shopingCardSlice.reducer

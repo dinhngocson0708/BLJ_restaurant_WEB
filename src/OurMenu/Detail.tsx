@@ -32,7 +32,7 @@ function Detail() {
   const handleAddcart = () => {
     console.log("-----------------detail",detail);
     if(detail && detail.data){
-      const {name, price,image,quantity} = detail.data;
+      const {name, price,image,quantity,totalPrice} = detail.data;
       const {id}=detail;
       console.log("consoleog---------------------------",name, price,image);
       dispatch(addToCart({
@@ -40,7 +40,8 @@ function Detail() {
         price: parseFloat(price[0].text),
         id:id,
         image:image.url,
-        quantity:1
+        quantity:1,
+        totalpriceitem: parseFloat(price[0].text)
       }))
       setShowModal(false);
     }

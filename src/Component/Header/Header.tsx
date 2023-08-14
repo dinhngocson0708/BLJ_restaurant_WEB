@@ -6,7 +6,6 @@ import MediaQuery from 'react-responsive';
 import {MDBNavbar,MDBContainer,MDBIcon,MDBNavbarLink,MDBNavbarBrand,MDBBadge} from 'mdb-react-ui-kit';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-
 //import { getCartTotal } from "../features/cartSlice";
 const HeaderMenu = () => {
   
@@ -14,6 +13,13 @@ const HeaderMenu = () => {
   headerMenuDocuments?.sort((a, b) => a.data.shortorder - b.data.shortorder);
   const [getLogo] = useAllPrismicDocumentsByType('restaurantinfo');
   const {items} = useSelector((state:any) => state.shopingCarRedux);
+  const cartDataJSON = localStorage.getItem('cart');
+  var cartItems ;
+  if (cartDataJSON) {
+       cartItems = JSON.parse(cartDataJSON);
+      // Now you can work with the cartItems array
+      console.log("cartitemss========>",cartItems) ;
+  };
 
   console.log('HD-------------------',items);
   const dispatch = useDispatch();
@@ -70,7 +76,7 @@ const HeaderMenu = () => {
               ) : null}
               <Button className='btn btn-danger'>
                 <MDBIcon fas icon="shopping-cart" size="lg" color='white'>
-                    <Link to="/cart">Cart({items.length})</Link>
+                    <Link to="/cart">Cart _{cartItems ? cartItems.length :null}_</Link>
                   
                 </MDBIcon>
               </Button>

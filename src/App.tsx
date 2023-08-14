@@ -8,7 +8,9 @@ import Detail from './OurMenu/Detail';
 import PrivacyNotice from './Privacy Notice';
 import Loading from './Component/Loading/Loading';
 import Gallery from './Gallery/Gallery';
-import ShopingCardInfo from './ShopingCartInfo'
+// import ShopingCardInfo from './ShopingCartInfo';
+//  import Showcart from './ShopingCartInfo/Showcart';
+import ShopingCardInfo from './ShopingCartInfo';
 
 
 function App() {
