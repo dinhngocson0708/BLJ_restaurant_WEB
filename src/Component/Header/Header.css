@@ -8,6 +8,14 @@
     z-index: 100;
 }
 
+.cart-item-count {
+   color: red;
+   position: absolute;
+   font-size: 13px;
+    top: 26px;
+    
+  }
+
 #dropdown-basic {
     border: white;
     background-color: rgb(210, 82, 82);

@@ -101,7 +101,7 @@ const HeaderMenu = () => {
           )
         )}
       </MediaQuery>
-      <Navbar expand="lg" className="bg-body-restaurant" style={{background:"skyblue",position:"sticky",top:"0",left:"0",right:"0",zIndex:"100"}}>
+      <Navbar expand="lg" className="bg-body-restaurant" style={{background:"white",position:"sticky",top:"0",left:"0",right:"0",zIndex:"100"}}>
         <Container>
           <Navbar.Brand href="/home">
             {getLogo?.map(function (el) {
@@ -151,7 +151,7 @@ const HeaderMenu = () => {
               </p>
             )}
              <p className="iconson" >
-                <b  className="quantity" onClick={navigateCart}><MDBIcon fas icon="shopping-cart" size="lg"  >{itemnew ? itemnew.length :0}</MDBIcon></b>  
+                <b  className="quantity" onClick={navigateCart}><MDBIcon fas icon="shopping-cart" size="lg"  ><span  className="cart-item-count">{itemnew ? itemnew.length :0}</span></MDBIcon></b>  
 
               </p>
             
