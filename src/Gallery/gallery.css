@@ -5,3 +5,8 @@
     padding: 50px;
     gap: 50px;
 }
+.title_contactUs{
+    position: relative;
+    text-align: center;
+    bottom:200px;
+}
