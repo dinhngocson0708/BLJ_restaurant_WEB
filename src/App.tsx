@@ -11,7 +11,6 @@ import Gallery from './Gallery/Gallery';
 import Signup from './Signup';
 import Login from './Login';
 import Logout from './Logout';
-
 function App() {
   const [loading, setLoading] = useState(true);
   

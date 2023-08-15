@@ -13,9 +13,7 @@ import "./MyProfile.css";
 interface User {
     username: string;
     email: string;
-    // Add other properties if needed
   }
-  
   const UpdateProfile = () => {
     const loggedInUsername = localStorage.getItem('loggedInUsername');
     const storedUsers = localStorage.getItem('users');
