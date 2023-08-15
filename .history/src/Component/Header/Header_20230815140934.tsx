@@ -74,7 +74,6 @@ const HeaderMenu = () => {
         autoClose: 2000, // Tự đóng sau 2 giây
       });
       // window.location.reload(); // Tải lại trang
-      navigate('/home')
     }
   };
   console.log("isMenuOpen: ", isMenuOpen);
