@@ -101,7 +101,7 @@ const HeaderMenu = () => {
           )
         )}
       </MediaQuery>
-      <Navbar expand="lg" className="bg-body-restaurant">
+      <Navbar expand="lg" className="bg-body-restaurant" style={{background:"skyblue",position:"sticky",top:"0",left:"0",right:"0",zIndex:"100"}}>
         <Container>
           <Navbar.Brand href="/home">
             {getLogo?.map(function (el) {
@@ -139,8 +139,6 @@ const HeaderMenu = () => {
                   <Dropdown.Menu className='menudrop'>
                     <Dropdown.Item href="/profile">My profile<i className="fa-solid fa-user" style={{marginLeft:'60px',marginTop:'8px'}}></i></Dropdown.Item>
                     <Dropdown.Item href="#/action-3">My order<i className="fa-brands fa-first-order" style={{marginLeft:'67px',marginTop:'8px'}}></i></Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Cart <i className="fas fa-shopping-cart" style={{marginLeft:'95px',marginTop:'8px'}}></i>
-                    </Dropdown.Item>
                     <Dropdown.Item onClick={handleLogoutClick}>Logout
                       <i className="fa fa-sign-out" aria-hidden="true" style={{ marginLeft: '80px', marginTop: '8px' }}></i></Dropdown.Item>
                   </Dropdown.Menu>
@@ -158,52 +156,6 @@ const HeaderMenu = () => {
               </p>
             
           </Navbar.Collapse>
-          <MediaQuery minWidth={769}>
-            {(matches) => (
-              matches ? null : (
-                <div className={`${isMenuOpen ? 'openMenu' : 'closeMenu'}`}>
-                  {headerMenuDocuments && headerMenuDocuments.length > 0 ? (
-                    headerMenuDocuments.map(function (el) {
-                      const linkUrl = el.data.link;
-                      console.log('link ', linkUrl);
-                      return (
-                        <Nav.Item key={el.id} className='hd' style={{ fontSize: '15px', marginTop: '10px' }}>
-                          <Nav.Link href={linkUrl[0].text}>
-                            <PrismicRichText field={el.data.menuname} />
-                          </Nav.Link>
-                        </Nav.Item>
-                      );
-                    })
-                  ) : null}
-                  {login ? (
-                      <Dropdown style={{padding:'10px'}}>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
-                          <p className='person1'>
-                            <i className="fas fa-user" />
-                            <span className='user'>{loggedInUsername}</span>
-                          </p>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className='menudrop'>
-                          <Dropdown.Item href="#/action-2">My profile<i className="fa-solid fa-user" style={{ marginLeft: '60px', marginTop: '8px' }}></i></Dropdown.Item>
-                          <Dropdown.Item href="#/action-3">My order<i className="fa-brands fa-first-order" style={{ marginLeft: '67px', marginTop: '8px' }}></i></Dropdown.Item>
-                          <Dropdown.Item href="#/action-3">Cart <i className="fas fa-shopping-cart" style={{ marginLeft: '95px', marginTop: '8px' }}></i>
-                          </Dropdown.Item>
-                          <Dropdown.Item onClick={handleLogoutClick}>Logout
-                            <i className="fa fa-sign-out" aria-hidden="true" style={{ marginLeft: '80px', marginTop: '8px' }}></i></Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                  ) : (
-                    <div>
-                      <p className='person' style={{ width: '100%' }}>
-                        <i className="fas fa-user" style={{ marginLeft: '-50px' }} />
-                        <a href="/login" className='login'>Đăng nhập</a> | <a href="/signup" className='signup'>Đăng ký</a>
-                      </p>
-                    </div>
-                  )}
-                </div>
-              )
-            )}
-          </MediaQuery>
         </Container>
       </Navbar >
     </>
