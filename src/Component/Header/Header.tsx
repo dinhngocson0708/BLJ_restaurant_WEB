@@ -4,6 +4,7 @@ import { PrismicImage, PrismicRichText, useAllPrismicDocumentsByType } from '@pr
 import MediaQuery from 'react-responsive';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect, useState } from 'react';
 
 const HeaderMenu = () => {
   const [headerMenuDocuments] = useAllPrismicDocumentsByType('menu');
@@ -11,6 +12,19 @@ const HeaderMenu = () => {
   const [getLogo] = useAllPrismicDocumentsByType('restaurantinfo');
 
   const loggedInUsername = localStorage.getItem('loggedInUsername');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [login, setLogin] = useState(false);
+  useEffect(() => {
+    if (loggedInUsername) {
+      setLogin(true);
+    }
+  }, []);
+
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
 
   const handleLogoutClick = () => {
     const confirmed = window.confirm('Bạn có chắc chắn muốn đăng xuất?');
@@ -22,6 +36,8 @@ const HeaderMenu = () => {
       window.location.reload(); // Tải lại trang
     }
   };
+  console.log("isMenuOpen: ", isMenuOpen);
+
   return (
     <>
       <MediaQuery maxWidth={768}>
@@ -49,12 +65,11 @@ const HeaderMenu = () => {
           <Navbar.Brand href="/home">
             {getLogo?.map(function (el) {
               return <PrismicImage field={el.data.restaurantlogo} style={{ objectFit: 'cover', width: '100%', height: '60px' }} />
-            })
-            }
+            })}
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleMenu} />
           <Navbar.Collapse id="basic-navbar-nav">
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',color:'#002E5B',fontWeight:'600' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#002E5B', fontWeight: '600' }}>
               <Nav className="me-auto justify-content-between" style={{ width: '800px', height: '60px' }}>
                 {headerMenuDocuments && headerMenuDocuments.length > 0 ? (
                   headerMenuDocuments.map(function (el) {
@@ -73,7 +88,7 @@ const HeaderMenu = () => {
             </div>
             {loggedInUsername ? (
               <>
-                <Dropdown>
+                <Dropdown style={{ marginLeft: '80px' }}>
                   <Dropdown.Toggle variant="success" id="dropdown-basic">
                     <p className='person1'>
                       <i className="fas fa-user" />
@@ -81,28 +96,72 @@ const HeaderMenu = () => {
                     </p>
                   </Dropdown.Toggle>
                   <Dropdown.Menu className='menudrop'>
-                    <Dropdown.Item href="#/action-2">My profile<i className="fa-solid fa-user" style={{marginLeft:'60px',marginTop:'8px'}}></i></Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">My order<i className="fa-brands fa-first-order" style={{marginLeft:'67px',marginTop:'8px'}}></i></Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Cart <i className="fas fa-shopping-cart" style={{marginLeft:'95px',marginTop:'8px'}}></i>
+                    <Dropdown.Item href="#/action-2">My profile<i className="fa-solid fa-user" style={{ marginLeft: '60px', marginTop: '8px' }}></i></Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">My order<i className="fa-brands fa-first-order" style={{ marginLeft: '67px', marginTop: '8px' }}></i></Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Cart <i className="fas fa-shopping-cart" style={{ marginLeft: '95px', marginTop: '8px' }}></i>
                     </Dropdown.Item>
                     <Dropdown.Item onClick={handleLogoutClick}>Logout
-                      <i className="fa fa-sign-out" aria-hidden="true" style={{marginLeft:'80px',marginTop:'8px'}}></i></Dropdown.Item>
+                      <i className="fa fa-sign-out" aria-hidden="true" style={{ marginLeft: '80px', marginTop: '8px' }}></i></Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </>
             ) : (
               <p className='person'>
                 <i className="fas fa-user" />
-                <a href="/login" className='signup'>Đăng nhập</a> | <a href="/signup" className='login'>Đăng ký</a>
+                <a href="/login" className='login'>Đăng nhập</a> | <a href="/signup" className='signup'>Đăng ký</a>
               </p>
             )}
-            
           </Navbar.Collapse>
+          <MediaQuery minWidth={769}>
+            {(matches) => (
+              matches ? null : (
+                <div className={`${isMenuOpen ? 'openMenu' : 'closeMenu'}`}>
+                  {headerMenuDocuments && headerMenuDocuments.length > 0 ? (
+                    headerMenuDocuments.map(function (el) {
+                      const linkUrl = el.data.link;
+                      console.log('link ', linkUrl);
+                      return (
+                        <Nav.Item key={el.id} className='hd' style={{ fontSize: '15px', marginTop: '10px' }}>
+                          <Nav.Link href={linkUrl[0].text}>
+                            <PrismicRichText field={el.data.menuname} />
+                          </Nav.Link>
+                        </Nav.Item>
+                      );
+                    })
+                  ) : null}
+                  {login ? (
+                      <Dropdown style={{padding:'10px'}}>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                          <p className='person1'>
+                            <i className="fas fa-user" />
+                            <span className='user'>{loggedInUsername}</span>
+                          </p>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className='menudrop'>
+                          <Dropdown.Item href="#/action-2">My profile<i className="fa-solid fa-user" style={{ marginLeft: '60px', marginTop: '8px' }}></i></Dropdown.Item>
+                          <Dropdown.Item href="#/action-3">My order<i className="fa-brands fa-first-order" style={{ marginLeft: '67px', marginTop: '8px' }}></i></Dropdown.Item>
+                          <Dropdown.Item href="#/action-3">Cart <i className="fas fa-shopping-cart" style={{ marginLeft: '95px', marginTop: '8px' }}></i>
+                          </Dropdown.Item>
+                          <Dropdown.Item onClick={handleLogoutClick}>Logout
+                            <i className="fa fa-sign-out" aria-hidden="true" style={{ marginLeft: '80px', marginTop: '8px' }}></i></Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                  ) : (
+                    <div>
+                      <p className='person' style={{ width: '100%' }}>
+                        <i className="fas fa-user" style={{ marginLeft: '-50px' }} />
+                        <a href="/login" className='login'>Đăng nhập</a> | <a href="/signup" className='signup'>Đăng ký</a>
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )
+            )}
+          </MediaQuery>
         </Container>
-      </Navbar>
+      </Navbar >
     </>
   );
 };
-
 
 export default HeaderMenu;

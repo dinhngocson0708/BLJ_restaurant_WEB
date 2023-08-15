@@ -1,5 +1,3 @@
-import React from "react";
-
 const Logout = () => {
     localStorage.removeItem('loggedInUsername');
     alert('Đăng xuất tài khoản thành công');

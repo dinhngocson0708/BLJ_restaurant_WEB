@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './Login.css'; // Đảm bảo đã import stylesheet của bạn
+import { useState } from 'react';
+import './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -7,23 +7,35 @@ const Login = () => {
 
   const handleLogin = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
+    if (!email) {
+      alert("Vui lòng nhập email");
+      return;
+    }
 
+    if (!password) {
+      alert("Vui lòng nhập mật khẩu");
+      return;
+    }
     const storedUsers = localStorage.getItem('users');
     if (storedUsers) {
       const users = JSON.parse(storedUsers);
-      const userData = users.find((users: { email: string; }) => users.email === email);
+      const userData = users.find((user: { email: string; }) => user.email === email);
 
       if (userData && userData.password === password) {
         alert("Đăng nhập thành công");
         localStorage.setItem('loggedInUsername', userData.username);
         window.location.href = "http://localhost:3000/";
       } else {
-        alert("Đăng nhập thất bại, vui lòng thử lại");
+        if (userData) {
+          alert("Sai mật khẩu, vui lòng nhập lại");
+        } else {
+          alert("Email không tồn tại");
+        }
       }
     } else {
       alert("Đăng nhập thất bại, vui lòng thử lại");
     }
-  };
+};
 
   return (
     <div className='formlogin'>
