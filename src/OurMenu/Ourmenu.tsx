@@ -87,7 +87,7 @@ const Ourmenu = () => {
                         </Card.Text>
                         <Link
                           className="btn btn-danger"
-                          to={`/detail/${item.id}`}
+                          to={`/detail/${item.id}/${Math.random()}`}
                         >
                           VIEW DETAIL
                         </Link>

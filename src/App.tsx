@@ -8,6 +8,10 @@ import Detail from './OurMenu/Detail';
 import PrivacyNotice from './Privacy Notice';
 import Loading from './Component/Loading/Loading';
 import Gallery from './Gallery/Gallery';
+// import ShopingCardInfo from './ShopingCartInfo';
+//  import Showcart from './ShopingCartInfo/Showcart';
+import ShopingCardInfo from './ShopingCartInfo';
+
 import Signup from './Signup';
 import Login from './Login';
 import MyProfile from './Profile/My Profile';
@@ -43,8 +47,9 @@ function App() {
 
           <Route path='/gallery' element={<Gallery />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/detail/:id' element={<Detail />} />
+          <Route path='/detail/:id/:rand' element={<Detail />} />
           <Route path='/privacy' element={<PrivacyNotice />} />
+          <Route path='/cart' element={<ShopingCardInfo />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route path="/account" element={<Profile />} />

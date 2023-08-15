@@ -5,13 +5,18 @@ import { PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react'
 import './ourmenu.css';
 import Layout from '../Layout';
 import Ourmenu from './Ourmenu';
+import { useSelector, useDispatch } from 'react-redux';
+import {addToCart} from '../Component/features/shopingCardSlice'
+import { number } from '@prismicio/client/dist/helpers/isFilled';
 
 function Detail() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { id } = useParams<{ id: string }>();
+  const { id, rand } = useParams<{ id: string, rand: string}>();
   const [detail, setDetail] = useState<any | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [documents] = useAllPrismicDocumentsByType('our_menu');
+  const { items } = useSelector((state: any) => state.shopingCarRedux);
   useEffect(() => {
     const item = documents?.find((item) => item.id === id);
     if (item) {
@@ -19,19 +24,45 @@ function Detail() {
       setShowModal(true);
     } else {
     }
-  }, [documents, id]);
+  }, [documents, id, rand]);
 
   const handleClose = () => {
     setShowModal(false);
     navigate("/ourmenu");
   };
   const handleAddcart = () => {
-    setShowModal(false);
-    alert('mua thành công')
-    navigate("/ourmenu");
+
+    if(localStorage.getItem('loggedInUsername')){
+      const userName=JSON.stringify(localStorage.getItem('loggedInUsername'))
+      console.log("-----------------detail",detail);
+      if(detail && detail.data){
+        const {name, price,image,quantity,totalPrice} = detail.data;
+        const {id}=detail;
+        console.log("consoleog---------------------------",name, price,image);
+        dispatch(addToCart({
+          name: name[0].text,
+          price: parseFloat(price[0].text),
+          id:id,
+          image:image.url,
+          quantity:1,
+          totalpriceitem: parseFloat(price[0].text),
+          userName:userName
+        }))
+        setShowModal(false);
+      }
+    }else{
+      alert('vui lòng đăng nhập trước khi thêm sản phẩm vào giỏ hàng')
+      navigate('/login')
+      
+    }
+   
+    // setShowModal(false);
+    // alert('mua thành công')
+    // navigate("/ourmenu");
   };
 
   return (
+    
     <div>
 
       <Ourmenu/>
