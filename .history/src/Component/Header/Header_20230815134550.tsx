@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 //import { getCartTotal } from "../features/cartSlice";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const HeaderMenu = () => {
   const navigate = useNavigate();
@@ -109,7 +109,12 @@ const HeaderMenu = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleMenu} />
           <Navbar.Collapse id="basic-navbar-nav">
+<<<<<<< HEAD
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#002E5B', fontWeight: '600' }}>
+=======
+            
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',color:'#002E5B',fontWeight:'600' }}>
+>>>>>>> test
               <Nav className="me-auto justify-content-between" style={{ width: '800px', height: '60px' }}>
                 {headerMenuDocuments && headerMenuDocuments.length > 0 ? (
                   headerMenuDocuments.map(function (el) {
@@ -151,11 +156,14 @@ const HeaderMenu = () => {
                 <a href="/login" className='login'>Đăng nhập</a> | <a href="/signup" className='signup'>Đăng ký</a>
               </p>
             )}
+<<<<<<< HEAD
+=======
              <p className="iconson" >
                 <b  className="quantity" onClick={navigateCart}><MDBIcon fas icon="shopping-cart" size="lg"  >{itemnew ? itemnew.length :0}</MDBIcon></b>  
 
               </p>
             
+>>>>>>> test
           </Navbar.Collapse>
           <MediaQuery minWidth={769}>
             {(matches) => (

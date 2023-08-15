@@ -151,11 +151,14 @@ const HeaderMenu = () => {
                 <a href="/login" className='login'>Đăng nhập</a> | <a href="/signup" className='signup'>Đăng ký</a>
               </p>
             )}
+<<<<<<< HEAD
+=======
              <p className="iconson" >
                 <b  className="quantity" onClick={navigateCart}><MDBIcon fas icon="shopping-cart" size="lg"  >{itemnew ? itemnew.length :0}</MDBIcon></b>  
 
               </p>
             
+>>>>>>> test
           </Navbar.Collapse>
           <MediaQuery minWidth={769}>
             {(matches) => (
