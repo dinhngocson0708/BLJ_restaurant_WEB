@@ -1,59 +1,69 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleUser, faBookOpenReader, faCreditCard } from "@fortawesome/free-solid-svg-icons";
-import { faBell as farBell } from "@fortawesome/free-regular-svg-icons";
-import { faBitcoin as fabBitcoin } from "@fortawesome/free-brands-svg-icons";
-import "./Account.css";
+import React from 'react';
 
-const Account = () => {
-    const isLoggedIn = true;
-    if (isLoggedIn) {
-        return (
-            <div className='body'>
-                <Container>
-                    <div className="Home_page"><a href="account">Home page |</a></div>
-                    <div className="Account"><a href="#">Account</a></div>
-                    <Row className='row_account mt-4'>
-                        <Col >
-                            <img className="avatar" src="https://www.w3schools.com/w3css/img_avatar3.png" alt="User profile picture" />
-                            <h6 className='text'>Nguyen Van A</h6>
-                            <button className="btn-gradient">
-                                <a href="/update_profile">Update Profile</a>
-                            </button>
-                            <div className='icon'>
-                                <div className='icon-row'>
-                                    <span className='My_Account'> <FontAwesomeIcon icon={faCircleUser} /> <a href="/profile">My Profile</a></span>
-                                    <br />
-                                </div>
-                                <div className='icon-row'>
-                                    <span className='Notification'> <FontAwesomeIcon icon={farBell} /> Notification</span>
-                                    <br />
-                                </div>
-                                <div className='icon-row'>
-                                    <span className='My_Purchase'> <FontAwesomeIcon icon={faBookOpenReader} /> My Purchase</span>
-                                    <br />
-                                </div>
-                                <div className='icon-row'>
-                                    <span className='My_Vouchers'> <FontAwesomeIcon icon={faCreditCard} /> My Vouchers</span>
-                                    <br />
-                                </div>
-                                <div className='icon-row'>
-                                    <span className='My_Coins'> <FontAwesomeIcon icon={fabBitcoin} /> My Coins</span>
-                                    <br />
-                                </div>
 
-                            </div>
-
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-        );
-    } else {
-        return null;
-    }
+// Define the user interface
+interface User {
+  username: string;
+  email: string;
+  // Add other properties if needed
 }
 
-export default Account;
+const Profile = () => {
+  const loggedInUsername = localStorage.getItem('loggedInUsername');
+
+  if (loggedInUsername === null) {
+    // Handle the case where user is not logged in
+    return <div>You are not logged in.</div>;
+  }
+
+  const storedUsers = localStorage.getItem('users');
+  if (storedUsers === null) {
+    // Handle the case where user data is not found
+    return <div>User data not found.</div>;
+  }
+
+  const users: User[] = JSON.parse(storedUsers); // Parse the users as an array of User type
+
+  const userData = users.find(user => user.username === loggedInUsername);
+
+  if (!userData) {
+    // Handle the case where user data is not found
+    return <div>User data not found.</div>;
+  }
+
+  return (
+    <div className='profile'>
+      <div className="container h-100">
+        <div className="row h-100 justify-content-center align-items-center">
+          <div className="col-md-9">
+            <div className="AppForm shadow-lg">
+              <div className="row">
+                <div className="col-md-6 d-flex justify-content-center align-items-center">
+                  <div className="AppFormLeft">
+                    <h1>Profile</h1>
+                    <p><strong>Username:</strong> {userData.username}</p>
+                    <p><strong>Email:</strong> {userData.email}</p>
+                    {/* You can display other user information here */}
+                    <button
+                      className="btn btn-primary btn-block shadow border-0 py-2 text-uppercase"
+                      onClick={() => {
+                        // Handle edit profile logic
+                      }}
+                    >
+                      Edit Profile
+                    </button>
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  {/* You can display an image or other content here */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Profile;

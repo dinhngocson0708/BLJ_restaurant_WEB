@@ -90,8 +90,8 @@ body{
 }
 .select_image{
   position: absolute;
-  margin-top: -20%;
-  width: 8%;
+  margin-top: -30%;
+  width: 14%;
   margin-left: 685px;
   border-radius: 0%;
   background: linear-gradient(white, white) padding-box,
