@@ -73,8 +73,7 @@ const HeaderMenu = () => {
       toast.success('Đã đăng xuất thành công', {
         autoClose: 2000, // Tự đóng sau 2 giây
       });
-      // window.location.reload(); // Tải lại trang
-      navigate('/home')
+       // Tải lại trang
     }
   };
   console.log("isMenuOpen: ", isMenuOpen);
