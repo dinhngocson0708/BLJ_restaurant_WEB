@@ -40,7 +40,7 @@ const HeaderMenu = () => {
     if(localStorage.getItem('loggedInUsername')){
         navigate('/cart')
     }else{
-      alert("Gior hàng đang trống.Vui lòng add to cart")
+      alert("Giỏ hàng đang trống.Vui lòng add to cart")
       navigate('/')
     }
   }
@@ -138,7 +138,7 @@ const HeaderMenu = () => {
               </p>
             )}
              <p className="iconson" >
-                <Button  className="quantity" onClick={navigateCart}><MDBIcon fas icon="shopping-cart" size="lg"  >{itemnew ? itemnew.length :0}</MDBIcon></Button>  
+                <b  className="quantity" onClick={navigateCart}><MDBIcon fas icon="shopping-cart" size="lg"  >{itemnew ? itemnew.length :0}</MDBIcon></b>  
 
               </p>
             

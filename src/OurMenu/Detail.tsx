@@ -12,7 +12,7 @@ import { number } from '@prismicio/client/dist/helpers/isFilled';
 function Detail() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { id } = useParams<{ id: string }>();
+  const { id, rand } = useParams<{ id: string, rand: string}>();
   const [detail, setDetail] = useState<any | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [documents] = useAllPrismicDocumentsByType('our_menu');
@@ -24,7 +24,7 @@ function Detail() {
       setShowModal(true);
     } else {
     }
-  }, [documents, id]);
+  }, [documents, id, rand]);
 
   const handleClose = () => {
     setShowModal(false);

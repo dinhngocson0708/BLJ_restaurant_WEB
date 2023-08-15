@@ -48,7 +48,7 @@ function App() {
 
           <Route path='/gallery' element={<Gallery />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/detail/:id' element={<Detail />} />
+          <Route path='/detail/:id/:rand' element={<Detail />} />
           <Route path='/privacy' element={<PrivacyNotice />} />
           <Route path='/cart' element={<ShopingCardInfo />} />
           <Route path='/signup' element={<Signup />} />

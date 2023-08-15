@@ -1,14 +1,14 @@
 import Layout from "../Layout";
 import { Container } from 'react-bootstrap'
 import { useDispatch, useSelector } from "react-redux";
-import { removeCart, decreaseItemQuantity, increaseItemQuantity, selectTotalPrice,selectTotalQuantity} from '../Component/features/shopingCardSlice'
+import { removeCart,getCartTotal, decreaseItemQuantity, increaseItemQuantity, } from '../Component/features/shopingCardSlice'
+import { useEffect } from "react";
 
 const ShopingCardInfo = () => {
 
     const dispatch = useDispatch();
-    const totalPrice = useSelector(selectTotalPrice);
-    const totalquantity = useSelector(selectTotalQuantity);
-    const { items } = useSelector((state: any) => state.shopingCarRedux);
+   
+    const { items,totalPrice,totalQuantity } = useSelector((state: any) => state.shopingCarRedux);
     console.log("items------------->", items);
     // const cartDataJSON = localStorage.getItem('cart');
     // if (cartDataJSON) {
@@ -18,12 +18,20 @@ const ShopingCardInfo = () => {
     // }
     // const cartString = localStorage.getItem('cart');
     // const cartStorage = JSON.parse(cartString|| '[]');
+    useEffect(()=>{
+        dispatch(getCartTotal())
+    },[items])
+    console.log("====>",totalPrice)
+   if(!(JSON.stringify(localStorage.getItem('loggedInUsername')))){
+
+     
+   }
     const itemnew:any=[];
     items?.map((data:any)=>{
             
         if(data.userName===JSON.stringify(localStorage.getItem('loggedInUsername'))){
             console.log("data",data)
-           itemnew.push(data)
+           itemnew.push(data);
         }else{
             console.log("quang")
         }
@@ -157,7 +165,7 @@ const ShopingCardInfo = () => {
                                         <ul className="list-group list-group-flush">
                                             <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                              
-                                               <strong> Quantity:{totalquantity}</strong>
+                                               <strong> Quantity:{totalQuantity}</strong>
                                                 
                                             </li>
 
