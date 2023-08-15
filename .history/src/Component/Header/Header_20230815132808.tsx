@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 //import { getCartTotal } from "../features/cartSlice";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useState } from 'react';
+import {  useState } from 'react';
 
 const HeaderMenu = () => {
   const navigate = useNavigate();
@@ -185,8 +185,7 @@ const HeaderMenu = () => {
                         <Dropdown.Menu className='menudrop'>
                           <Dropdown.Item href="#/action-2">My profile<i className="fa-solid fa-user" style={{ marginLeft: '60px', marginTop: '8px' }}></i></Dropdown.Item>
                           <Dropdown.Item href="#/action-3">My order<i className="fa-brands fa-first-order" style={{ marginLeft: '67px', marginTop: '8px' }}></i></Dropdown.Item>
-                          <Dropdown.Item href="#/action-3">Cart <i className="fas fa-shopping-cart" style={{ marginLeft: '95px', marginTop: '8px' }}></i>
-                          </Dropdown.Item>
+                         
                           <Dropdown.Item onClick={handleLogoutClick}>Logout
                             <i className="fa fa-sign-out" aria-hidden="true" style={{ marginLeft: '80px', marginTop: '8px' }}></i></Dropdown.Item>
                         </Dropdown.Menu>

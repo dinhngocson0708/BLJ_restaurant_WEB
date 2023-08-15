@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 //import { getCartTotal } from "../features/cartSlice";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const HeaderMenu = () => {
   const navigate = useNavigate();
