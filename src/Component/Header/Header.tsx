@@ -81,7 +81,7 @@ const HeaderMenu = () => {
                     </p>
                   </Dropdown.Toggle>
                   <Dropdown.Menu className='menudrop'>
-                    <Dropdown.Item href="#/action-2">My profile<i className="fa-solid fa-user" style={{marginLeft:'60px',marginTop:'8px'}}></i></Dropdown.Item>
+                    <Dropdown.Item href="/account">My profile<i className="fa-solid fa-user" style={{marginLeft:'60px',marginTop:'8px'}}></i></Dropdown.Item>
                     <Dropdown.Item href="#/action-3">My order<i className="fa-brands fa-first-order" style={{marginLeft:'67px',marginTop:'8px'}}></i></Dropdown.Item>
                     <Dropdown.Item href="#/action-3">Cart <i className="fas fa-shopping-cart" style={{marginLeft:'95px',marginTop:'8px'}}></i>
                     </Dropdown.Item>
