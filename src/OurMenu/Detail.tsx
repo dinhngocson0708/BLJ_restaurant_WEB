@@ -79,7 +79,7 @@ function Detail() {
             </Modal.Body>
             <p className='close'>
             <Modal.Footer>
-              <Button className='close' variant="danger" onClick={handleClose}>
+              <Button className='exit' variant="danger" onClick={handleClose}>
                 Close
               </Button>
             </Modal.Footer>
