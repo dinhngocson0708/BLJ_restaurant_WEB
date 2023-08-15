@@ -58,8 +58,7 @@ export const shopingCardSlice = createSlice({
           console.log("carttotal", cartTotal);
           console.log("cartitem", cartItem);
           const { price, quantity,userName } = cartItem;
-          console.log('aa',userName);
-          if(userName==JSON.stringify(localStorage.getItem('loggedInUsername'))){
+          if(userName=localStorage.getItem('loggedInUsername')){
             const itemTotal = price * quantity;
             cartTotal.totalPrice += itemTotal;
             cartTotal.totalQuantity += quantity;
