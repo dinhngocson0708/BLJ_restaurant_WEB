@@ -6,14 +6,12 @@
     right: 0;
     z-index: 100;
 }
-.menudrop{
-    margin-left: 22px;
-}
+
 #dropdown-basic {
     border: white;
     background-color: rgb(210, 82, 82);
-    border-radius: 50px;
-    margin-left: 50px;
+    border-radius: 10px;
+    margin-left: 40px;
     height: 50px;
     width: auto;
     align-items: center;
@@ -37,7 +35,6 @@
 }
 
 .signup {
-    margin-left: 10px;
     text-decoration: none;
     color: #002E5B;
     font-weight: 500;
@@ -49,6 +46,7 @@
 }
 
 .login {
+    margin-left: 10px;
     text-decoration: none;
     color: #002E5B;
     font-weight: 500;
@@ -80,4 +78,49 @@ div.hd.nav-item p {
 
 div.hd.nav-item p:hover {
     color: #ff656a;
+}
+
+/* Responsive cho tablet */
+@media (max-width: 1024px) {
+    #basic-navbar-nav {
+        display: none;
+        /* Ẩn menu header ở màn hình nhỏ hơn 1024px */
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        /* Hiển thị nút mở menu dropdown */
+        cursor: pointer;
+    }
+
+    .openMenu {
+        display: flex;
+        flex-direction: column;
+        padding-right: 350px;
+    }
+    .closeMenu {
+        display: none;
+    }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 850px) {
+    #basic-navbar-nav {
+        display: none;
+        /* Ẩn menu header ở màn hình nhỏ hơn 768px */
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        /* Hiển thị nút mở menu dropdown */
+        cursor: pointer;
+    }
+    .openMenu {
+        display: flex;
+        flex-direction: column;
+        padding-right: 350px;
+    }
+    .closeMenu {
+        display: none;
+    }
 }

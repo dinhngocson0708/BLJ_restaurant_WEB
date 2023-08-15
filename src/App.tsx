@@ -11,13 +11,10 @@ import Gallery from './Gallery/Gallery';
 import Signup from './Signup';
 import Login from './Login';
 import Logout from './Logout';
-import MyProfile from "./Profile/My Profile";
-import UpdateProfile from "./Profile/Update Profile";
-import Account from "./Profile/Account";
 
 function App() {
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
 
     const timeout = setTimeout(() => {
