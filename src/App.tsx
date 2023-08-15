@@ -10,7 +10,7 @@ import Loading from './Component/Loading/Loading';
 import Gallery from './Gallery/Gallery';
 import Signup from './Signup';
 import Login from './Login';
-
+import Logout from './Logout';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -45,6 +45,9 @@ function App() {
           <Route path='/privacy' element={<PrivacyNotice />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/profile" element={<MyProfile />} />
+          <Route path="/update_profile" element={<UpdateProfile/>} />
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
 

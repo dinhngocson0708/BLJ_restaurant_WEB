@@ -33,7 +33,7 @@ const PrivacyNotice: React.FC = () => {
           </Col>
         </Row>
         <h2 className="text1">Privacy Notice</h2>
-        <div className="conten">
+        <div className="content">
           {documents && documents.length > 0 ? (
             documents.map(function (el) {
               return <PrismicRichText field={el.data.privactycontent} key={el.id} />;

@@ -31,8 +31,10 @@
   margin-bottom: 10px;
   border-bottom: 1px light rgb(243, 241, 241);
 }
-.content p{
+.content {
   line-height: 2.5;
+  position: relative;
+  text-align: left;
 }
 
 
