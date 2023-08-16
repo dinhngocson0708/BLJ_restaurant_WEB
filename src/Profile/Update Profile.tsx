@@ -46,7 +46,7 @@ interface User {
       setUserName(userData.username);
       setEmail(userData.email);
   
-      console.log('Fetched user data:', userData);
+      console.log('Fetched =================user data:', userData);
     }, [loggedInUsername, storedUsers]);
   
     const handleSave = () => {
@@ -72,6 +72,7 @@ interface User {
         console.log('User data not found.');
       }
     };
+  
 
   return (
     <div className='body'>
@@ -134,7 +135,7 @@ interface User {
         </Form.Select>
         <div className='image-form-container'>
           <img className="avatars" src="https://www.w3schools.com/w3css/img_avatar3.png" alt="User profile picture" style={{ left: "500px" }} />
-          <button className="select_image">Select Image</button>
+          <button className="select_image" > Select Image</button>
         </div>
 
               </div>
