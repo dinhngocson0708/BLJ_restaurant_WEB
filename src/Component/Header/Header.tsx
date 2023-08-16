@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import './Header.css';
-import { Nav, Navbar, Container, Dropdown,Button } from 'react-bootstrap';
+import { Nav, Navbar, Container, Dropdown } from 'react-bootstrap';
 import { PrismicImage, PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react';
 import MediaQuery from 'react-responsive';
-import {MDBNavbar,MDBContainer,MDBIcon,MDBNavbarLink,MDBNavbarBrand,MDBBadge} from 'mdb-react-ui-kit';
-import { Link, useNavigate } from 'react-router-dom';
+import {MDBIcon} from 'mdb-react-ui-kit';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-//import { getCartTotal } from "../features/cartSlice";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {  useState } from 'react';
@@ -21,11 +20,8 @@ const HeaderMenu = () => {
   var cartItems ;
   if (cartDataJSON) {
        cartItems = JSON.parse(cartDataJSON);
-      // Now you can work with the cartItems array
-      console.log("cartitemss========>",cartItems) ;
   };
 
-  console.log('HD-------------------',items);
   const itemnew:any=[];
     items?.map((data:any)=>{
             
@@ -36,7 +32,6 @@ const HeaderMenu = () => {
             console.log("quang")
         }
     })
-    console.log("new=====",itemnew)
   const  navigateCart=()=>{
     if(localStorage.getItem('loggedInUsername')){
         navigate('/cart')
@@ -46,11 +41,7 @@ const HeaderMenu = () => {
     }
   }
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   //dispatch(getCartTotal());
-  // }, [cart]);
-
-
+ 
   const loggedInUsername = localStorage.getItem('loggedInUsername');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [login, setLogin] = useState(false);
@@ -76,7 +67,6 @@ const HeaderMenu = () => {
       window.location.reload(); // Tải lại trang
     }
   };
-  console.log("isMenuOpen: ", isMenuOpen);
 
   return (
     <>
@@ -138,7 +128,7 @@ const HeaderMenu = () => {
                   <Dropdown.Menu className='menudrop'>
                     <Dropdown.Item href="/profile">My profile<i className="fa-solid fa-user" style={{marginLeft:'60px',marginTop:'8px'}}></i></Dropdown.Item>
                     <Dropdown.Item href="#/action-3">My order<i className="fa-brands fa-first-order" style={{marginLeft:'67px',marginTop:'8px'}}></i></Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Cart <i className="fas fa-shopping-cart" style={{marginLeft:'95px',marginTop:'8px'}}></i>
+                    <Dropdown.Item href="/cart">Cart <i className="fas fa-shopping-cart" style={{marginLeft:'95px',marginTop:'8px'}}></i>
                     </Dropdown.Item>
                     <Dropdown.Item onClick={handleLogoutClick}>Logout
                       <i className="fa fa-sign-out" aria-hidden="true" style={{ marginLeft: '80px', marginTop: '8px' }}></i></Dropdown.Item>
