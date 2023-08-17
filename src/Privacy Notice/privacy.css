@@ -14,10 +14,11 @@
 }
 .image-caption {
   position: absolute;
-  top: 50%;
+  bottom:150px;
+  text-align: center;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   color: white;
 }
@@ -25,6 +26,7 @@
  margin-top: 50px;
  border-bottom: 1px solid #506172;
  padding-bottom: 20px;
+ text-align: left;
 }
 .border{
   margin-top: 10px;
@@ -35,6 +37,7 @@
   line-height: 2.5;
   position: relative;
   text-align: left;
+  
 }
 
 
