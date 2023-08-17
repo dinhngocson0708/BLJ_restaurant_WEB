@@ -1,11 +1,19 @@
 .bg-body-restaurant {
-    background-color: rgb(255, 255, 255);
-    position: sticky;
+    background-color: #ffff;
+    position:sticky;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
 }
+
+.cart-item-count {
+   color: red;
+   position: absolute;
+   font-size: 13px;
+    top: 26px;
+    
+  }
 
 #dropdown-basic {
     border: white;
