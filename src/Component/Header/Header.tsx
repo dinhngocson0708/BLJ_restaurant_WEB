@@ -2,8 +2,8 @@ import './Header.css';
 import { Nav, Navbar, Container, Dropdown } from 'react-bootstrap';
 import { PrismicImage, PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react';
 import MediaQuery from 'react-responsive';
-import {MDBIcon} from 'mdb-react-ui-kit';
-import { Link, useNavigate } from 'react-router-dom';
+import { MDBIcon } from 'mdb-react-ui-kit';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,24 +14,24 @@ const HeaderMenu = () => {
   const [headerMenuDocuments] = useAllPrismicDocumentsByType('menu');
   headerMenuDocuments?.sort((a, b) => a.data.shortorder - b.data.shortorder);
   const [getLogo] = useAllPrismicDocumentsByType('restaurantinfo');
-  const {items} = useSelector((state:any) => state.shopingCarRedux);
+  const { items } = useSelector((state: any) => state.shopingCarRedux);
   const cartDataJSON = localStorage.getItem('cart');
-  var cartItems ;
+  var cartItems;
   if (cartDataJSON) {
-       cartItems = JSON.parse(cartDataJSON);
+    cartItems = JSON.parse(cartDataJSON);
   };
-  const itemnew:any=[];
-    items?.map((data:any)=>{
+  const itemnew: any = [];
+  items?.map((data: any) => {
 
-        if(data.userName===JSON.stringify(localStorage.getItem('loggedInUsername'))){
-           itemnew.push(data)
-        }else{
-        }
-    })
-  const  navigateCart=()=>{
-    if(localStorage.getItem('loggedInUsername')){
-        navigate('/cart')
-    }else{
+    if (data.userName === JSON.stringify(localStorage.getItem('loggedInUsername'))) {
+      itemnew.push(data)
+    } else {
+    }
+  })
+  const navigateCart = () => {
+    if (localStorage.getItem('loggedInUsername')) {
+      navigate('/cart')
+    } else {
       alert("Giỏ hàng đang trống.Vui lòng add to cart")
       navigate('/')
     }
@@ -84,66 +84,18 @@ const HeaderMenu = () => {
           )
         )}
       </MediaQuery>
-      <Navbar expand="lg" className="bg-body-restaurant">
-        <Container>
-          <Navbar.Brand href="/home">
-            {getLogo?.map(function (el) {
-              return <PrismicImage field={el.data.restaurantlogo} style={{ objectFit: 'cover', width: '100%', height: '60px' }} />
-            })}
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleMenu} />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#002E5B', fontWeight: '600' }}>
-              <Nav className="me-auto justify-content-between" style={{ width: '800px', height: '60px' }}>
-                {headerMenuDocuments && headerMenuDocuments.length > 0 ? (
-                  headerMenuDocuments.map(function (el) {
-                    const linkUrl = el.data.link;
-                    console.log('link ', linkUrl);
-                    return (
-                      <Nav.Item key={el.id} className='hd' style={{ fontSize: '15px', marginTop: '10px' }}>
-                        <Nav.Link href={linkUrl[0].text}>
-                          <PrismicRichText field={el.data.menuname} />
-                        </Nav.Link>
-                      </Nav.Item>
-                    );
-                  })
-                ) : null}
-              </Nav>
-            </div>
-            {loggedInUsername ? (
-              <>
-                <Dropdown style={{ marginLeft: '80px' }}>
-                  <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    <p className='person1'>
-                      <i className="fas fa-user" />
-                      <span className='user'>{loggedInUsername}</span>
-                    </p>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className='menudrop'>
-                    <Dropdown.Item href="/profile">My profile<i className="fa-solid fa-user" style={{marginLeft:'60px',marginTop:'8px'}}></i></Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">My order<i className="fa-brands fa-first-order" style={{marginLeft:'67px',marginTop:'8px'}}></i></Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Cart <i className="fas fa-shopping-cart" style={{marginLeft:'95px',marginTop:'8px'}}></i>
-                    </Dropdown.Item>
-                    <Dropdown.Item onClick={handleLogoutClick}>Logout
-                      <i className="fa fa-sign-out" aria-hidden="true" style={{ marginLeft: '80px', marginTop: '8px' }}></i></Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </>
-            ) : (
-              <p className='person'>
-                <i className="fas fa-user" />
-                <a href="/login" className='login'>Đăng nhập</a> | <a href="/signup" className='signup'>Đăng ký</a>
-              </p>
-            )}
-             <p className="iconson" >
-                <b  className="quantity" onClick={navigateCart}><MDBIcon fas icon="shopping-cart" size="lg"  >{itemnew ? itemnew.length :0}</MDBIcon></b>  
-
-              </p>
-          </Navbar.Collapse>
-          <MediaQuery minWidth={769}>
-            {(matches) => (
-              matches ? null : (
-                <div className={`${isMenuOpen ? 'openMenu' : 'closeMenu'}`}>
+      <div className="body-restaurant">
+        <Navbar expand="lg" >
+          <Container>
+            <Navbar.Brand href="/home">
+              {getLogo?.map(function (el) {
+                return <PrismicImage field={el.data.restaurantlogo} style={{ objectFit: 'cover', width: '100%', height: '60px' }} />
+              })}
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleMenu} />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#002E5B', fontWeight: '600' }}>
+                <Nav className="me-auto justify-content-between" style={{ width: '800px', height: '60px' }}>
                   {headerMenuDocuments && headerMenuDocuments.length > 0 ? (
                     headerMenuDocuments.map(function (el) {
                       const linkUrl = el.data.link;
@@ -157,8 +109,57 @@ const HeaderMenu = () => {
                       );
                     })
                   ) : null}
-                  {login ? (
-                      <Dropdown style={{padding:'10px'}}>
+                </Nav>
+              </div>
+              {loggedInUsername ? (
+                <>
+                  <Dropdown style={{ marginLeft: '80px' }}>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                      <p className='person1'>
+                        <i className="fas fa-user" />
+                        <span className='user'>{loggedInUsername}</span>
+                      </p>
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu className='menudrop'>
+                      <Dropdown.Item href="/profile">My profile<i className="fa-solid fa-user" style={{ marginLeft: '60px', marginTop: '8px' }}></i></Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">My order<i className="fa-brands fa-first-order" style={{ marginLeft: '67px', marginTop: '8px' }}></i></Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Cart <i className="fas fa-shopping-cart" style={{ marginLeft: '95px', marginTop: '8px' }}></i>
+                      </Dropdown.Item>
+                      <Dropdown.Item onClick={handleLogoutClick}>Logout
+                        <i className="fa fa-sign-out" aria-hidden="true" style={{ marginLeft: '80px', marginTop: '8px' }}></i></Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </>
+              ) : (
+                <p className='person'>
+                  <i className="fas fa-user" />
+                  <a href="/login" className='login'>Đăng nhập</a> | <a href="/signup" className='signup'>Đăng ký</a>
+                </p>
+              )}
+              <p className="iconson" >
+                <b className="quantity" onClick={navigateCart}><MDBIcon fas icon="shopping-cart" size="lg"  >{itemnew ? itemnew.length : 0}</MDBIcon></b>
+
+              </p>
+            </Navbar.Collapse>
+            <MediaQuery minWidth={769}>
+              {(matches) => (
+                matches ? null : (
+                  <div className={`${isMenuOpen ? 'openMenu' : 'closeMenu'}`}>
+                    {headerMenuDocuments && headerMenuDocuments.length > 0 ? (
+                      headerMenuDocuments.map(function (el) {
+                        const linkUrl = el.data.link;
+                        console.log('link ', linkUrl);
+                        return (
+                          <Nav.Item key={el.id} className='hd' style={{ fontSize: '15px', marginTop: '10px' }}>
+                            <Nav.Link href={linkUrl[0].text}>
+                              <PrismicRichText field={el.data.menuname} />
+                            </Nav.Link>
+                          </Nav.Item>
+                        );
+                      })
+                    ) : null}
+                    {login ? (
+                      <Dropdown style={{ padding: '10px' }}>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
                           <p className='person1'>
                             <i className="fas fa-user" />
@@ -174,20 +175,21 @@ const HeaderMenu = () => {
                             <i className="fa fa-sign-out" aria-hidden="true" style={{ marginLeft: '80px', marginTop: '8px' }}></i></Dropdown.Item>
                         </Dropdown.Menu>
                       </Dropdown>
-                  ) : (
-                    <div>
-                      <p className='person' style={{ width: '100%' }}>
-                        <i className="fas fa-user" style={{ marginLeft: '-50px' }} />
-                        <a href="/login" className='login'>Đăng nhập</a> | <a href="/signup" className='signup'>Đăng ký</a>
-                      </p>
-                    </div>
-                  )}
-                </div>
-              )
-            )}
-          </MediaQuery>
-        </Container>
-      </Navbar >
+                    ) : (
+                      <div>
+                        <p className='person' style={{ width: '100%' }}>
+                          <i className="fas fa-user" style={{ marginLeft: '-50px' }} />
+                          <a href="/login" className='login'>Đăng nhập</a> | <a href="/signup" className='signup'>Đăng ký</a>
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )
+              )}
+            </MediaQuery>
+          </Container>
+        </Navbar >
+      </div>
     </>
   );
 };

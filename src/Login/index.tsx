@@ -1,17 +1,15 @@
 import { useState } from 'react';
 import './Login.css';
-
+import bcrypt from 'bcryptjs';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
   const handleLogin = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     if (!email) {
       alert("Vui lòng nhập email");
       return;
     }
-
     if (!password) {
       alert("Vui lòng nhập mật khẩu");
       return;
@@ -20,23 +18,27 @@ const Login = () => {
     if (storedUsers) {
       const users = JSON.parse(storedUsers);
       const userData = users.find((user: { email: string; }) => user.email === email);
-
-      if (userData && userData.password === password) {
-        alert("Đăng nhập thành công");
-        localStorage.setItem('loggedInUsername', userData.username);
-        window.location.href = "http://localhost:3000/";
+      if (userData) {
+        bcrypt.compare(password, userData.password, (err, result) => {
+          if (err) {
+            console.error('Error comparing passwords:', err);
+            return;
+          }
+          if (result) {
+            alert('Đăng nhập thành công');
+            localStorage.setItem('loggedInUsername', userData.username);
+            window.location.href = 'http://localhost:3000/';
+          } else {
+            alert('Sai mật khẩu, vui lòng nhập lại');
+          }
+        });
       } else {
-        if (userData) {
-          alert("Sai mật khẩu, vui lòng nhập lại");
-        } else {
-          alert("Email không tồn tại");
-        }
+        alert('Email không tồn tại');
       }
     } else {
-      alert("Đăng nhập thất bại, vui lòng thử lại");
+      alert('Đăng nhập thất bại, vui lòng thử lại');
     }
 };
-
   return (
     <div className='formlogin'>
     <div className="container h-100">
