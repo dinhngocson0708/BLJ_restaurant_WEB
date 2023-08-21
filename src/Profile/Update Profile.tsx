@@ -30,6 +30,7 @@ const UpdateProfile = () => {
   const [address, setAddress] = useState('');
   const [gender, setGender] = useState('');
   const [avatar, setAvatar] = useState('');
+  
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     accept: 'image/*' as unknown as Accept,
@@ -42,6 +43,7 @@ const UpdateProfile = () => {
       }
     }
   });
+
   let update;
   useEffect(() => {
     if (loggedInUsername === null || storedUsers === null) {
@@ -66,12 +68,12 @@ const UpdateProfile = () => {
     setAddress(userData.address);
     setGender(userData.gender);
     setAvatar(userData.avatar);
+    
 
     console.log('Fetched user data:', userData);
   }, [loggedInUsername, storedUsers]);
 
   const handleSave = () => {
-    // Kiểm tra storedUsers và loggedInUsername
     if (storedUsers === null || loggedInUsername === null) {
       console.log('User not logged in or data not found.');
       return;
@@ -79,21 +81,40 @@ const UpdateProfile = () => {
 
     const users: User[] = JSON.parse(storedUsers);
 
-    // Tìm người dùng có username trùng khớp với loggedInUsername
-    const userIndex = users.findIndex(user => user.username === loggedInUsername);
+    const userIndex = users.findIndex((user) => user.username === loggedInUsername);
 
     if (userIndex !== -1) {
-      // Cập nhật thông tin người dùng
       users[userIndex].username = userName;
       users[userIndex].email = email;
       users[userIndex].phonenumber = phoneNumber;
       users[userIndex].address = address;
       users[userIndex].gender = gender;
-      users[userIndex].avatar = avatar;
 
-      // Cập nhật lại localStorage
+      if (selectedFile) {
+        const reader = new FileReader();
+      
+        reader.onload = (event) => {
+          const base64String = event.target?.result;
+      
+          if (typeof base64String === 'string') {
+            setAvatar(base64String);
+            users[userIndex].avatar = base64String;
+      
+            localStorage.setItem('users', JSON.stringify(users));
+            localStorage.setItem('loggedInUsername', userName);
+            console.log('User data updated:', users[userIndex]);
+          } else {
+            console.log('Invalid base64String:', base64String);
+          }
+        };
+      
+        reader.readAsDataURL(selectedFile);
+      } else {
+        users[userIndex].avatar = avatar;
+      }
+
       localStorage.setItem('users', JSON.stringify(users));
-      localStorage.setItem('loggedInUsername', userName)
+      localStorage.setItem('loggedInUsername', userName);
       console.log('User data updated:', users[userIndex]);
     } else {
       console.log('User data not found.');
@@ -171,9 +192,6 @@ const UpdateProfile = () => {
                     <p>Drag and drop your image here, or click to select files</p>
                   </div>
                 )}
-                {/* <button className="select_image" onClick={() => document.querySelector('input[type="file"]')?.click()}>
-                  Select Image
-                </button> */}
               </div>
             </div>
           </Col>
