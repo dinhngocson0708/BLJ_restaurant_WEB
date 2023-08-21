@@ -1,20 +1,17 @@
-.bg-body-restaurant {
-    background-color: skyblue;
-    position:sticky;
-    position: fixed;
+.body-restaurant{
+    background-color: rgb(255, 255, 255);
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 100;
 }
 
 .cart-item-count {
-   color: red;
-   position: absolute;
-   font-size: 13px;
+    color: red;
+    position: absolute;
+    font-size: 13px;
     top: 26px;
-    
-  }
+
+}
 
 #dropdown-basic {
     border: white;
@@ -107,6 +104,7 @@ div.hd.nav-item p:hover {
         flex-direction: column;
         padding-right: 350px;
     }
+
     .closeMenu {
         display: none;
     }
@@ -124,19 +122,22 @@ div.hd.nav-item p:hover {
         /* Hiển thị nút mở menu dropdown */
         cursor: pointer;
     }
+
     .openMenu {
         display: flex;
         flex-direction: column;
         padding-right: 350px;
     }
+
     .closeMenu {
         display: none;
     }
 }
-.iconson{
+
+.iconson {
     padding-left: 30px;
 }
-.quantity{
+
+.quantity {
     color: red;
 }
-

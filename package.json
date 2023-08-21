@@ -19,6 +19,10 @@
     "@types/react": "^18.2.15",
     "@types/react-bootstrap": "^0.32.32",
     "@types/react-dom": "^18.2.7",
+<<<<<<< HEAD
+    "@types/react-redux": "^7.1.25",
+    "@types/react-router-dom": "^5.3.3",
+=======
     "@types/react-dropzone": "^5.1.0",
     "bootstrap": "^5.3.1",
     "mdb-react-ui-kit": "^6.2.0",
@@ -64,6 +68,7 @@
     ]
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.4.0"
+    "@fortawesome/fontawesome-free": "^6.4.0",
+    "@types/bcryptjs": "^2.4.2"
   }
 }
