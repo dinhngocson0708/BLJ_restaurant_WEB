@@ -13,7 +13,10 @@ import "./MyProfile.css";
 interface User {
   username: string;
   email: string;
-  // Add other properties if needed
+  phonenumber: string;
+  address: string;
+  gender: string;
+  avatar: string;
 }
 
 const MyProfile = () => {
@@ -25,6 +28,7 @@ const MyProfile = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [address, setAddress] = useState('');
   const [gender, setGender] = useState('');
+  const [avatar, setAvatar] = useState('');
 
   useEffect(() => {
     if (loggedInUsername === null || storedUsers === null) {
@@ -43,6 +47,10 @@ const MyProfile = () => {
 
     setUserName(userData.username);
     setEmail(userData.email);
+    setPhoneNumber(userData.phonenumber);
+    setAddress(userData.address);
+    setGender(userData.gender);
+    setAvatar(userData.avatar);
   }, [loggedInUsername, storedUsers]);
 
   return (
