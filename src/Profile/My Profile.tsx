@@ -22,7 +22,7 @@ interface User {
 const MyProfile = () => {
   const loggedInUsername = localStorage.getItem('loggedInUsername');
   const storedUsers = localStorage.getItem('users');
-  
+
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -64,31 +64,31 @@ const MyProfile = () => {
             <h6 className='Name_text'>{userName}</h6>
             <button className="btn-gradient-2">
               <a href="/update_profile">Update Profile</a>
-            </button> 
+            </button>
 
             <div className='icon'> <br />
-                                <div className='icon-row'>
-                                    <span className='My_Account'> <FontAwesomeIcon icon={faCircleUser} /> <a href="/profile">My Profile</a></span>
-                                    <br />
-                                </div>
-                                <div className='icon-row'>
-                                    <span className='Notification'> <FontAwesomeIcon icon={farBell} /> Notification</span>
-                                    <br />
-                                </div>
-                                <div className='icon-row'>
-                                    <span className='My_Purchase'> <FontAwesomeIcon icon={faBookOpenReader} /> My Purchase</span>
-                                    <br />
-                                </div>
-                                <div className='icon-row'>
-                                    <span className='My_Vouchers'> <FontAwesomeIcon icon={faCreditCard} /> My Vouchers</span>
-                                    <br />
-                                </div>
-                                <div className='icon-row'>
-                                    <span className='My_Coins'> <FontAwesomeIcon icon={fabBitcoin} /> My Coins</span>
-                                    <br />
-                                </div>
+              <div className='icon-row'>
+                <span className='My_Account'> <FontAwesomeIcon icon={faCircleUser} /> <a href="/profile">My Profile</a></span>
+                <br />
+              </div>
+              <div className='icon-row'>
+                <span className='Notification'> <FontAwesomeIcon icon={farBell} /> Notification</span>
+                <br />
+              </div>
+              <div className='icon-row'>
+                <span className='My_Purchase'> <FontAwesomeIcon icon={faBookOpenReader} /> My Purchase</span>
+                <br />
+              </div>
+              <div className='icon-row'>
+                <span className='My_Vouchers'> <FontAwesomeIcon icon={faCreditCard} /> My Vouchers</span>
+                <br />
+              </div>
+              <div className='icon-row'>
+                <span className='My_Coins'> <FontAwesomeIcon icon={fabBitcoin} /> My Coins</span>
+                <br />
+              </div>
 
-                            </div>
+            </div>
           </Col>
 
           <Col className="col_myprofile">
@@ -101,24 +101,24 @@ const MyProfile = () => {
                 <Form.Control type="email" placeholder="name@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
               </FloatingLabel>
               <FloatingLabel controlId="floatingInput" label="Phone number" className="mb-3">
-          <Form.Control type="text" placeholder="Phone Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-        </FloatingLabel>
-        <FloatingLabel controlId="floatingInput" label="Address" className='mb-3'>
-          <Form.Control type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
-        </FloatingLabel>
-        <Form.Select aria-label="Default select example" className='opiton' value={gender} onChange={(e) => setGender(e.target.value)}>
-          <option>Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-        </Form.Select>
-        <div className='image-form-container'>
-          <img className="avatars" src="https://www.w3schools.com/w3css/img_avatar3.png" alt="User profile picture" style={{ left: "500px" }} />
-          <button className="select_image">Select Image</button>
-        </div>
-
+                <Form.Control type="text" placeholder="Phone Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+              </FloatingLabel>
+              <FloatingLabel controlId="floatingInput" label="Address" className='mb-3'>
+                <Form.Control type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
+              </FloatingLabel>
+              <Form.Select aria-label="Default select example" className='opiton' value={gender} onChange={(e) => setGender(e.target.value)}>
+                <option>Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </Form.Select>
+              <div className='image-form-container'>
+                <img className="avatars" src="https://www.w3schools.com/w3css/img_avatar3.png" alt="User profile picture" style={{ left: "500px" }} />
+                <button className="select_image">Select Image</button>
               </div>
-            
+
+            </div>
+
           </Col>
         </Row>
       </Container>

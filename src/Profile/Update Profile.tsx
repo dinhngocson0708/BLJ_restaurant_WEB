@@ -124,7 +124,9 @@ const UpdateProfile = () => {
 
 
   return (
+    
     <div className='body'>
+      
       <Container>
         <div className="Home_page"><a href="/home">Home page |</a></div>
         <div className="Account"><a href="account">Account</a></div>
@@ -164,7 +166,7 @@ const UpdateProfile = () => {
           <Col className="col_myprofile">
             <div className='profile-container'>
               <h5 className='text_myprofile'>My Profile</h5><br />
-              <FloatingLabel controlId="floatingInput" label="User name" className="mb-3">
+              <FloatingLabel controlId="floatingInput" label="User name" className="mb-3" >
                 <Form.Control type="text" placeholder="User Name" value={userName} onChange={(e) => setUserName(e.target.value)} />
               </FloatingLabel>
               <FloatingLabel controlId="floatingInput" label="Email address" className="mb-3">
@@ -182,8 +184,11 @@ const UpdateProfile = () => {
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
               </Form.Select>
-
-              <div className='image-form-container' onDragOver={(e) => e.preventDefault()}>
+              <div className='image-form-container'>
+                <img className="avatars" src="https://www.w3schools.com/w3css/img_avatar3.png" alt="User profile picture" style={{ left: "500px" }} />
+                <button className="select_image">Select Image</button>
+              </div>
+              <div className='image-container' onDragOver={(e) => e.preventDefault()}>
                 {selectedFile ? (
                   <img className="avatars" src={avatar} alt="User profile picture" style={{ left: "500px" }} />
                 ) : (
