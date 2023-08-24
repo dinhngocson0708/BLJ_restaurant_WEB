@@ -128,7 +128,7 @@ const UpdateProfile = () => {
     <div className='body'>
       
       <Container>
-        <div className="Home_page"><a href="/home">Home page |</a></div>
+        <div className="Home_page"><a href="/home" style={{ color:'black' }} >Home page |</a></div> 
         <div className="Account"><a href="account">Account</a></div>
         <Row className='row_account mt-4'>
           <Col>
