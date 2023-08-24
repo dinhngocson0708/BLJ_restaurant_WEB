@@ -30,6 +30,7 @@ const UpdateProfile = () => {
   const [address, setAddress] = useState('');
   const [gender, setGender] = useState('');
   const [avatar, setAvatar] = useState('');
+  
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     accept: 'image/*' as unknown as Accept,
@@ -42,6 +43,7 @@ const UpdateProfile = () => {
       }
     }
   });
+
   let update;
   useEffect(() => {
     if (loggedInUsername === null || storedUsers === null) {
@@ -66,12 +68,12 @@ const UpdateProfile = () => {
     setAddress(userData.address);
     setGender(userData.gender);
     setAvatar(userData.avatar);
+    
 
     console.log('Fetched user data:', userData);
   }, [loggedInUsername, storedUsers]);
 
   const handleSave = () => {
-    // Kiểm tra storedUsers và loggedInUsername
     if (storedUsers === null || loggedInUsername === null) {
       console.log('User not logged in or data not found.');
       return;
@@ -79,21 +81,40 @@ const UpdateProfile = () => {
 
     const users: User[] = JSON.parse(storedUsers);
 
-    // Tìm người dùng có username trùng khớp với loggedInUsername
-    const userIndex = users.findIndex(user => user.username === loggedInUsername);
+    const userIndex = users.findIndex((user) => user.username === loggedInUsername);
 
     if (userIndex !== -1) {
-      // Cập nhật thông tin người dùng
       users[userIndex].username = userName;
       users[userIndex].email = email;
       users[userIndex].phonenumber = phoneNumber;
       users[userIndex].address = address;
       users[userIndex].gender = gender;
-      users[userIndex].avatar = avatar;
 
-      // Cập nhật lại localStorage
+      if (selectedFile) {
+        const reader = new FileReader();
+      
+        reader.onload = (event) => {
+          const base64String = event.target?.result;
+      
+          if (typeof base64String === 'string') {
+            setAvatar(base64String);
+            users[userIndex].avatar = base64String;
+      
+            localStorage.setItem('users', JSON.stringify(users));
+            localStorage.setItem('loggedInUsername', userName);
+            console.log('User data updated:', users[userIndex]);
+          } else {
+            console.log('Invalid base64String:', base64String);
+          }
+        };
+      
+        reader.readAsDataURL(selectedFile);
+      } else {
+        users[userIndex].avatar = avatar;
+      }
+
       localStorage.setItem('users', JSON.stringify(users));
-      localStorage.setItem('loggedInUsername', userName)
+      localStorage.setItem('loggedInUsername', userName);
       console.log('User data updated:', users[userIndex]);
     } else {
       console.log('User data not found.');
@@ -103,9 +124,11 @@ const UpdateProfile = () => {
 
 
   return (
+    
     <div className='body'>
+      
       <Container>
-        <div className="Home_page"><a href="/home">Home page |</a></div>
+        <div className="Home_page"><a href="/home" style={{ color:'black' }} >Home page |</a></div> 
         <div className="Account"><a href="account">Account</a></div>
         <Row className='row_account mt-4'>
           <Col>
@@ -143,7 +166,7 @@ const UpdateProfile = () => {
           <Col className="col_myprofile">
             <div className='profile-container'>
               <h5 className='text_myprofile'>My Profile</h5><br />
-              <FloatingLabel controlId="floatingInput" label="User name" className="mb-3">
+              <FloatingLabel controlId="floatingInput" label="User name" className="mb-3" >
                 <Form.Control type="text" placeholder="User Name" value={userName} onChange={(e) => setUserName(e.target.value)} />
               </FloatingLabel>
               <FloatingLabel controlId="floatingInput" label="Email address" className="mb-3">
@@ -161,8 +184,11 @@ const UpdateProfile = () => {
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
               </Form.Select>
-
-              <div className='image-form-container' onDragOver={(e) => e.preventDefault()}>
+              <div className='image-form-container'>
+                <img className="avatars" src="https://www.w3schools.com/w3css/img_avatar3.png" alt="User profile picture" style={{ left: "500px" }} />
+                <button className="select_image">Select Image</button>
+              </div>
+              <div className='image-container' onDragOver={(e) => e.preventDefault()}>
                 {selectedFile ? (
                   <img className="avatars" src={avatar} alt="User profile picture" style={{ left: "500px" }} />
                 ) : (
@@ -171,9 +197,6 @@ const UpdateProfile = () => {
                     <p>Drag and drop your image here, or click to select files</p>
                   </div>
                 )}
-                {/* <button className="select_image" onClick={() => document.querySelector('input[type="file"]')?.click()}>
-                  Select Image
-                </button> */}
               </div>
             </div>
           </Col>
