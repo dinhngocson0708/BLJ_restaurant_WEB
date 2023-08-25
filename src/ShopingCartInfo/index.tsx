@@ -22,7 +22,7 @@ const ShopingCardInfo = () => {
         }
     })
     const handlecheckout =()=>{
-        Swal.fire('load.......Hệ thống đang lỗi!!!')
+        Swal.fire('wait a minute _______________________________ Shop is busying')
     }
     return (
         <Layout>
@@ -91,7 +91,7 @@ const ShopingCardInfo = () => {
 
                                             <div className="col-xl-3 col-md-6 mb-4 mt-5">
                                                 <div className="d-flex">
-                                                    <button className="btn btn-primary px-3 me-2" onClick={() => dispatch(decreaseItemQuantity(data.id))}>
+                                                    <button className="btn btn-danger px-3 me-2" onClick={() => dispatch(decreaseItemQuantity(data.id))}>
                                                         <i className="fas fa-minus"></i>
                                                     </button>
                                                     <div className="">
@@ -105,7 +105,7 @@ const ShopingCardInfo = () => {
                                                             onChange={() => null}
                                                         />
                                                     </div>
-                                                    <button className="btn btn-primary px-3 ms-2" onClick={() => dispatch(increaseItemQuantity(data.id))}>
+                                                    <button className="btn btn-danger px-3 ms-2" onClick={() => dispatch(increaseItemQuantity(data.id))}>
                                                         <i className="fas fa-plus"></i>
                                                     </button>
                                                 </div>
@@ -118,7 +118,7 @@ const ShopingCardInfo = () => {
                                             <div className="col-xl-1 mt-5">
                                                 <button
                                                     type="button"
-                                                    className="btn btn-primary  px-3 ms-2"
+                                                    className="btn btn-danger  px-3 ms-2"
                                                     data-mdb-toggle="tooltip"
                                                     title="Remove item"
                                                     onClick={() => dispatch(removeCart(data.id))}
@@ -161,7 +161,7 @@ const ShopingCardInfo = () => {
                                    
                                     <button
                                         type="button"
-                                        className="btn btn-primary btn-lg btn-block"
+                                        className="btn btn-danger btn-lg btn-block"
                                         onClick={handlecheckout}
                                     >
                                         Go to checkout
