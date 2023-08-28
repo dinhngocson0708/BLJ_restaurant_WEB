@@ -78,6 +78,12 @@ const UpdateProfile = () => {
       console.log('User not logged in or data not found.');
       return;
     }
+    if (!userName || !email || !phoneNumber || !address || !gender) {
+      alert('Vui lòng nhập đầy đủ thông tin.');
+      return;
+    }
+    alert(`Thông tin đã được lưu:`);
+    
 
     const users: User[] = JSON.parse(storedUsers);
 
@@ -103,8 +109,10 @@ const UpdateProfile = () => {
             localStorage.setItem('users', JSON.stringify(users));
             localStorage.setItem('loggedInUsername', userName);
             console.log('User data updated:', users[userIndex]);
+            alert('Thông tin đã được lưu vào.');
           } else {
             console.log('Invalid base64String:', base64String);
+            alert('Lỗi khi lưu thông tin.');
           }
         };
       
@@ -178,7 +186,7 @@ const UpdateProfile = () => {
               <FloatingLabel controlId="floatingInput" label="Address" className='mb-3'>
                 <Form.Control type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
               </FloatingLabel>
-              <Form.Select aria-label="Default select example" className='opiton' value={gender} onChange={(e) => setGender(e.target.value)}>
+              <Form.Select aria-label="Default select example" className='opitons' value={gender} onChange={(e) => setGender(e.target.value)}>
                 <option>Gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -194,7 +202,7 @@ const UpdateProfile = () => {
                 ) : (
                   <div {...getRootProps()}>
                     <input {...getInputProps()} /> <br />
-                    <p>Drag and drop your image here, or click to select files</p>
+                    {/* <p>Drag and drop your image here, or click to select files</p> */}
                   </div>
                 )}
               </div>

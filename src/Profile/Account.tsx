@@ -1,10 +1,15 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 // Define the user interface
 interface User {
   username: string;
   email: string;
+  phonenumber: string;
+  address: string;
+  gender: string;
+  avatar: string;
+
   // Add other properties if needed
 }
 
@@ -40,18 +45,20 @@ const Profile = () => {
               <div className="row">
                 <div className="col-md-6 d-flex justify-content-center align-items-center">
                   <div className="AppFormLeft">
-                    <h1>Profile</h1>
+                    <h2>Profile</h2>
                     <p><strong>Username:</strong> {userData.username}</p>
                     <p><strong>Email:</strong> {userData.email}</p>
+                    <p><strong>Phone:</strong> {userData.phonenumber}</p>
+                    <p><strong>Addres:</strong> {userData.address}</p>
+                    <p><strong> Gender:</strong> {userData.gender}</p>
+                    <p><strong>Avatar:</strong> {userData.avatar}</p>
                     {/* You can display other user information here */}
-                    <button
-                      className="btn btn-primary btn-block shadow border-0 py-2 text-uppercase"
-                      onClick={() => {
-                        // Handle edit profile logic
-                      }}
-                    >
-                      Edit Profile
-                    </button>
+                    
+                     <Link to="/update_profile" className="btn btn-danger btn-block shadow border-0 py-2 text-uppercase">
+                     Edit Profile
+                   </Link>
+                     
+                     
                   </div>
                 </div>
                 <div className="col-md-6">
