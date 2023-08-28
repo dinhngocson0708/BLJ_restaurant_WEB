@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import './Login.css';
 import bcrypt from 'bcryptjs';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  
   const handleLogin = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     if (!email) {
@@ -14,6 +17,9 @@ const Login = () => {
       alert("Vui lòng nhập mật khẩu");
       return;
     }
+    
+  
+    
     const storedUsers = localStorage.getItem('users');
     if (storedUsers) {
       const users = JSON.parse(storedUsers);
@@ -27,7 +33,7 @@ const Login = () => {
           if (result) {
             alert('Đăng nhập thành công');
             localStorage.setItem('loggedInUsername', userData.username);
-            window.location.href = 'http://localhost:3000/';
+            navigate("/ourmenu");
           } else {
             alert('Sai mật khẩu, vui lòng nhập lại');
           }
