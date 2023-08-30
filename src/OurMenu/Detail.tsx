@@ -51,7 +51,7 @@ function Detail() {
         setShowModal(false);
       }
     }else{
-      alert('vui lòng đăng nhập trước khi thêm sản phẩm vào giỏ hàng')
+      alert('You don have account ')
       navigate('/login')
       
     }
