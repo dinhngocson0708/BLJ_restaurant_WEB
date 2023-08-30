@@ -51,7 +51,6 @@ const Profile = () => {
                     <p><strong>Phone:</strong> {userData.phonenumber}</p>
                     <p><strong>Addres:</strong> {userData.address}</p>
                     <p><strong> Gender:</strong> {userData.gender}</p>
-                    <p><strong>Avatar:</strong> {userData.avatar}</p>
                     {/* You can display other user information here */}
                     
                     <Link to="/update_profile" className="btn btn-danger btn-block shadow border-0 py-2 text-uppercase">
