@@ -202,7 +202,7 @@ const UpdateProfile = () => {
                 ) : (
                   <div {...getRootProps()}>
                     <input {...getInputProps()} /> <br />
-                    <p>Drag and drop your image here, or click to select files</p>
+                    {/* <p>Drag and drop your image here, or click to select files</p> */}
                   </div>
                 )}
               </div>
