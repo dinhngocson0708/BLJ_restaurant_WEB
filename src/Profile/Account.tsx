@@ -54,15 +54,10 @@ const Profile = () => {
                     <p><strong>Avatar:</strong> {userData.avatar}</p>
                     {/* You can display other user information here */}
                     
-                     <Link to="/update_profile" className="btn btn-danger btn-block shadow border-0 py-2 text-uppercase">
+                    <Link to="/update_profile" className="btn btn-danger btn-block shadow border-0 py-2 text-uppercase">
                      Edit Profile
-                   </Link>
-                     
-                     
+                   </Link> 
                   </div>
-                </div>
-                <div className="col-md-6">
-                  {/* You can display an image or other content here */}
                 </div>
               </div>
             </div>
